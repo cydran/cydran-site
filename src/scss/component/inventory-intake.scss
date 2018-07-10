@@ -1,0 +1,178 @@
+div[data-c-component-type="inventory-intake"] {
+
+	position: absolute;
+	top: 56px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+
+			.search-tool,
+			.items {
+				width: 300px;
+				flex: 0 0 300px;
+			}
+
+			.search-tool {
+				background-color: #cccccc;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.details {
+				background-color: #202020;
+				flex: 1;
+			}
+
+			.items {
+				background-color: #000000;
+				overflow-y: scroll;
+			}
+
+			/*
+
+			.offers {
+				margin-right: 400px;
+				width: auto !important;
+				color: #f0f0f0;
+			}
+
+			.offers .title .label {
+				background-color: #f38530;
+				font-weight: bold;
+				font-size: 36px;
+				padding: 15px;
+				text-align: center;
+			}
+
+			.offers .stats {
+				background-color: #ffffff;
+				color: #000000;
+			}
+
+			.offers .stats .label {
+				text-align: center;
+				font-weight: bold;
+				padding: 10px;
+				font-size: 18px;
+			}
+
+			.offers .condition .label {
+				text-align: center;
+				font-weight: bold;
+				color: #ffffff;
+				background-color: #666666;
+				padding: 10px;
+				font-size: 18px;
+			}
+
+			.offers .condition .label span {
+				font-size: 32px;
+			}
+
+			.offers .offer-list-header {
+				background-color: #cccccc;
+				color: #666666;
+			}
+
+			.offers .offer-list-header .label {
+				text-align: center;
+				padding: 10px;
+				border-left: 1px solid #aaaaaa;
+				font-weight: bold;
+			}
+
+			.offers .offer-list {
+				background-color: #cccccc;
+				color: #000000;
+			}
+
+			.offers .offer-list .label {
+				padding: 0 25px 25px 25px;
+				border-left: 1px solid #aaaaaa;
+				font-size: 24px;
+			}
+
+			.offers .buy-boxes {
+				background-color: #ffffff;
+				color: #000000;
+			}
+
+			.offers .buy-boxes .label {
+				text-align: center;
+				font-weight: bold;
+				padding: 10px;
+				font-size: 24px;
+			}
+
+
+			.main {
+				margin-right: 400px;
+				width: auto !important;
+			}
+
+			.vendor-buttons {
+				background-color: #333333;
+				color: #ffffff
+			}
+
+			.items table {
+				margin-bottom: 0;
+			}
+
+			.items thead td {
+				padding: 10px;
+			}
+
+			.items tbody td {
+				padding: 10px 10px 10px 70px;
+			}
+
+			.items tbody h3 {
+				font-size: 16px;
+			}
+
+			.items tbody p {
+				margin-bottom: 0;
+				padding-bottom: 0;
+				font-size: 10px;
+			}
+
+			.btn-condition {
+				width: 180px;
+				background-color: #666666;
+				color: #ffffff;
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			.btn-condition[data-active="true"] {
+				background-color: #0099cc;
+			}
+
+			.btn-condition.btn-new[data-active="true"] {
+				background-color: #009900;
+			}
+
+			.btn-condition.btn-like-new[data-active="true"] {
+				background-color: #0099cc;
+			}
+
+			.btn-condition.btn-very-good[data-active="true"] {
+				background-color: #cccc00;
+			}
+
+			.btn-condition.btn-good[data-active="true"] {
+				background-color: #ee7800;
+			}
+
+			.btn-condition.btn-acceptable[data-active="true"] {
+				background-color: #cc00cc;
+			}
+
+			.btn-condition.btn-unacceptable[data-active="true"] {
+				background-color: #cc0000;
+			}
+
+			*/
+}

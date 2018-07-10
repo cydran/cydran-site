@@ -1,0 +1,32 @@
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'scss/component.scss';
+
+body {
+	background-color: #252a2e;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+	color: #f0f0f0;
+}
+
+div[data-c-component-type="app"] > div[data-c-region="body"] {
+
+	margin-top: 56px;
+
+}
+
+a.btn.icon > i.fa {
+	margin-right: 8px;
+}
+
+footer.footer {
+	padding: 50px 0 50px 0;
+	color: #999999;
+	background-color: #242424;
+}
+
+.main-body {
+
+	background-color: #f0f0f0;
+
+}
