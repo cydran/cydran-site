@@ -17,22 +17,10 @@ let routes: any = {
 	}
 };
 
-let first: Component = new AppComponent();
-let second: Component = new OtherComponent();
-
 let stage: Stage = new Stage('app');
 stage.getConfig().useDebug();
-stage.setComponent(first);
+stage.setComponent(new AppComponent());
 stage.start();
 
 router.on(routes).resolve();
-
-window['first'] = function() {
-	stage.setComponent(first);
-};
-
-
-window['second'] = function() {
-	stage.setComponent(second);
-};
 

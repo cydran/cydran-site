@@ -16,19 +16,19 @@ class MenuComponent extends Component {
 			    <ul class="navbar-nav mr-auto">
 
 			      <li class="nav-item active">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick()">Docs<span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('main')">Docs<span class="sr-only">(current)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick()">Tutorial</a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('other')">Tutorial</a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick()">Community</a>
+			        <a class="nav-link" href="javascript:void(0);">Community</a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick()">Blog</a>
+			        <a class="nav-link" href="javascript:void(0);">Blog</a>
 			      </li>
 
 			      <li class="nav-item">
@@ -69,8 +69,8 @@ class MenuComponent extends Component {
 		this.navigationBroadcaster = this.broadcastTo('navigation');
 	}
 
-	public handleClick(): void {
-		this.navigationBroadcaster.broadcast('navigate', 'anything');
+	public handleClick(name: string): void {
+		this.navigationBroadcaster.broadcast('navigate', name);
 	}
 
 }

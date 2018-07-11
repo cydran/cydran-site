@@ -6,9 +6,9 @@ import {Component} from "cydran";
 
 class AppComponent extends Component {
 
-	private main: Component;
-
-	private other: Component;
+	private components: {
+		[name: string]: Component;
+	}
 
 	constructor() {
 		super('app', () => `
@@ -17,17 +17,19 @@ class AppComponent extends Component {
 			<div data-c-region="footer"></div>
 		`);
 
-		this.main = new MainComponent();
-		this.other = new OtherComponent();
+		this.components = {
+			main: new MainComponent(),
+			other: new OtherComponent()
+		};
 
 		this.setChild('menu', new MenuComponent());
-		this.setChild('body', this.main);
+		this.navigate('main');
 		this.setChild('footer', new FooterComponent());
 		this.listenTo('navigation', 'navigate', this.navigate);
 	}
 
-	public navigate(componentName: string): void {
-		this.setChild('body', this.other);
+	public navigate(name: string): void {
+		this.setChild('body', this.components[name]);
 	}
 
 }
