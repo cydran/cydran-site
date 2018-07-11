@@ -4,6 +4,7 @@ import {Stage, Component} from "cydran";
 import Navigo from "navigo";
 import './legacy';
 import './main.scss';
+import './decorator/';
 
 let router = new Navigo('/', true, '#');
 
