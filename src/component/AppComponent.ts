@@ -1,6 +1,6 @@
 import MenuComponent from "./MenuComponent";
-import MainComponent from "./MainComponent";
-import OtherComponent from "./OtherComponent";
+import IndexComponent from "./IndexComponent";
+import DocsComponent from "./DocsComponent";
 import FooterComponent from "./FooterComponent";
 import {Component} from "cydran";
 
@@ -18,12 +18,12 @@ class AppComponent extends Component {
 		`);
 
 		this.components = {
-			main: new MainComponent(),
-			other: new OtherComponent()
+			index: new IndexComponent(),
+			docs: new DocsComponent()
 		};
 
 		this.setChild('menu', new MenuComponent());
-		this.navigate('main');
+		this.navigate('index');
 		this.setChild('footer', new FooterComponent());
 		this.listenTo('navigation', 'navigate', this.navigate);
 	}

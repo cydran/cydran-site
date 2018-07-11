@@ -1,5 +1,5 @@
 import AppComponent from "./component/AppComponent";
-import OtherComponent from "./component/OtherComponent";
+import OtherComponent from "./component/DocsComponent";
 import {Stage, Component} from "cydran";
 import Navigo from "navigo";
 import './legacy';

@@ -1,17 +1,26 @@
 @import 'bootstrap/scss/bootstrap.scss';
 @import 'scss/component.scss';
+@import 'scss/jumbotron.scss';
 
 body {
 	background-color: #252a2e;
 }
 
-h1, h2, h3, h4, h5, h6, p, label {
-	color: #f0f0f0;
-}
+div[data-component-type="app"] {
 
-div[data-c-component-type="app"] > div[data-c-region="body"] {
+	& > div[data-region-id="body"] {
+		margin-top: 56px;
+		background-color: #ffffff;
+	}
 
-	margin-top: 56px;
+	& > div[data-region-id="menu"],
+	& > div[data-region-id="footer"] {
+
+		h1, h2, h3, h4, h5, h6, p, label {
+			color: #f0f0f0;
+		}
+
+	}
 
 }
 

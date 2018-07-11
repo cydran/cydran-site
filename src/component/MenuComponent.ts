@@ -7,7 +7,7 @@ class MenuComponent extends Component {
 	constructor() {
 		super('menu', () => `
 			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-			  <a class="navbar-brand" href="javascript:void(0);">Cydran</a>
+			  <a class="navbar-brand" href="javascript:void(0);" data-c-click="this.handleClick('index')">Cydran</a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -16,11 +16,11 @@ class MenuComponent extends Component {
 			    <ul class="navbar-nav mr-auto">
 
 			      <li class="nav-item active">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('main')">Docs<span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('docs')">Docs<span class="sr-only">(current)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('other')">Tutorial</a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('tutorial')">Tutorial</a>
 			      </li>
 
 			      <li class="nav-item">
