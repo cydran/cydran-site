@@ -20,7 +20,7 @@ class MenuComponent extends Component {
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('tutorial')">Tutorial</a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('tutorials')">Tutorial</a>
 			      </li>
 
 			      <li class="nav-item">
