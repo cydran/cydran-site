@@ -31,32 +31,12 @@ class MenuComponent extends Component {
 			        <a class="nav-link" href="javascript:void(0);">Blog</a>
 			      </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="/#/first/1">First</a>
-			      </li>
-
-			      <li class="nav-item">
-			        <a class="nav-link" href="/#/second">Second</a>
-			      </li>
-
 			    </ul>
 			    <ul class="navbar-nav">
 
-			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          <i class="fa fa-user-o"></i>
-			        </a>
-			        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="#">Action</a>
-			          <a class="dropdown-item" href="#">Another action</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item" href="javascript:void(0);" data-c-click="this.logout()">Log Out</a>
-			        </div>
-			      </li>
-
 				<li class="nav-item">
 
-				  <a class="nav-link" href="https://github.com/cydran/cydran/" target="_blank" rel="noopener">GitHub</a>
+				<a class="nav-link" href="https://github.com/cydran/cydran/" target="_blank" rel="noopener">GitHub</a>
 		      </li>
 
 
