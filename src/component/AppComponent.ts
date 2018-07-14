@@ -2,6 +2,7 @@ import MenuComponent from "./MenuComponent";
 import IndexComponent from "./IndexComponent";
 import DocsComponent from "./DocsComponent";
 import FooterComponent from "./FooterComponent";
+import TutorialsComponent from "./TutorialsComponent";
 import {Component} from "cydran";
 
 class AppComponent extends Component {
@@ -19,7 +20,8 @@ class AppComponent extends Component {
 
 		this.components = {
 			index: new IndexComponent(),
-			docs: new DocsComponent()
+			docs: new DocsComponent(),
+			tutorials: new TutorialsComponent()
 		};
 
 		this.setChild('menu', new MenuComponent());
