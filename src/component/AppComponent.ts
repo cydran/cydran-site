@@ -3,6 +3,8 @@ import IndexComponent from "./IndexComponent";
 import DocsComponent from "./DocsComponent";
 import FooterComponent from "./FooterComponent";
 import TutorialsComponent from "./TutorialsComponent";
+import NotFoundComponent from "./NotFoundComponent";
+
 import {Component} from "cydran";
 
 class AppComponent extends Component {
@@ -21,7 +23,8 @@ class AppComponent extends Component {
 		this.components = {
 			index: new IndexComponent(),
 			docs: new DocsComponent(),
-			tutorials: new TutorialsComponent()
+			tutorials: new TutorialsComponent(),
+			notFound: new NotFoundComponent()
 		};
 
 		this.setChild('menu', new MenuComponent());
@@ -31,7 +34,13 @@ class AppComponent extends Component {
 	}
 
 	public navigate(name: string): void {
-		this.setChild('body', this.components[name]);
+		let component: Component = this.components[name];
+
+		if (!component) {
+			component = this.components['notFound'];
+		}
+
+		this.setChild('body', component);
 	}
 
 }

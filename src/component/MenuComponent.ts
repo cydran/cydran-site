@@ -24,11 +24,11 @@ class MenuComponent extends Component {
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);">Community</a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('community')">Community</a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="javascript:void(0);">Blog</a>
+			        <a class="nav-link" href="javascript:void(0);" data-c-click="this.handleClick('blog')">Blog</a>
 			      </li>
 
 			    </ul>
