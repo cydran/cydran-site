@@ -1,12 +1,12 @@
-import {Component, Broadcaster} from "cydran";
-import TEMPLATE from "./IndexComponent.html";
+import {Component, Broadcaster, Registry} from "cydran";
+import TEMPLATE from "./Home.html";
 
-class IndexComponent extends Component {
+class Home extends Component {
 
 	private navigationBroadcaster: Broadcaster;
 
 	constructor() {
-		super('index', () => TEMPLATE);
+		super('home', () => TEMPLATE);
 
 		this.navigationBroadcaster = this.broadcastTo('navigation');
 	}
@@ -17,4 +17,6 @@ class IndexComponent extends Component {
 
 }
 
-export default IndexComponent;
+Registry.registerPrototype('page:home', Home);
+
+export default Home;

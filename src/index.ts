@@ -1,27 +1,21 @@
-import AppComponent from "./component/AppComponent";
-import OtherComponent from "./component/DocsComponent";
-import {Stage, Component} from "cydran";
+import App from "./component/App";
+import Router from "./Router";
+import {Stage, Component, Registry} from "cydran";
 import Navigo from "navigo";
 import './legacy';
 import './main.scss';
 import './decorator/';
+import './component/';
 
-let router = new Navigo('/', true, '#');
-
-let routes: any = {
-	'first/:id': (data) => {
-		console.log('first');
-		console.log(data);
-	},
-	'second': () => {
-		console.log('second');
-	}
-};
+Registry.registerSingleton('router', Router);
 
 let stage: Stage = new Stage('app');
 stage.getConfig().useDebug();
-stage.setComponent(new AppComponent());
+stage.setComponent(new App());
+
+stage.withInitializer(function() {
+	let router: Router = this.get('router');
+	router.start();
+});
+
 stage.start();
-
-router.on(routes).resolve();
-

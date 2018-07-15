@@ -1,8 +1,8 @@
-import {Component} from "cydran";
-import TEMPLATE from "./TutorialsComponent.html";
-import CONTENT from "./TutorialsComponent.md";
+import {Component, Registry} from "cydran";
+import TEMPLATE from "./Tutorials.html";
+import CONTENT from "./Tutorials.md";
 
-class TutorialsComponent extends Component {
+class Tutorials extends Component {
 
 	private mdContent: string;
 	private myField: string;
@@ -19,4 +19,6 @@ class TutorialsComponent extends Component {
 
 }
 
-export default TutorialsComponent;
+Registry.registerPrototype('page:tutorials', Tutorials);
+
+export default Tutorials;

@@ -1,6 +1,6 @@
-import {Component} from "cydran";
-import TEMPLATE from "./DocsComponent.html";
-import CONTENT from "./DocsComponent.md";
+import {Component, Registry} from "cydran";
+import TEMPLATE from "./Docs.html";
+import CONTENT from "./Docs.md";
 
 class DocsComponent extends Component {
 
@@ -12,5 +12,7 @@ class DocsComponent extends Component {
 	}
 
 }
+
+Registry.registerPrototype('page:docs', DocsComponent);
 
 export default DocsComponent;
