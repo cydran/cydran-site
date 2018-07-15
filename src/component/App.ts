@@ -12,7 +12,6 @@ class App extends Component {
 		`);
 
 		this.setChild('menu', new Menu());
-		//		this.navigate('home');
 		this.setChild('footer', new Footer());
 		this.listenTo('navigation', 'navigate', this.navigate);
 	}

@@ -8,9 +8,11 @@ class FooterView extends Component {
 
 	<div class="container">
 		<div class="row">
+
 			<div class="col-sm">
 				&copy; 2018 The Cydran Team
 			</div>
+
 			<div class="col-sm">
 
 				<h2>Docs</h2>
@@ -30,18 +32,8 @@ class FooterView extends Component {
 					</li>
 				</ul>
 
-				<h2>Community</h2>
-
-				<ul>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-				</ul>
-
 			</div>
+
 			<div class="col-sm">
 
 				<h2>Channels</h2>
@@ -60,6 +52,29 @@ class FooterView extends Component {
 						<a href="#">One of three columns</a>
 					</li>
 				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm-4 offset-md-4">
+
+				<h2>Community</h2>
+
+				<ul>
+					<li>
+						<a href="#">One of three columns</a>
+					</li>
+					<li>
+						<a href="#">One of three columns</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="col-sm-4">
 
 				<h2>More</h2>
 

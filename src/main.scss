@@ -13,8 +13,7 @@ div[data-component-type="app"] {
 		background-color: #ffffff;
 	}
 
-	& > div[data-region-id="menu"],
-	& > div[data-region-id="footer"] {
+	& > div[data-region-id="menu"] {
 
 		h1, h2, h3, h4, h5, h6, p, label {
 			color: #f0f0f0;
