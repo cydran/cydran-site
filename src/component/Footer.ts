@@ -80,14 +80,15 @@ class FooterView extends Component {
 
 				<ul>
 					<li>
-						<a href="#">One of three columns</a>
+						<a href="/#/blog">Blog</a>
 					</li>
 					<li>
-						<a href="#">One of three columns</a>
+						<a href="/#/tutorial">Tutorial</a>
+					</li>
+					<li>
+						<a href="/#/acknowledgements">Acknowledgements</a>
 					</li>
 				</ul>
-
-
 
 			</div>
 		</div>

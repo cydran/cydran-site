@@ -3,7 +3,7 @@
 @import 'scss/jumbotron.scss';
 
 body {
-	background-color: #252a2e;
+	background-color: #26201a;
 }
 
 div[data-component-type="app"] {
@@ -25,12 +25,6 @@ div[data-component-type="app"] {
 
 a.btn.icon > i.fa {
 	margin-right: 8px;
-}
-
-footer.footer {
-	padding: 50px 0 50px 0;
-	color: #999999;
-	background-color: #242424;
 }
 
 .main-body {

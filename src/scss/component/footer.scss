@@ -1,5 +1,11 @@
 div[data-component-type="footer"] {
 
+	footer.footer {
+		padding: 50px 0 10px 0;
+		color: #999999;
+		background-color: #26201a;
+	}
+
 	h2 {
 		color: #999999;
 		font-size: 15px;
@@ -19,8 +25,12 @@ div[data-component-type="footer"] {
 
 	a {
 		font-size: 14px;
-		color: #f0f0f0;
+		color: #ffffff;
 		text-decoration: none;
+	}
+
+	a:hover {
+		color: #ff9933;
 	}
 
 	.row {
