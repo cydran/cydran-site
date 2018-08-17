@@ -19,6 +19,6 @@ class Tutorials extends Component {
 
 }
 
-Registry.registerPrototype('page:tutorials', Tutorials);
+Registry.registerSingleton('page:tutorials', Tutorials);
 
 export default Tutorials;
