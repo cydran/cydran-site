@@ -15,8 +15,12 @@ class Home extends Component {
 		this.navigationBroadcaster.broadcast('navigate', name);
 	}
 
+	protected wireListeners(): void {
+		// Intentionally do nothing
+	}
+
 }
 
-Registry.registerPrototype('page:home', Home);
+Home.expose("page:home");
 
 export default Home;

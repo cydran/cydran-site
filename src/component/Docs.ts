@@ -1,18 +1,14 @@
-import {Component, Registry} from "cydran";
-import TEMPLATE from "./Docs.html";
+import AbstractMarkdownComponent from "./AbstractMarkdownComponent";
 import CONTENT from "./Docs.md";
 
-class DocsComponent extends Component {
-
-	private mdContent: string;
+class Docs extends AbstractMarkdownComponent {
 
 	constructor() {
-		super('docs', () => TEMPLATE);
-		this.mdContent = CONTENT;
+		super('docs', 'Documentation', CONTENT);
 	}
 
 }
 
-Registry.registerPrototype('page:docs', DocsComponent);
+Docs.expose('page:docs');
 
-export default DocsComponent;
+export default Docs;

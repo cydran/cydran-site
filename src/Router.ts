@@ -18,7 +18,7 @@ class Router {
 	private navigationBroadcaster: Broadcaster;
 
 	constructor() {
-		this.pubSub = new PubSub();
+		this.pubSub = new PubSub(this);
 		this.navigationBroadcaster = this.pubSub.broadcastTo('navigation');
 		let url = window.location.protocol + '//' + window.location.hostname;
 

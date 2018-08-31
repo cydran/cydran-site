@@ -7,8 +7,12 @@ class NotFound extends Component {
 		super('notFound', () => TEMPLATE);
 	}
 
+	protected wireListeners(): void {
+		// Intentionally do nothing
+	}
+
 }
 
-Registry.registerPrototype('page:notFound', NotFound);
+NotFound.expose("page:notFound");
 
 export default NotFound;

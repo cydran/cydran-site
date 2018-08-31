@@ -3,7 +3,7 @@ import TEMPLATE from "./Tutorials.html";
 import CONTENT from "./Tutorials.md";
 import BlogService from "../service/BlogService";
 
-class Tutorials extends Component {
+class Blog extends Component {
 
 	private mdContent: string;
 
@@ -25,9 +25,14 @@ class Tutorials extends Component {
 		this.myField = "Kilroy was here!";
 	}
 
+	protected wireListeners(): void {
+		this.listenTo("component", "wired", this.onWired);
+		this.listenTo("blog", "updated", this.blogUpdated);
+		this.listenTo("blog", "error", this.blogError);
+	}
+
 	public handleMyClick(): void {
 		window.alert(this.myField);
-		this.blogService.load();
 	}
 
 	public blogUpdated(data: any): void {
@@ -39,13 +44,12 @@ class Tutorials extends Component {
 		console.log(error);
 	}
 
-	protected wireListeners(): void {
-		this.listenTo("blog", "updated", this.blogUpdated);
-		this.listenTo("blog", "error", this.blogError);
+	public onWired(): void {
+		this.blogService.load();
 	}
 
 }
 
-Tutorials.expose("page:tutorials");
+Blog.expose("page:blog");
 
-export default Tutorials;
+export default Blog;

@@ -98,6 +98,10 @@ class FooterView extends Component {
 		`);
 	}
 
+	protected wireListeners(): void {
+		// Intentionally do nothing
+	}
+
 }
 
 export default FooterView;

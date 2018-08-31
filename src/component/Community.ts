@@ -1,14 +1,14 @@
-import {Component, Registry} from "cydran";
-import TEMPLATE from "./Community.html";
+import CONTENT from "./Community.md";
+import AbstractMarkdownComponent from "./AbstractMarkdownComponent";
 
-class Community extends Component {
+class Community extends AbstractMarkdownComponent {
 
 	constructor() {
-		super('community', () => TEMPLATE);
+		super('community', 'Community', CONTENT);
 	}
 
 }
 
-Registry.registerPrototype('page:community', Community);
+Community.expose('page:community');
 
 export default Community;

@@ -1,11 +1,12 @@
 import App from "./component/App";
 import Router from "./Router";
-import {Stage, Component, Registry} from "cydran";
+import {Stage, Component, Registry, registerFilter} from "cydran";
 import Navigo from "navigo";
-import './legacy';
-import './main.scss';
-import './decorator/';
-import './component/';
+import "./legacy";
+import "./main.scss";
+import "./decorator/";
+import "./component/";
+import "./service/";
 
 Registry.registerSingleton('router', Router);
 
@@ -19,3 +20,5 @@ stage.withInitializer(function() {
 });
 
 stage.start();
+
+registerFilter('upper', (str: string) => str.toUpperCase());

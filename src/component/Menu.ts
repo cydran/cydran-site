@@ -53,6 +53,10 @@ class Menu extends Component {
 		this.navigationBroadcaster.broadcast('navigate', name);
 	}
 
+	protected wireListeners(): void {
+		// Intentionally do nothing
+	}
+
 }
 
 export default Menu;
