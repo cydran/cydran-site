@@ -7,7 +7,6 @@ class Home extends Component {
 
 	constructor() {
 		super('home', () => TEMPLATE);
-
 		this.navigationBroadcaster = this.broadcastTo('navigation');
 	}
 
