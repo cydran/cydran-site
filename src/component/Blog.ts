@@ -50,6 +50,4 @@ class Blog extends Component {
 
 }
 
-Blog.expose("page:blog");
-
 export default Blog;

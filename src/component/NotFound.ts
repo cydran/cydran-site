@@ -13,6 +13,4 @@ class NotFound extends Component {
 
 }
 
-NotFound.expose("page:notFound");
-
 export default NotFound;

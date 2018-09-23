@@ -9,6 +9,4 @@ class Community extends AbstractMarkdownComponent {
 
 }
 
-Community.expose('page:community');
-
 export default Community;

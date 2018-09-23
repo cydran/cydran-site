@@ -46,6 +46,4 @@ class Tutorials extends Component {
 
 }
 
-Tutorials.expose("page:tutorials");
-
 export default Tutorials;

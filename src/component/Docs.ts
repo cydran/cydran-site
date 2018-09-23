@@ -9,6 +9,4 @@ class Docs extends AbstractMarkdownComponent {
 
 }
 
-Docs.expose('page:docs');
-
 export default Docs;

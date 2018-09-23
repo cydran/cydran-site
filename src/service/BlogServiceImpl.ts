@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Registry, PubSub, Broadcaster} from "cydran";
+import {Modules, Registry, PubSub, Broadcaster} from "cydran";
 import BlogService from "./BlogService";
 
 class BlogServiceImpl implements BlogService {
@@ -24,6 +24,6 @@ class BlogServiceImpl implements BlogService {
 
 }
 
-Registry.registerSingleton("blogService", BlogServiceImpl);
+Modules.getModule('main').getRegistry().registerSingleton("blogService", BlogServiceImpl);
 
 export default BlogServiceImpl;

@@ -20,6 +20,4 @@ class Home extends Component {
 
 }
 
-Home.expose("page:home");
-
 export default Home;

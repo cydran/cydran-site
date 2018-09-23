@@ -6,7 +6,13 @@ import Community from './Community';
 import Blog from './Blog';
 import {Modules, Module} from "cydran";
 
-Modules.getModule('main').associate(Home);
-Modules.getModule('other').associate(Docs, NotFound, Tutorials, Community, Blog);
+Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog)
+	.getRegistry()
+	.registerPrototype("page:home", Home)
+	.registerPrototype("page:docs", Docs)
+	.registerPrototype("page:notFound", NotFound)
+	.registerPrototype("page:tutorials", Tutorials)
+	.registerPrototype('page:community', Community)
+	.registerPrototype("page:blog", Blog);
 
 export {};
