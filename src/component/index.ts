@@ -11,7 +11,7 @@ Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community,
 	.registerPrototype("page:home", Home)
 	.registerPrototype("page:docs", Docs)
 	.registerPrototype("page:notFound", NotFound)
-	.registerPrototype("page:tutorials", Tutorials)
+	.registerSingleton("page:tutorials", Tutorials)
 	.registerPrototype('page:community', Community)
 	.registerPrototype("page:blog", Blog);
 
