@@ -1,4 +1,4 @@
-import {Broadcaster, PubSub, Registry} from "cydran";
+import {PubSub, Registry} from "cydran";
 import Navigo from "navigo";
 
 interface Routes {
@@ -15,11 +15,8 @@ class Router {
 
 	private pubSub: PubSub;
 
-	private navigationBroadcaster: Broadcaster;
-
 	constructor() {
 		this.pubSub = new PubSub(this);
-		this.navigationBroadcaster = this.pubSub.broadcastTo('navigation');
 		let url = window.location.protocol + '//' + window.location.hostname;
 
 		if (window.location.port) {
@@ -54,7 +51,7 @@ class Router {
 	}
 
 	private navigate(name: string): void {
-		this.navigationBroadcaster.broadcast('navigate', name);
+		this.pubSub.broadcast('navigation', 'navigate', name);
 	}
 
 	public start(): void {

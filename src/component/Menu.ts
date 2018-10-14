@@ -1,8 +1,6 @@
-import {Component, Broadcaster} from "cydran";
+import {Component} from "cydran";
 
 class Menu extends Component {
-
-	private navigationBroadcaster: Broadcaster;
 
 	constructor() {
 		super('menu', () => `
@@ -45,12 +43,10 @@ class Menu extends Component {
 			  </div>
 			</nav>
 		`);
-
-		this.navigationBroadcaster = this.broadcastTo('navigation');
 	}
 
 	public handleClick(name: string): void {
-		this.navigationBroadcaster.broadcast('navigate', name);
+		this.broadcast('navigation', 'navigate', name);
 	}
 
 	protected wireListeners(): void {

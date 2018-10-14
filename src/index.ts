@@ -8,13 +8,14 @@ import "./decorator/";
 import "./component/";
 import "./service/";
 
-Modules.getModule('DEFAULT').getRegistry().registerSingleton('router', Router);
+Modules.getDefaultModule().getRegistry().registerSingleton('router', Router);
 
 let stage: Stage = new Stage('app');
 stage.getConfig().useDebug();
-stage.setComponent(new App());
 
 stage.withInitializer(function() {
+	this.setComponent(new App());
+
 	let router: Router = this.get('router');
 	router.start();
 });
