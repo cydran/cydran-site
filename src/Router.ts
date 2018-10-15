@@ -1,4 +1,4 @@
-import {PubSub, Registry} from "cydran";
+import {PubSub} from "cydran";
 import Navigo from "navigo";
 
 interface Routes {

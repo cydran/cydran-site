@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import {Stage, Component, Registry, Modules, registerFilter} from "cydran";
+import {Stage, Component, Modules, registerFilter} from "cydran";
 import Navigo from "navigo";
 import "./legacy";
 import "./main.scss";
@@ -8,7 +8,7 @@ import "./decorator/";
 import "./component/";
 import "./service/";
 
-Modules.getDefaultModule().getRegistry().registerSingleton('router', Router);
+Modules.registerSingleton('router', Router);
 
 let stage: Stage = new Stage('app');
 stage.getConfig().useDebug();

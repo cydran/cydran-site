@@ -1,4 +1,4 @@
-import {Component, Registry} from "cydran";
+import {Component} from "cydran";
 import TEMPLATE from "./Home.html";
 
 class Home extends Component {
