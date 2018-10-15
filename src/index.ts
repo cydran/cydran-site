@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import {Stage, Component, Modules, registerFilter} from "cydran";
+import {Stage, Component, Modules} from "cydran";
 import Navigo from "navigo";
 import "./legacy";
 import "./main.scss";
@@ -22,4 +22,4 @@ stage.withInitializer(function() {
 
 stage.start();
 
-registerFilter('upper', (str: string) => str.toUpperCase());
+Modules.registerFilter('upper', (str: string) => str.toUpperCase());

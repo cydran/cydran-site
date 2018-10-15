@@ -1,4 +1,4 @@
 import MarkdownDecorator from './MarkdownDecorator';
-import {registerDecorator} from 'cydran';
+import {Modules} from 'cydran';
 
-registerDecorator('markdown', ['*'], MarkdownDecorator);
+Modules.registerDecorator('markdown', ['*'], MarkdownDecorator);
