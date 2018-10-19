@@ -3,3 +3,5 @@
 /dist/**
 /.settings/**
 settings.json
+/nbproject/**
+package-lock.json
