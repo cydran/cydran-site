@@ -13,7 +13,8 @@ class BlogServiceImpl implements BlogService {
 	public load(): void {
 		axios.get("/static/blog-posts.json")
 			.then((response) => {
-				this.pubSub.broadcast('blog', "updated", response.data);
+				console.log(response.data.items);
+				this.pubSub.broadcast('blog', "updated", response.data.items);
 			}).catch((error) => {
 				this.pubSub.broadcast('blog', "error", error);
 			});

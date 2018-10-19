@@ -6,7 +6,7 @@
 		},
 		{
 			"title": "Test Post 2",
-			"body": "**Other Test**"
+			"body": "This is some text that is **bold**.  This other text isn't bold.'"
 		}
 	]
 }
