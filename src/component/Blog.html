@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+		<div data-c-component-each="['div', 'blogPost', this.posts]"></div>
+	</div>
+
+	<div class="row">
+
+		Title: <input type="text" data-c-model="this.title" /><br />
+
+		<textarea data-c-model="this.body"></textarea>
+
+		<button data-c-click="this.add()">Add</button>
+
+
+	</div>
+
+</div>

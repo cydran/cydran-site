@@ -1,6 +1,5 @@
 import {Component} from "cydran";
-import TEMPLATE from "./Tutorials.html";
-import CONTENT from "./Tutorials.md";
+import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
 class Blog extends Component {
@@ -13,16 +12,22 @@ class Blog extends Component {
 
 	private blogService: BlogService;
 
+	private title: string;
+
+	private body: string;
+
 	private posts: {
 		title: string,
 		body: string
 	}[];
 
 	constructor() {
-		super('tutorials', () => TEMPLATE);
+		super('blog', () => TEMPLATE);
 		this.blogService = this.get('blogService');
-		this.mdContent = CONTENT;
 		this.myField = "Kilroy was here!";
+		this.posts = [];
+		this.title = '';
+		this.body = '';
 	}
 
 	protected wireListeners(): void {
@@ -37,7 +42,7 @@ class Blog extends Component {
 
 	public blogUpdated(data: any): void {
 		console.log(data);
-		this.posts = data.items;
+		this.posts = data;
 	}
 
 	public blogError(error: any): void {
@@ -46,6 +51,18 @@ class Blog extends Component {
 
 	public onWired(): void {
 		this.blogService.load();
+	}
+
+	public add(): void {
+		this.posts.push({
+			title: this.title,
+			body: this.body
+		});
+
+		console.log(this.posts);
+
+		this.title = '';
+		this.body = '';
 	}
 
 }
