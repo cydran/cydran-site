@@ -16,7 +16,10 @@ class Blog extends Component {
 
 	private body: string;
 
+	private idCounter: number;
+
 	private posts: {
+		id: string,
 		title: string,
 		body: string
 	}[];
@@ -28,6 +31,7 @@ class Blog extends Component {
 		this.posts = [];
 		this.title = '';
 		this.body = '';
+		this.idCounter = 0;
 	}
 
 	protected wireListeners(): void {
@@ -54,9 +58,13 @@ class Blog extends Component {
 	}
 
 	public add(): void {
+		this.idCounter++;
+		const id: string = this.idCounter + '';
+
 		this.posts.push({
 			title: this.title,
-			body: this.body
+			body: this.body,
+			id: id
 		});
 
 		console.log(this.posts);

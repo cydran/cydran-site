@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div data-c-component-each="['div', 'blogPost', this.posts]"></div>
+		<div data-c-component-each="this.posts" data-p-component-each-id="blogPost" />
 	</div>
 
 	<div class="row">
@@ -10,7 +10,6 @@
 		<textarea data-c-model="this.body"></textarea>
 
 		<button data-c-click="this.add()">Add</button>
-
 
 	</div>
 
