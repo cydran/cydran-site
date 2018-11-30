@@ -45,12 +45,12 @@ class Blog extends Component {
 	}
 
 	public blogUpdated(data: any): void {
-		console.log(data);
+		this.getLogger().debug(data);
 		this.posts = data;
 	}
 
 	public blogError(error: any): void {
-		console.log(error);
+		this.getLogger().error(error);
 	}
 
 	public onWired(): void {
@@ -67,7 +67,7 @@ class Blog extends Component {
 			id: id
 		});
 
-		console.log(this.posts);
+		this.getLogger().debug(this.posts);
 
 		this.title = '';
 		this.body = '';

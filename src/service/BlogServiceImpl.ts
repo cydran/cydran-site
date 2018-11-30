@@ -1,10 +1,12 @@
 import axios from "axios";
-import {Modules, PubSub} from "cydran";
+import {Modules, PubSub, Logger, LoggerFactory } from "cydran";
 import BlogService from "./BlogService";
 
 class BlogServiceImpl implements BlogService {
 
 	private pubSub: PubSub;
+
+	private logger: Logger = LoggerFactory.getLogger("BlogServiceImpl");
 
 	constructor() {
 		this.pubSub = new PubSub(this);
@@ -13,7 +15,7 @@ class BlogServiceImpl implements BlogService {
 	public load(): void {
 		axios.get("/static/blog-posts.json")
 			.then((response) => {
-				console.log(response.data.items);
+				this.logger.info(response.data.items);
 				this.pubSub.broadcast('blog', "updated", response.data.items);
 			}).catch((error) => {
 				this.pubSub.broadcast('blog', "error", error);
