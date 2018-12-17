@@ -4,7 +4,8 @@ import {markdown} from "markdown";
 class MarkdownDecorator extends Decorator<string> {
 
 	public wire(): void {
-		this.setMarkdown(this.getTarget());
+		this.setMarkdown(this.getMediator().get());
+		this.getMediator().watch(this, this.onTargetChange);
 	}
 
 	public unwire(): void {
