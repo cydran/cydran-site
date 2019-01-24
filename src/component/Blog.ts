@@ -1,3 +1,4 @@
+import _ from "lodash";
 import {Component} from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
@@ -18,6 +19,13 @@ class Blog extends Component {
 
 	private idCounter: number;
 
+	private checkboxItems: {
+		title: string;
+		id: string;
+	}[];
+
+	private checked: string[];
+
 	private posts: {
 		id: string,
 		title: string,
@@ -32,12 +40,57 @@ class Blog extends Component {
 		this.title = '';
 		this.body = '';
 		this.idCounter = 0;
+		this.checkboxItems = [
+			{
+				title: "Alpha",
+				id: "1"
+			},
+			{
+				title: "Beta",
+				id: "2"
+			},
+			{
+				title: "Gamma",
+				id: "3"
+			}
+		];
+		this.checked = ["2"];
 	}
 
 	protected wireListeners(): void {
 		this.listenTo("component", "wired", this.onWired);
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
+		this.watch("this.checked", (previous:any, current:any) => {
+			this.getLogger().info(current);
+		});
+		this.watch("this.checkboxItems", (previous:any, current:any) => {
+			this.getLogger().info(current);
+		});
+	}
+
+	public addCheckbox(): void {
+		this.checkboxItems.push({
+				title: "Tau",
+				id: "4"
+		});
+	}
+
+	public addCheckedCheckbox(): void {
+		this.checkboxItems.push({
+				title: "Omega",
+				id: "5"
+		});
+
+		this.checked.push("5");
+	}
+
+	public checkOmega(): void {
+		this.checked.push("5");
+	}
+
+	public removeCheckbox(): void {
+		_.remove(this.checkboxItems, (value) => value['title'] === 'Omega');
 	}
 
 	public handleMyClick(): void {

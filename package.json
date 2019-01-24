@@ -40,6 +40,7 @@
     "markdown": "^0.5.0",
     "navigo": "^7.1.2",
     "popper.js": "^1.14.4",
-    "require-context": "^1.1.0"
+    "require-context": "^1.1.0",
+    "lodash": "4.17.11"
   }
 }

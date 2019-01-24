@@ -11,7 +11,7 @@ import "./service/";
 Modules.registerSingleton('router', Router);
 
 let stage: Stage = new Stage('app');
-stage.getConfig().useTrace();
+stage.getConfig().useDebug();
 
 stage.withInitializer(function() {
 	this.setComponent(new App());
