@@ -13,6 +13,8 @@ class Tutorials extends Component {
 
 	private blogService: BlogService;
 
+	private filter:RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
+
 	private posts: {
 		title: string,
 		body: string
@@ -22,12 +24,16 @@ class Tutorials extends Component {
 		super('tutorials', () => TEMPLATE);
 		this.blogService = this.get('blogService');
 		this.mdContent = CONTENT;
-		this.myField = "Kilroy was here!";
+		this.myField = "Kilroy was here";
 	}
 
 	public handleMyClick(): void {
 		window.alert(this.myField);
 		this.blogService.load();
+	}
+
+	public handleChange(): void {
+		window.alert("Changed");
 	}
 
 	public blogUpdated(data: any): void {
@@ -42,6 +48,12 @@ class Tutorials extends Component {
 	protected wireListeners(): void {
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
+
+		this.watch("this.myField", (previous:any, current:any) => {
+			console.log("Field", current);
+			this.myField = current.replace(this.filter, '');
+			console.log("Object", this);
+		});
 	}
 
 }
