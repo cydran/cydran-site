@@ -15,9 +15,6 @@ class BlogPost extends Component {
 		super('blogPost', () => TEMPLATE);
 	}
 
-	protected wireListeners(): void {
-	}
-
 }
 
 export default BlogPost;

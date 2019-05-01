@@ -55,15 +55,15 @@ class Blog extends Component {
 			}
 		];
 		this.checked = ["2"];
-	}
 
-	protected wireListeners(): void {
 		this.listenTo("component", "wired", this.onWired);
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
+
 		this.watch("this.checked", (previous:any, current:any) => {
 			this.getLogger().info(current);
 		});
+
 		this.watch("this.checkboxItems", (previous:any, current:any) => {
 			this.getLogger().info(current);
 		});

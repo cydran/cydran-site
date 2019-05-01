@@ -13,14 +13,11 @@ class App extends Component {
 
 		this.setChild('menu', new Menu());
 		this.setChild('footer', new Footer());
+		this.listenTo('navigation', 'navigate', this.navigate);
 	}
 
 	public navigate(name: string): void {
 		this.setChildFromRegistry("body", 'page:' + name, 'page:notFound')
-	}
-
-	protected wireListeners(): void {
-		this.listenTo('navigation', 'navigate', this.navigate);
 	}
 
 }

@@ -7,10 +7,6 @@ class NotFound extends Component {
 		super('notFound', () => TEMPLATE);
 	}
 
-	protected wireListeners(): void {
-		// Intentionally do nothing
-	}
-
 }
 
 export default NotFound;

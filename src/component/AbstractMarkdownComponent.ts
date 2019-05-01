@@ -13,10 +13,6 @@ abstract class AbstractMarkdownComponent extends Component {
 		this.markdown = markdown;
 	}
 
-	protected wireListeners(): void {
-		// Intentionally do nothing
-	}
-
 }
 
 export default AbstractMarkdownComponent;

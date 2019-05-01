@@ -11,10 +11,6 @@ class Home extends Component {
 		this.broadcast('navigation', 'navigate', name);
 	}
 
-	protected wireListeners(): void {
-		// Intentionally do nothing
-	}
-
 }
 
 export default Home;

@@ -25,6 +25,13 @@ class Tutorials extends Component {
 		this.blogService = this.get('blogService');
 		this.mdContent = CONTENT;
 		this.myField = "Kilroy was here";
+
+		this.listenTo("blog", "updated", this.blogUpdated);
+		this.listenTo("blog", "error", this.blogError);
+
+		this.watch("this.myField", (previous:any, current:any) => {
+			this.myField = current.replace(this.filter, '');
+		});
 	}
 
 	public handleMyClick(): void {
@@ -43,17 +50,6 @@ class Tutorials extends Component {
 
 	public blogError(error: any): void {
 		console.log(error);
-	}
-
-	protected wireListeners(): void {
-		this.listenTo("blog", "updated", this.blogUpdated);
-		this.listenTo("blog", "error", this.blogError);
-
-		this.watch("this.myField", (previous:any, current:any) => {
-			console.log("Field", current);
-			this.myField = current.replace(this.filter, '');
-			console.log("Object", this);
-		});
 	}
 
 }
