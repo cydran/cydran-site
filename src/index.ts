@@ -9,6 +9,7 @@ import "./component/";
 import "./service/";
 
 Modules.registerSingleton('router', Router);
+Modules.registerFilter('upper', (str: string) => str.toUpperCase());
 
 let stage: Stage = new Stage('app');
 stage.getConfig().useDebug();
@@ -21,5 +22,3 @@ stage.withInitializer(function() {
 });
 
 stage.start();
-
-Modules.registerFilter('upper', (str: string) => str.toUpperCase());
