@@ -6,92 +6,94 @@ class FooterView extends Component {
 		super('footer', () => `
 <footer class="footer">
 
-	<div class="container">
-		<div class="row">
+	<div class="columns">
 
-			<div class="col-sm">
-				&copy; 2018 The Cydran Team
-			</div>
+		<div class="column">
+			&copy; 2018 The Cydran Team
+		</div>
 
-			<div class="col-sm">
+		<div class="column">
 
-				<h2>Docs</h2>
+			<h2>Docs</h2>
 
-				<ul>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="col-sm">
-
-				<h2>Channels</h2>
-
-				<ul>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-				</ul>
-
-			</div>
+			<ul>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+			</ul>
 
 		</div>
 
-		<div class="row">
+		<div class="column">
 
-			<div class="col-sm-4 offset-md-4">
+			<h2>Channels</h2>
 
-				<h2>Community</h2>
+			<ul>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+			</ul>
 
-				<ul>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-					<li>
-						<a href="#">One of three columns</a>
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="col-sm-4">
-
-				<h2>More</h2>
-
-				<ul>
-					<li>
-						<a href="/#/blog">Blog</a>
-					</li>
-					<li>
-						<a href="/#/tutorial">Tutorial</a>
-					</li>
-					<li>
-						<a href="/#/acknowledgements">Acknowledgements</a>
-					</li>
-				</ul>
-
-			</div>
 		</div>
+
+	</div>
+
+	<div class="columns">
+		<div class="column">
+			&nbsp;
+		</div>
+
+		<div class="column">
+
+			<h2>Community</h2>
+
+			<ul>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+				<li>
+					<a href="#">One of three columns</a>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="column">
+
+			<h2>More</h2>
+
+			<ul>
+				<li>
+					<a href="/#/blog">Blog</a>
+				</li>
+				<li>
+					<a href="/#/tutorial">Tutorial</a>
+				</li>
+				<li>
+					<a href="/#/acknowledgements">Acknowledgements</a>
+				</li>
+			</ul>
+
+		</div>
+
 	</div>
 
 </footer>

@@ -1,16 +1,21 @@
-@import 'bootstrap/scss/bootstrap.scss';
+@import 'bulma/bulma.sass';
 @import 'scss/component.scss';
-@import 'scss/jumbotron.scss';
+@import 'scss/hero.scss';
 @import 'scss/_variables.scss';
+
+html {
+	height: 100%;
+}
 
 body {
 	background-color: #26201a;
+	min-height: 100%;
 }
 
 div[data-component-type="app"] {
 
 	& > div[data-region-id="body"] {
-		margin-top: 56px;
+		margin-top: 52px;
 		background-color: #ffffff;
 	}
 
