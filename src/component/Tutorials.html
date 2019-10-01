@@ -1,6 +1,32 @@
-<div class="container">
-	<div class="row">
-	<div class="col-sm-9" data-c-markdown="this.mdContent"></div>
-	<input type="text" data-c-model="this.myField" />
-	<button data-c-click="this.handleMyClick()" data-c-enabled="this.myField.length > 0">Click Me!</button>
-</div>
+<section class="section">
+	<div class="container" data-c-markdown="this.mdContent"></div>
+</section>
+<section class="section">
+	<div class="container">
+		<input type="text" data-c-model="this.myField" />
+		<button data-c-click="this.handleMyClick()" data-c-enabled="this.myField.length > 0">Click Me!</button>
+		
+		This is {{this.myField}}!<br />
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<input type="text" data-c-model="this.address.firstName" /><br />
+		<input type="text" data-c-model="this.address.lastName" /><br />
+		<input type="text" data-c-model="this.address.line1" /><br />
+		<input type="text" data-c-model="this.address.line2" /><br />
+		<input type="text" data-c-model="this.address.city" /><br />
+		<input type="text" data-c-model="this.address.state" /><br />
+		<input type="text" data-c-model="this.address.postalCode" />
+		<br />
+		<br />
+		<br />
+		<br />
+		{{this.address.firstName}} {{this.address.lastName}}<br />
+		{{this.address.line1}}<br />
+		<span data-c-visible="this.address.line2.length > 0">{{this.address.line2}}<br /></span>
+		{{this.address.city}}, {{this.address.state}} {{this.address.postalCode}}
+
+	</div>
+</section>

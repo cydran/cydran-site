@@ -15,6 +15,7 @@ class Tutorials extends Component {
 
 	private filter:RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
 
+	private address: any;
 	private posts: {
 		title: string,
 		body: string
@@ -32,6 +33,16 @@ class Tutorials extends Component {
 		this.watch("this.myField", (previous:any, current:any) => {
 			this.myField = current.replace(this.filter, '');
 		});
+
+		this.address = {
+			firstName: "John",
+			lastName: "Doe",
+			line1: "123 Anystreet",
+			line2: "Suite 100",
+			city: "Los Angeles",
+			state: "CA",
+			postalCode: "90601"
+		};
 	}
 
 	public handleMyClick(): void {
