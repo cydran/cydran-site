@@ -16,6 +16,13 @@ class Tutorials extends Component {
 	private filter:RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
 
 	private address: any;
+
+	private lineEditable: boolean;
+
+	private firstNameMaxLength: number;
+
+	private color: string;
+
 	private posts: {
 		title: string,
 		body: string
@@ -43,11 +50,19 @@ class Tutorials extends Component {
 			state: "CA",
 			postalCode: "90601"
 		};
+
+		this.lineEditable = true;
+		this.firstNameMaxLength = 5;
+		this.color = "#ffffff";
 	}
 
 	public handleMyClick(): void {
 		window.alert(this.myField);
 		this.blogService.load();
+	}
+
+	public toggleLineEditable(): void {
+		this.lineEditable = !this.lineEditable;
 	}
 
 	public handleChange(): void {
