@@ -3,7 +3,7 @@
 	<div data-c-component-each="this.posts" data-p-component-each-id="blogPost" />
 
 	<div>
-		Title: <input type="text" data-c-model="this.title"  /><br />
+		Title: <input type="text" data-c-model="this.title" /><br />
 		<textarea data-c-model="this.body"></textarea>
 		<button data-c-onclick="this.add()">Add</button>
 	</div>
@@ -11,6 +11,8 @@
 	<div>
 		<ul data-c-checkbox-list="this.checked" data-p-checkbox-list-items="this.checkboxItems">
 		</ul>
+
+		<ul data-c-repeat="{component: 'commonCheckbox', items: this.items}"></ul>
 
 		<button data-c-onclick="this.addCheckbox()">addCheckbox</button>
 		<button data-c-onclick="this.addCheckedCheckbox()">addCheckedCheckbox</button>

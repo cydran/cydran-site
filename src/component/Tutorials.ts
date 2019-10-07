@@ -1,4 +1,4 @@
-import {Component} from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./Tutorials.html";
 import CONTENT from "./Tutorials.md";
 import BlogService from "../service/BlogService";
@@ -13,7 +13,7 @@ class Tutorials extends Component {
 
 	private blogService: BlogService;
 
-	private filter:RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
+	private filter: RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
 
 	private address: any;
 
@@ -29,15 +29,15 @@ class Tutorials extends Component {
 	}[];
 
 	constructor() {
-		super('tutorials', () => TEMPLATE);
+		super('tutorials', TEMPLATE);
 		this.blogService = this.get('blogService');
-		this.mdContent = CONTENT;
 		this.myField = "Kilroy was here";
+		this.mdContent = CONTENT;
 
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
 
-		this.watch("this.myField", (previous:any, current:any) => {
+		this.watch("this.myField", (previous: any, current: any) => {
 			this.myField = current.replace(this.filter, '');
 		});
 

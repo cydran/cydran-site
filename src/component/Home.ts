@@ -1,10 +1,10 @@
-import {Component} from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./Home.html";
 
 class Home extends Component {
 
 	constructor() {
-		super('home', () => TEMPLATE);
+		super('home', TEMPLATE);
 	}
 
 	public handleClick(name: string): void {

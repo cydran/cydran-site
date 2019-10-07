@@ -1,5 +1,5 @@
 import _ from "lodash";
-import {Component} from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
@@ -33,7 +33,7 @@ class Blog extends Component {
 	}[];
 
 	constructor() {
-		super('blog', () => TEMPLATE);
+		super('blog', TEMPLATE);
 		this.blogService = this.get('blogService');
 		this.myField = "Kilroy was here!";
 		this.posts = [];
@@ -60,26 +60,26 @@ class Blog extends Component {
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
 
-		this.watch("this.checked", (previous:any, current:any) => {
+		this.watch("this.checked", (previous: any, current: any) => {
 			this.getLogger().info(current);
 		});
 
-		this.watch("this.checkboxItems", (previous:any, current:any) => {
+		this.watch("this.checkboxItems", (previous: any, current: any) => {
 			this.getLogger().info(current);
 		});
 	}
 
 	public addCheckbox(): void {
 		this.checkboxItems.push({
-				title: "Tau",
-				id: "4"
+			title: "Tau",
+			id: "4"
 		});
 	}
 
 	public addCheckedCheckbox(): void {
 		this.checkboxItems.push({
-				title: "Omega",
-				id: "5"
+			title: "Omega",
+			id: "5"
 		});
 
 		this.checked.push("5");

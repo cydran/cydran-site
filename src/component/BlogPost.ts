@@ -1,4 +1,4 @@
-import {Component} from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./BlogPost.html";
 
 class BlogPost extends Component {
@@ -7,12 +7,12 @@ class BlogPost extends Component {
 		title: string,
 		body: string
 	} = {
-		title: 'Foo',
-		body: 'Bar'
-	};
+			title: 'Foo',
+			body: 'Bar'
+		};
 
 	constructor() {
-		super('blogPost', () => TEMPLATE);
+		super('blogPost', TEMPLATE);
 	}
 
 }

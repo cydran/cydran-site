@@ -1,4 +1,4 @@
-import {Component} from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./Menu.html";
 
 class Menu extends Component {
@@ -6,7 +6,7 @@ class Menu extends Component {
 	private expanded: boolean;
 
 	constructor() {
-		super('menu', () => TEMPLATE);
+		super('menu', TEMPLATE);
 		this.expanded = false;
 	}
 

@@ -1,103 +1,10 @@
-import {Component} from "cydran";
+import { Component } from "cydran";
+import TEMPLATE from "./Footer.html";
 
 class FooterView extends Component {
 
 	constructor() {
-		super('footer', () => `
-<footer class="footer">
-
-	<div class="columns">
-
-		<div class="column">
-			&copy; 2018 The Cydran Team
-		</div>
-
-		<div class="column">
-
-			<h2>Docs</h2>
-
-			<ul>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-			</ul>
-
-		</div>
-
-		<div class="column">
-
-			<h2>Channels</h2>
-
-			<ul>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-			</ul>
-
-		</div>
-
-	</div>
-
-	<div class="columns">
-		<div class="column">
-			&nbsp;
-		</div>
-
-		<div class="column">
-
-			<h2>Community</h2>
-
-			<ul>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-				<li>
-					<a href="#">One of three columns</a>
-				</li>
-			</ul>
-
-		</div>
-
-		<div class="column">
-
-			<h2>More</h2>
-
-			<ul>
-				<li>
-					<a href="/#/blog">Blog</a>
-				</li>
-				<li>
-					<a href="/#/tutorial">Tutorial</a>
-				</li>
-				<li>
-					<a href="/#/acknowledgements">Acknowledgements</a>
-				</li>
-			</ul>
-
-		</div>
-
-	</div>
-
-</footer>
-		`);
+		super('footer', TEMPLATE);
 	}
 
 }

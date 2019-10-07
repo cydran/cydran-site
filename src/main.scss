@@ -10,31 +10,17 @@ html {
 body {
 	background-color: #26201a;
 	min-height: 100%;
-}
 
-div[data-component-type="app"] {
-
-	& > div[data-region-id="body"] {
+	& > div {
 		margin-top: 52px;
 		background-color: #ffffff;
 	}
-
-	& > div[data-region-id="menu"] {
-
-		h1, h2, h3, h4, h5, h6, p, label {
-			color: #f0f0f0;
-		}
-
-	}
-
 }
 
-a.btn.icon > i.fa {
+a.btn.icon>i.fa {
 	margin-right: 8px;
 }
 
 .main-body {
-
 	background-color: #f0f0f0;
-
 }
