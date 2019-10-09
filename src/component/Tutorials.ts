@@ -23,6 +23,8 @@ class Tutorials extends Component {
 
 	private color: string;
 
+	private sillypass: string = '';
+
 	private posts: {
 		title: string,
 		body: string
