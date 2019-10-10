@@ -2,38 +2,41 @@
 
 	<div class="container" data-c-markdown="this.mdContent"></div>
 
-	<div class="container" data-c-style="{backgroundColor: this.color}">
-		<input type="text" data-c-model="this.myField" />
-		<button data-c-onclick="this.handleMyClick()" data-c-enabled="this.myField.length > 0">Click Me!</button>
-
-		This is {{this.myField}}!<br />
-
-		<br />
-		<br />
-		Color: <input type="text" data-c-model="this.color" />
-		<br />
-		<br />
-		Editable: {{this.lineEditable}}<br />
-		<input type="text" data-c-model="this.firstNameMaxLength" />
-		FNMN: {{this.firstNameMaxLength}}<br />
-		<input type="text" data-c-model="this.address.firstName" maxlength="{{this.firstNameMaxLength}}" /><br />
-		<input type="text" data-c-model="this.address.lastName" /><br />
-		<input type="text" data-c-model="this.address.line1" /><br />
-		<input type="text" data-c-model="this.address.line2" data-c-readonly="!this.lineEditable" />
-		<button data-c-onclick="this.toggleLineEditable()">Editable</button><br />
-		<input type="text" data-c-model="this.address.city" /><br />
-		<input type="text" data-c-model="this.address.state" /><br />
-		<input type="text" data-c-model="this.address.postalCode" />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		{{this.address.firstName}} {{this.address.lastName}}<br />
-		{{this.address.line1}}<br />
-		<span data-c-visible="this.address.line2.length > 0">{{this.address.line2}}<br /></span>
-		{{this.address.city}}, {{this.address.state}} {{this.address.postalCode}}
-
+<div class="columns">
+		<div class="container column" data-c-style="{backgroundColor: this.color}">
+			<input type="text" data-c-model="this.myField" />
+			<button data-c-onclick="this.handleMyClick()" data-c-enabled="this.myField.length > 0">Click Me!</button>
+	
+			This is {{this.myField}}!<br />
+	
+			<br />
+			<br />
+			Color: <input type="text" data-c-model="this.color" />
+			<br />
+			<br />
+			Editable: {{this.lineEditable}}<br />
+			<input type="text" data-c-model="this.firstNameMaxLength" />
+			FNMN: {{this.firstNameMaxLength}}<br />
+			<input type="text" data-c-model="this.address.firstName" maxlength="{{this.firstNameMaxLength}}" /><br />
+			<input type="text" data-c-model="this.address.lastName" /><br />
+			<input type="text" data-c-model="this.address.line1" /><br />
+			<input type="text" data-c-model="this.address.line2" data-c-readonly="!this.lineEditable" />
+			<button data-c-onclick="this.toggleLineEditable()">Editable</button><br />
+			<input type="text" data-c-model="this.address.city" /><br />
+			<input type="text" data-c-model="this.address.state" /><br />
+			<input type="text" data-c-model="this.address.postalCode" />
+			<br />
+			<br />
+			<br />
+			{{this.address.firstName}} {{this.address.lastName}}<br />
+			{{this.address.line1}}<br />
+			<span data-c-visible="this.address.line2.length > 0">{{this.address.line2}}<br /></span>
+			{{this.address.city}}, {{this.address.state}} {{this.address.postalCode}}
+	
+		</div>
+		<div class="column">
+			<input type="password" size="25" data-c-model="this.sillypass" /> : 
+			<input type="text" size="25" data-c-model="this.sillypass" /><br/>
+		</div>
 	</div>
 </section>

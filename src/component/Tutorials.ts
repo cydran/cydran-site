@@ -23,6 +23,18 @@ class Tutorials extends Component {
 
 	private color: string;
 
+	private sillypass: string = "";
+
+	private whichOne: string = "";
+
+	private insideList = [
+		{name: 'Name 1', value: 1},
+		{name: 'Name 2', value: 2},
+		{name: 'Name 3', value: 3},
+		{name: 'Name 4', value: 4},
+		{name: 'Name 5', value: 5}
+	];
+
 	private posts: {
 		title: string,
 		body: string
@@ -76,6 +88,11 @@ class Tutorials extends Component {
 
 	public blogError(error: any): void {
 		console.log(error);
+	}
+
+	public doWhichOne() {
+		let wkvar = this.getEl().querySelector("options:checked").nodeValue;
+		console.log("**** yay: " + wkvar);
 	}
 
 }
