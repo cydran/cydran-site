@@ -4,4 +4,6 @@
 /.settings/**
 settings.json
 /nbproject/**
-package-lock.json
+.externalToolBuilders/
+.tm_properties
+
