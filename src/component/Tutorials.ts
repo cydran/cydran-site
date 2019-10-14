@@ -90,11 +90,6 @@ class Tutorials extends Component {
 		console.log(error);
 	}
 
-	public doWhichOne() {
-		let wkvar = this.getEl().querySelector("options:checked").nodeValue;
-		console.log("**** yay: " + wkvar);
-	}
-
 }
 
 export default Tutorials;

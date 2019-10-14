@@ -21,10 +21,12 @@
 			<input type="text" data-c-model="this.address.lastName" /><br />
 			<input type="text" data-c-model="this.address.line1" /><br />
 			<input type="text" data-c-model="this.address.line2" data-c-readonly="!this.lineEditable" />
-			<button data-c-onclick="this.toggleLineEditable()">Editable</button><br />
+			<button data-c-onclick="this.toggleLineEditable()">Editable</button>
+			<input type="checkbox" data-c-checked="!this.lineEditable" data-c-onchange="this.toggleLineEditable()" />
+			<input type="radio" data-c-checked="!this.lineEditable" data-c-onclick="this.toggleLineEditable()" /><br />
 			<input type="text" data-c-model="this.address.city" /><br />
 			<input type="text" data-c-model="this.address.state" /><br />
-			<input type="text" data-c-model="this.address.postalCode" />
+			<input type="text" data-c-checked="!this.lineEditable" data-c-model="this.address.postalCode" />
 			<br />
 			<br />
 			<br />
