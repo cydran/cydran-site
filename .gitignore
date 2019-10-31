@@ -4,6 +4,5 @@
 /.settings/**
 settings.json
 /nbproject/**
-.externalToolBuilders/
 .tm_properties
-
+.externalToolBuilders/
