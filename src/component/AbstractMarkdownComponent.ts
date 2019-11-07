@@ -3,13 +3,13 @@ import TEMPLATE from "./AbstractMarkdownComponent.html";
 
 abstract class AbstractMarkdownComponent extends Component {
 
-	private title: string;
+	private documentTitle: string;
 
 	private markdown: string;
 
 	constructor(componentName: string, title: string, markdown: string) {
 		super(componentName, TEMPLATE);
-		this.title = title;
+		this.documentTitle = title;
 		this.markdown = markdown;
 	}
 

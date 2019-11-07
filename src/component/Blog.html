@@ -1,23 +1,23 @@
 <div class="container">
 
-	<div data-c-component-each="this.posts" data-p-component-each-id="blogPost" />
+	<div c:component-each="this.posts" data-p-component-each-id="blogPost" />
 
 	<div>
-		Title: <input type="text" data-c-model="this.title" /><br />
-		<textarea data-c-model="this.body"></textarea>
-		<button data-c-onclick="this.add()">Add</button>
+		Title: <input type="text" c:model="this.pageTitle" /><br />
+		<textarea c:model="this.body"></textarea>
+		<button c:onclick="this.add()">Add</button>
 	</div>
 
 	<div>
-		<ul data-c-checkbox-list="this.checked" data-p-checkbox-list-items="this.checkboxItems">
+		<ul c:checkbox-list="this.checked" data-p-checkbox-list-items="this.checkboxItems">
 		</ul>
 
-		<ul data-c-repeat="{component: 'commonCheckbox', items: this.items}"></ul>
+		<ul c:repeat="{component: 'commonCheckbox', items: this.items}"></ul>
 
-		<button data-c-onclick="this.addCheckbox()">addCheckbox</button>
-		<button data-c-onclick="this.addCheckedCheckbox()">addCheckedCheckbox</button>
-		<button data-c-onclick="this.checkOmega()">checkOmega</button>
-		<button data-c-onclick="this.removeCheckbox()">removeCheckbox</button>
+		<button c:onclick="this.addCheckbox()">addCheckbox</button>
+		<button c:onclick="this.addCheckedCheckbox()">addCheckedCheckbox</button>
+		<button c:onclick="this.checkOmega()">checkOmega</button>
+		<button c:onclick="this.removeCheckbox()">removeCheckbox</button>
 
 	</div>
 

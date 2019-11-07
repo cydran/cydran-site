@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { Stage, Component, Modules } from "cydran";
+import { Stage, Modules } from "cydran";
 import Navigo from "navigo";
 import "./legacy";
 import "./main.scss";

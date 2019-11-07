@@ -13,7 +13,7 @@ class Blog extends Component {
 
 	private blogService: BlogService;
 
-	private title: string;
+	private pageTitle: string;
 
 	private body: string;
 
@@ -37,7 +37,7 @@ class Blog extends Component {
 		this.blogService = this.get('blogService');
 		this.myField = "Kilroy was here!";
 		this.posts = [];
-		this.title = '';
+		this.pageTitle = '';
 		this.body = '';
 		this.idCounter = 0;
 		this.checkboxItems = [
@@ -115,14 +115,14 @@ class Blog extends Component {
 		const id: string = this.idCounter + '';
 
 		this.posts.push({
-			title: this.title,
+			title: this.pageTitle,
 			body: this.body,
 			id: id
 		});
 
 		this.getLogger().debug(this.posts);
 
-		this.title = '';
+		this.pageTitle = '';
 		this.body = '';
 	}
 
