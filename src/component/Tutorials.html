@@ -24,10 +24,9 @@
 			<button c:onclick="this.toggleLineEditable()">Editable</button><br />
 			<input type="text" c:model="this.address.city" /><br />
 			<input type="text" c:model="this.address.state" /><br />
-			<input type="text" c:model="this.address.postalCode" />
+			<input type="text" c:readonly="!this.lineEditable" c:model="this.address.postalCode" />
 			<input type="checkbox" c:checked="!this.lineEditable" c:onchange="this.toggleLineEditable()" />
 			<input type="radio" c:checked="!this.lineEditable" c:onclick="this.toggleLineEditable()" /><br />
-			<input type="text" c:checked="!this.lineEditable" c:model="this.address.postalCode" />
 			<br />
 			<br />
 			<br />
