@@ -34,10 +34,20 @@
 			{{this.address.line1}}<br />
 			<span c:visible="this.address.line2.length > 0">{{this.address.line2}}<br /></span>
 			{{this.address.city}}, {{this.address.state}} {{this.address.postalCode}}
+			<br />
+			<br />
+			<br />
+
+			<ul c:repeat="{componentName: 'repeatItem', items: this.items}"></ul>
+
 		</div>
 		<div class="column">
 			<input type="password" size="25" c:model="this.sillypass" /> :
 			<input type="text" size="25" c:model="this.sillypass" /><br/>
+			<br>
+			<br>
+			<br>
+			<select c:repeat="{items: this.items, componentName: 'selectItem'}"></select>
 		</div>
 	</div>
 </section>

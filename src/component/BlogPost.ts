@@ -3,7 +3,9 @@ import TEMPLATE from "./BlogPost.html";
 
 class BlogPost extends Component {
 
-	private data: {
+	// TODO - Fix this to use repeat correctly
+
+	private dataValue: {
 		title: string,
 		body: string
 	} = {

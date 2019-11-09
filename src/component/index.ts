@@ -7,12 +7,16 @@ import Community from './Community';
 import Blog from './Blog';
 import BlogPost from './BlogPost';
 import Menu from './Menu';
+import RepeatItem from "./RepeatItem";
+import SelectItem from "./SelectItem";
 import {Modules, Module} from "cydran";
 
 Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
 
 Modules.registerPrototype("menu", Menu);
 Modules.registerPrototype("footer", Footer);
+Modules.registerPrototype("repeatItem", RepeatItem);
+Modules.registerPrototype("selectItem", SelectItem);
 Modules.registerPrototype("page:home", Home);
 Modules.registerPrototype("page:docs", Docs)
 Modules.registerPrototype("page:notFound", NotFound)

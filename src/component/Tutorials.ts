@@ -17,6 +17,8 @@ class Tutorials extends Component {
 
 	private address: any;
 
+	private counter: number;
+
 	private lineEditable: boolean;
 
 	private firstNameMaxLength: number;
@@ -40,14 +42,24 @@ class Tutorials extends Component {
 		body: string
 	}[];
 
+	private items: {
+		id: number | string,
+		title: string
+	}[];
+
 	constructor() {
 		super('tutorials', TEMPLATE);
 		this.blogService = this.get('blogService');
 		this.myField = "Kilroy was here";
 		this.mdContent = CONTENT;
+		this.items = [
+		];
+
+		this.counter = 0;
 
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
+		this.listenTo("repeats", "remove", this.removeItem);
 
 		this.watch("this.myField", (previous: any, current: any) => {
 			this.myField = current.replace(this.filter, '');
@@ -69,8 +81,16 @@ class Tutorials extends Component {
 	}
 
 	public handleMyClick(): void {
-		window.alert(this.myField);
-		this.blogService.load();
+		this.counter++;
+
+		this.items.push({
+			id: this.counter,
+			title: "Item #" + this.counter,
+		});
+	}
+
+	public removeItem(id: number): void {
+		this.items = this.items.filter((item) => item.id !== id);
 	}
 
 	public toggleLineEditable(): void {
