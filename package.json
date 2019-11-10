@@ -4,7 +4,7 @@
   "description": "Cydran Site",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --host 0.0.0.0",
+    "start": "webpack-dev-server --mode development --host 0.0.0.0 --open",
     "build": "webpack --mode production",
     "clean": "rimraf dist",
     "test": "run_tests"
