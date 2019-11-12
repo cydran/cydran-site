@@ -1,7 +1,7 @@
-import { Component } from "cydran";
+import { RepeatComponent } from "cydran";
 import TEMPLATE from "./RepeatItem.html";
 
-class RepeatItem extends Component {
+class RepeatItem extends RepeatComponent {
 
 	constructor() {
 		super('repeatItem', TEMPLATE);

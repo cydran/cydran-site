@@ -7,6 +7,7 @@ import Community from './Community';
 import Blog from './Blog';
 import BlogPost from './BlogPost';
 import Menu from './Menu';
+import EmptyRepeat from "./EmptyRepeat";
 import RepeatItem from "./RepeatItem";
 import SelectItem from "./SelectItem";
 import {Modules, Module} from "cydran";
@@ -15,6 +16,7 @@ Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community,
 
 Modules.registerPrototype("menu", Menu);
 Modules.registerPrototype("footer", Footer);
+Modules.registerPrototype("emptyRepeat", EmptyRepeat);
 Modules.registerPrototype("repeatItem", RepeatItem);
 Modules.registerPrototype("selectItem", SelectItem);
 Modules.registerPrototype("page:home", Home);

@@ -38,7 +38,7 @@
 			<br />
 			<br />
 
-			<ul c:repeat="{componentName: 'repeatItem', items: this.items}"></ul>
+			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}"></ul>
 
 		</div>
 		<div class="column">
@@ -47,7 +47,13 @@
 			<br>
 			<br>
 			<br>
-			<select c:repeat="{items: this.items, componentName: 'selectItem'}"></select>
+			<select c:repeat="{items: this.items, item: 'selectItem'}"></select>
+			<br>
+			<br>
+			<br>
+			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}">
+
+
 		</div>
 	</div>
 </section>

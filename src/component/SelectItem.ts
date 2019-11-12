@@ -1,7 +1,7 @@
 import { Component } from "cydran";
 import TEMPLATE from "./SelectItem.html";
 
-class RepeatItem extends Component {
+class SelectItem extends Component {
 
 	constructor() {
 		super('repeatItem', TEMPLATE);
@@ -9,4 +9,4 @@ class RepeatItem extends Component {
 
 }
 
-export default RepeatItem;
+export default SelectItem;
