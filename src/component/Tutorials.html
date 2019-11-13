@@ -47,10 +47,21 @@
 			<br>
 			<br>
 			<br>
-			<select c:repeat="{items: this.items, item: 'selectItem'}"></select>
+			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items, item: 'selectItem'}"></select>
 			<br>
 			<br>
 			<br>
+			!!{{this.selectedDropdownOption}}!!
+			<br>
+			<br>
+			<br>
+			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items, item: 'selectItem'}"></select>
+			<br>
+			<br>
+			<br>
+
+
+
 			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}">
 
 

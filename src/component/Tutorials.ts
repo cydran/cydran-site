@@ -29,6 +29,8 @@ class Tutorials extends Component {
 
 	private whichOne: string = "";
 
+	private selectedDropdownOption: string;
+
 	private insideList = [
 		{name: 'Name 1', value: 1},
 		{name: 'Name 2', value: 2},
@@ -56,6 +58,8 @@ class Tutorials extends Component {
 		];
 
 		this.counter = 0;
+
+		this.selectedDropdownOption = "";
 
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
