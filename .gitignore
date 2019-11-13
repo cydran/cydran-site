@@ -6,3 +6,4 @@ settings.json
 /nbproject/**
 .tm_properties
 .externalToolBuilders/
+/package-lock.json
