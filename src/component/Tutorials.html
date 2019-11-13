@@ -55,15 +55,33 @@
 			<br>
 			<br>
 			<br>
-			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items, item: 'selectItem'}"></select>
+			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items}">
+				<template type="empty">
+					<option value="" disabled selected>Select your option</option>
+				</template>
+				<template type="first">
+					<option disabled selected>Select One...</option>
+				</template>
+				<template type="item">
+					<option value="{{this.data.id}}">{{this.data.title}}</option>
+				</template>
+			</select>
 			<br>
 			<br>
 			<br>
 
+			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}"></ul>
 
-
-			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}">
-
+			<ul c:repeat="{item: 'repeatItem', items: this.items}">
+				<template type="empty">
+					<li>This is really empty!</li>
+				</template>
+				<template type="item">
+					<li>
+						<input type="text" c:model="this.data.title">
+					</li>
+				</template>
+			</ul>
 
 		</div>
 	</div>
