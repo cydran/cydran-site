@@ -31,7 +31,11 @@ class Tutorials extends Component {
 
 	private selectedDropdownOption: string;
 
-	private insideList = [
+	private myValues: string[] = [];
+
+	private insideList:
+		{ name: string, value: number }[]
+	= [
 		{name: 'Name 1', value: 1},
 		{name: 'Name 2', value: 2},
 		{name: 'Name 3', value: 3},
