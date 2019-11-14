@@ -63,7 +63,7 @@
 					<option disabled selected>Select One...</option>
 				</template>
 				<template type="item">
-					<option value="{{this.data.id}}">{{this.data.title}}</option>
+					<option value="{{this.data.id}}" c:content="this.data.title"></option>
 				</template>
 			</select>
 			<br>
