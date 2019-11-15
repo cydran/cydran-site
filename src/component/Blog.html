@@ -1,11 +1,9 @@
 <div class="container">
-
 	<div>
 		Title: <input type="text" c:model="this.post.title" /><br />
 		<textarea c:model="this.post.body" style="min-width: 400px; min-height: 200px;"></textarea>
 		<button c:onclick="this.add()">Add</button>
 	</div>
-
 	<section c:repeat="{items: this.posts}">
 		<template type="empty">
 			<p>No posts yet...</p>
@@ -17,7 +15,5 @@
 			</article>
 		</template>
 	</section>
-
 	<button c:onclick="this.load()" c:enabled="!this.loading">Load Posts</button>
-
 </div>

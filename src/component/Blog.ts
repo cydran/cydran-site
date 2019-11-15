@@ -57,11 +57,9 @@ class Blog extends Component {
 	}
 
 	private resetPost(): void {
-		this.idCounter++;
-
 		this.post = {
 			body: "",
-			id: this.idCounter + "",
+			id: ++this.idCounter + "",
 			title: "",
 		};
 	}
