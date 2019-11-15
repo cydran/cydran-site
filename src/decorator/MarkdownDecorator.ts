@@ -1,7 +1,7 @@
 import {Decorator} from "cydran";
 import {markdown} from "markdown";
 
-class MarkdownDecorator extends Decorator<string> {
+class MarkdownDecorator extends Decorator<string, HTMLElement> {
 
 	public wire(): void {
 		this.getMediator().watch(this, this.onTargetChange);
@@ -11,8 +11,8 @@ class MarkdownDecorator extends Decorator<string> {
 		// Intentionally do nothing
 	}
 
-	protected onTargetChange(value: any): void {
-		this.setMarkdown(value);
+	protected onTargetChange(previous: string, current: string): void {
+		this.setMarkdown(current);
 	}
 
 	private setMarkdown(source: string): void {

@@ -8,8 +8,14 @@ import "./decorator/";
 import "./component/";
 import "./service/";
 
+const bundle: any = {
+	"title.label": "Blog Post Title"
+}
+
 Modules.registerSingleton('router', Router);
+Modules.registerFilter('i18n', (key: string) => bundle[key]);
 Modules.registerFilter('upper', (str: string) => str.toUpperCase());
+Modules.registerFilter('lower', (str: string) => str.toLowerCase());
 
 let stage: Stage = new Stage("body");
 window['stage'] = stage;

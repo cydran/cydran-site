@@ -1,24 +1,21 @@
 <div class="container">
-
-	<div c:component-each="this.posts" data-p-component-each-id="blogPost" />
-
 	<div>
-		Title: <input type="text" c:model="this.pageTitle" /><br />
-		<textarea c:model="this.body"></textarea>
+		{{i18n('title.label')}}: <input type="text" c:model="this.post.title" /><br />
+		{{upper(this.post.title)}}<br />
+		{{lower(this.post.title)}}<br />
+		<textarea c:model="this.post.body" style="min-width: 400px; min-height: 200px;"></textarea>
 		<button c:onclick="this.add()">Add</button>
 	</div>
-
-	<div>
-		<ul c:checkbox-list="this.checked" data-p-checkbox-list-items="this.checkboxItems">
-		</ul>
-
-		<ul c:repeat="{component: 'commonCheckbox', items: this.items}"></ul>
-
-		<button c:onclick="this.addCheckbox()">addCheckbox</button>
-		<button c:onclick="this.addCheckedCheckbox()">addCheckedCheckbox</button>
-		<button c:onclick="this.checkOmega()">checkOmega</button>
-		<button c:onclick="this.removeCheckbox()">removeCheckbox</button>
-
-	</div>
-
+	<section c:repeat="{items: this.posts}">
+		<template type="empty">
+			<p>No posts yet...</p>
+		</template>
+		<template type="item">
+			<article>
+				<h2 c:content="this.data.title"></h2>
+				<div c:markdown="this.data.body"></div>
+			</article>
+		</template>
+	</section>
+	<button c:onclick="this.load()" c:enabled="!this.loading">Load Posts</button>
 </div>
