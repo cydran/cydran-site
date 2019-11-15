@@ -2,58 +2,68 @@ import { Component } from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
+interface Post {
+
+	id: string;
+
+	title: string;
+
+	body: string;
+
+}
+
 class Blog extends Component {
 
 	private blogService: BlogService;
 
-	private pageTitle: string;
-
-	private body: string;
-
 	private idCounter: number;
 
-	private posts: {
-		id: string,
-		title: string,
-		body: string
-	}[];
+	private loading: boolean;
+
+	private post: Post;
+
+	private posts: Post[];
 
 	constructor() {
 		super('blog', TEMPLATE);
 		this.blogService = this.get('blogService');
 		this.posts = [];
-		this.pageTitle = '';
-		this.body = '';
 		this.idCounter = 0;
-		this.listenTo("component", "wired", this.onWired);
+		this.loading = false;
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
+		this.resetPost();
 	}
 
 	public blogUpdated(data: any): void {
 		this.getLogger().debug(data);
 		this.posts = data;
+		this.loading = false;
 	}
 
 	public blogError(error: any): void {
 		this.getLogger().error(error);
+		this.loading = false;
 	}
 
-	public onWired(): void {
+	public load(): void {
 		this.blogService.load();
+		this.loading = true;
 	}
 
 	public add(): void {
-		this.idCounter++;
-		const id: string = this.idCounter + '';
+		this.posts.push(this.post);
+		this.resetPost();
+	}
 
-		this.posts.push({
-			title: this.pageTitle,
-			body: this.body,
-			id: id
-		});
-		this.pageTitle = '';
-		this.body = '';
+	private resetPost(): void {
+		this.idCounter++;
+
+		this.post = {
+			body: "",
+			id: this.idCounter + "",
+			title: "",
+		};
 	}
 
 }
