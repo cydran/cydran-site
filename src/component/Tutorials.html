@@ -47,13 +47,16 @@
 				<template type="item">
 					<option value="{{this.data.value}}" c:content="this.data.name"></option>
 				</template>
-			</select>:
+			</select>
 			<select style="width: 150px;" c:repeat="{items: this.insideList, idKey: 'value'}" c:model="this.myValues" size="{{this.insideList.length}}" multiple>
 				<template type="item">
 					<option value="{{this.data.value}}" c:content="this.data.name"></option>
 				</template>
 			</select>
-			<p></p>
+			<br>
+			<br>
+			<br>
+
 			<input type="password" size="25" c:model="this.sillypass" /> :
 			<input type="text" size="25" c:model="this.sillypass" /><br/>
 			<br>
