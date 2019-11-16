@@ -53,23 +53,37 @@
 					<option value="{{this.data.value}}" c:content="this.data.name"></option>
 				</template>
 			</select>
-			<br>
-			<br>
-			<br>
-
+			<br />
+			<br />
 			<input type="password" size="25" c:model="this.sillypass" /> :
-			<input type="text" size="25" c:model="this.sillypass" /><br/>
-			<br>
-			<br>
-			<br>
+			<input type="text" size="25" c:model="this.sillypass" />
+			<br />
+			<br />
+			<!--div c:repeat="{items: this.radioList}">
+				<template type="item">
+					<div>
+						<input type="radio" name="radiocount" value="{{this.data.id}}" id="{{'rad_' + this.data.id}}" c:model="this.parent.radioChoice"/>
+						<label for="{{'rad_' + this.data.id}}" c:content="this.data.label"></label>
+					</div>
+				</template>
+			</div-->
+			<div>
+				<input type="radio" name="radiocount" value="0" id="rad_0" c:model="this.radioChoice" />
+				<label for="rad_0">Zero</label><br/>
+				<input type="radio" name="radiocount" value="1" id="rad_1" c:model="this.radioChoice" />
+				<label for="rad_1">One</label><br/>
+				<input type="radio" name="radiocount" value="2" id="rad_2" c:model="this.radioChoice" />
+				<label for="rad_2">Two</label><br/>
+			</div>
+			{{this.radioChoice}}: <input type="text" size="5" c:model="this.radioChoice" />
+			<br />
+			<br />
 			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items, item: 'selectItem'}"></select>
-			<br>
-			<br>
-			<br>
+			<br />
+			<br />
 			!!{{this.selectedDropdownOption}}!!
-			<br>
-			<br>
-			<br>
+			<br />
+			<br />
 			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items}">
 				<template type="empty">
 					<option value="" disabled selected>Select your option</option>
@@ -81,9 +95,8 @@
 					<option value="{{this.data.id}}" c:content="this.data.title"></option>
 				</template>
 			</select>
-			<br>
-			<br>
-			<br>
+			<br />
+			<br />
 
 			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}"></ul>
 
