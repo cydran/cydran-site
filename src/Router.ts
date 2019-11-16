@@ -1,4 +1,4 @@
-import {PubSub} from "cydran";
+import { PubSub } from "cydran";
 import Navigo from "navigo";
 
 interface Routes {
@@ -11,7 +11,7 @@ class Router {
 
 	private routes: Routes;
 
-	private router;
+	private router: Navigo;
 
 	private pubSub: PubSub;
 
@@ -42,7 +42,7 @@ class Router {
 			'blog': () => {
 				this.navigate('blog');
 			},
-			'test/:id': (data) => {
+			'test/:id': (data: number | string) => {
 				console.log('first');
 				console.log(data);
 			}
