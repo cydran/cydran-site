@@ -13,9 +13,10 @@ const bundle: any = {
 }
 
 Modules.registerSingleton('router', Router);
-Modules.registerFilter('i18n', (key: string) => bundle[key]);
-Modules.registerFilter('upper', (str: string) => str.toUpperCase());
-Modules.registerFilter('lower', (str: string) => str.toLowerCase());
+Modules.getScope().add('bundle', bundle);
+Modules.getScope().add('i18n', (key: string) => bundle[key]);
+Modules.getScope().add('upper', (str: string) => str.toUpperCase());
+Modules.getScope().add('lower', (str: string) => str.toLowerCase());
 
 let stage: Stage = new Stage("body");
 window['stage'] = stage;
