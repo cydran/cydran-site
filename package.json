@@ -39,7 +39,6 @@
     "bulma": "0.8.0",
     "cydran": "0.0.31",
     "markdown": "^0.5.0",
-    "navigo": "^7.1.2",
-    "require-context": "^1.1.0"
+    "navigo": "^7.1.2"
   }
 }
