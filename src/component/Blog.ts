@@ -1,4 +1,4 @@
-import { Component } from "cydran";
+import { Component, Events } from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
@@ -30,6 +30,7 @@ class Blog extends Component {
 		this.posts = [];
 		this.idCounter = 0;
 		this.loading = false;
+		this.listenTo(Events.COMPONENT.NAME, Events.COMPONENT.EVENTS.AFTER_PARENT_CHANGED, this.load);
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
 		this.resetPost();
@@ -47,6 +48,7 @@ class Blog extends Component {
 	}
 
 	public load(): void {
+		this.getLogger().info("loading");
 		this.blogService.load();
 		this.loading = true;
 	}
