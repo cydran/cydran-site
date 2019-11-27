@@ -30,7 +30,7 @@ class Blog extends Component {
 		this.posts = [];
 		this.idCounter = 0;
 		this.loading = false;
-		this.listenTo(Events.COMPONENT.NAME, Events.COMPONENT.EVENTS.AFTER_PARENT_CHANGED, this.load);
+		this.listenToFramework(Events.AFTER_PARENT_ADDED, this.load);
 		this.listenTo("blog", "updated", this.blogUpdated);
 		this.listenTo("blog", "error", this.blogError);
 		this.resetPost();
