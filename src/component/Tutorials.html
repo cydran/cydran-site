@@ -59,22 +59,22 @@
 			<input type="text" size="25" c:model="this.sillypass" />
 			<br />
 			<br />
-			<!--div c:repeat="{items: this.radioList}">
+			<div c:repeat="{items: this.radioList}">
 				<template type="item">
 					<div>
 						<input type="radio" name="radiocount" value="{{this.data.id}}" id="{{'rad_' + this.data.id}}" c:model="this.parent.radioChoice"/>
 						<label for="{{'rad_' + this.data.id}}" c:content="this.data.label"></label>
 					</div>
 				</template>
-			</div-->
-			<div>
+			</div>
+			<!-- div>
 				<input type="radio" name="radiocount" value="0" id="rad_0" c:model="this.radioChoice" />
 				<label for="rad_0">Zero</label><br/>
 				<input type="radio" name="radiocount" value="1" id="rad_1" c:model="this.radioChoice" />
 				<label for="rad_1">One</label><br/>
 				<input type="radio" name="radiocount" value="2" id="rad_2" c:model="this.radioChoice" />
 				<label for="rad_2">Two</label><br/>
-			</div>
+			</div -->
 			{{this.radioChoice}}: <input type="text" size="5" c:model="this.radioChoice" />
 			<br />
 			<br />
