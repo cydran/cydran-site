@@ -1,21 +1,21 @@
 <div class="container">
 	<div>
-		{{i18n('title.label')}}: <input type="text" c:model="this.post.title" /><br />
-		{{upper(this.post.title)}}<br />
-		{{lower(this.post.title)}}<br />
-		<textarea c:model="this.post.body" style="min-width: 400px; min-height: 200px;"></textarea>
-		<button c:onclick="this.add()">Add</button>
+		{{i18n('title.label')}}: <input type="text" c:model="m().post.title" /><br />
+		{{upper(m().post.title)}}<br />
+		{{lower(m().post.title)}}<br />
+		<textarea c:model="m().post.body" style="min-width: 400px; min-height: 200px;"></textarea>
+		<button c:onclick="m().add()">Add</button>
 	</div>
-	<section c:repeat="{items: this.posts}">
+	<section c:repeat="{items: m().posts}">
 		<template type="empty">
 			<p>No posts yet...</p>
 		</template>
 		<template type="item">
 			<article>
-				<h2 c:content="this.data.title"></h2>
-				<div c:markdown="this.data.body"></div>
+				<h2 c:content="item().title"></h2>
+				<div c:markdown="item().body"></div>
 			</article>
 		</template>
 	</section>
-	<button c:onclick="this.load()" c:enabled="!this.loading">Load Posts</button>
+	<button c:onclick="m().load()" c:enabled="!m().loading">Load Posts</button>
 </div>

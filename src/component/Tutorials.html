@@ -1,90 +1,82 @@
 <section class="section">
 
-	<div class="container" c:markdown="this.mdContent"></div>
+	<div class="container" c:markdown="m().mdContent"></div>
 
 <div class="columns">
-		<div class="container column" c:style="{backgroundColor: this.color}">
-			<input type="text" c:model="this.myField" />
-			<button c:onclick="this.handleMyClick()" c:enabled="this.myField.length > 0">Click Me!</button>
+		<div class="container column" c:style="{backgroundColor: m().color}">
+			<input type="text" c:model="m().myField" />
+			<button c:onclick="m().handleMyClick()" c:enabled="m().myField.length > 0">Click Me!</button>
 
-			This is {{this.myField}}!<br />
+			This is {{m().myField}}!<br />
 
 			<br />
 			<br />
-			Color: <input type="text" c:model="this.color" />
+			Color: <input type="text" c:model="m().color" />
 			<br />
 			<br />
-			Editable: {{this.lineEditable}}<br />
-			<input type="text" c:model="this.firstNameMaxLength" />
-			FNMN: {{this.firstNameMaxLength}}<br />
-			<input type="text" c:model="this.address.firstName" maxlength="{{this.firstNameMaxLength}}" /><br />
-			<input type="text" c:model="this.address.lastName" /><br />
-			<input type="text" c:model="this.address.line1" /><br />
-			<input type="text" c:model="this.address.line2" c:readonly="!this.lineEditable" />
-			<button c:onclick="this.toggleLineEditable()">Editable</button><br />
-			<input type="text" c:model="this.address.city" /><br />
-			<input type="text" c:model="this.address.state" /><br />
-			<input type="text" c:readonly="!this.lineEditable" c:model="this.address.postalCode" />
-			<input type="checkbox" c:checked="!this.lineEditable" c:onchange="this.toggleLineEditable()" />
-			<input type="radio" c:checked="!this.lineEditable" c:onclick="this.toggleLineEditable()" /><br />
+			Editable: {{m().lineEditable}}<br />
+			<input type="text" c:model="m().firstNameMaxLength" />
+			FNMN: {{m().firstNameMaxLength}}<br />
+			<input type="text" c:model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
+			<input type="text" c:model="m().address.lastName" /><br />
+			<input type="text" c:model="m().address.line1" /><br />
+			<input type="text" c:model="m().address.line2" c:readonly="!m().lineEditable" />
+			<button c:onclick="m().toggleLineEditable()">Editable</button><br />
+			<input type="text" c:model="m().address.city" /><br />
+			<input type="text" c:model="m().address.state" /><br />
+			<input type="text" c:readonly="!m().lineEditable" c:model="m().address.postalCode" />
+			<input type="checkbox" c:checked="!m().lineEditable" c:onchange="m().toggleLineEditable()" />
+			<input type="radio" c:checked="!m().lineEditable" c:onclick="m().toggleLineEditable()" /><br />
 			<br />
 			<br />
 			<br />
-			{{this.address.firstName}} {{this.address.lastName}}<br />
-			{{this.address.line1}}<br />
-			<span c:visible="this.address.line2.length > 0">{{this.address.line2}}<br /></span>
-			{{this.address.city}}, {{this.address.state}} {{this.address.postalCode}}
+			{{m().address.firstName}} {{m().address.lastName}}<br />
+			{{m().address.line1}}<br />
+			<span c:visible="m().address.line2.length > 0">{{m().address.line2}}<br /></span>
+			{{m().address.city}}, {{m().address.state}} {{m().address.postalCode}}
 			<br />
 			<br />
 			<br />
 
-			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}"></ul>
+			<ul c:class="{populated: m().items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: m().items}"></ul>
 
 		</div>
 		<div class="column">
 
-			<select style="width: 150px;" c:repeat="{items: this.insideList, idKey: 'value'}" c:model="this.myValues" size="{{this.insideList.length}}" multiple>
+			<select style="width: 150px;" c:repeat="{items: m().insideList, idKey: 'value'}" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{this.data.value}}" c:content="this.data.name"></option>
+					<option value="{{item().value}}" c:content="item().name"></option>
 				</template>
 			</select>
-			<select style="width: 150px;" c:repeat="{items: this.insideList, idKey: 'value'}" c:model="this.myValues" size="{{this.insideList.length}}" multiple>
+			<select style="width: 150px;" c:repeat="{items: m().insideList, idKey: 'value'}" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{this.data.value}}" c:content="this.data.name"></option>
+					<option value="{{item().value}}" c:content="item().name"></option>
 				</template>
 			</select>
 			<br />
 			<br />
-			<input type="password" size="25" c:model="this.sillypass" /> :
-			<input type="text" size="25" c:model="this.sillypass" />
+			<input type="password" size="25" c:model="m().sillypass" /> :
+			<input type="text" size="25" c:model="m().sillypass" />
 			<br />
 			<br />
-			<div c:repeat="{items: this.radioList}">
+			<div c:repeat="{items: m().radioList}">
 				<template type="item">
 					<div>
-						<input type="radio" name="radiocount" value="{{this.data.id}}" id="{{'rad_' + this.data.id}}" c:model="this.parent.radioChoice"/>
-						<label for="{{'rad_' + this.data.id}}" c:content="this.data.label"></label>
+						<input type="radio" name="radiocount" value="{{item().id}}" id="{{'rad_' + item().id}}" c:model="p().radioChoice"/>
+						<label for="{{'rad_' + item().id}}" c:content="item().label"></label>
 					</div>
 				</template>
 			</div>
-			<!-- div>
-				<input type="radio" name="radiocount" value="0" id="rad_0" c:model="this.radioChoice" />
-				<label for="rad_0">Zero</label><br/>
-				<input type="radio" name="radiocount" value="1" id="rad_1" c:model="this.radioChoice" />
-				<label for="rad_1">One</label><br/>
-				<input type="radio" name="radiocount" value="2" id="rad_2" c:model="this.radioChoice" />
-				<label for="rad_2">Two</label><br/>
-			</div -->
-			{{this.radioChoice}}: <input type="text" size="5" c:model="this.radioChoice" />
+			{{m().radioChoice}}: <input type="text" size="5" c:model="m().radioChoice" />
 			<br />
 			<br />
-			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items, item: 'selectItem'}"></select>
+			<select c:model="m().selectedDropdownOption" c:repeat="{items: m().items, item: 'selectItem'}"></select>
 			<br />
 			<br />
-			!!{{this.selectedDropdownOption}}!!
+			!!{{m().selectedDropdownOption}}!!
 			<br />
 			<br />
-			<select c:model="this.selectedDropdownOption" c:repeat="{items: this.items}">
+			<select c:model="m().selectedDropdownOption" c:repeat="{items: m().items}">
 				<template type="empty">
 					<option value="" disabled selected>Select your option</option>
 				</template>
@@ -92,21 +84,21 @@
 					<option disabled selected>Select One...</option>
 				</template>
 				<template type="item">
-					<option value="{{this.data.id}}" c:content="this.data.title"></option>
+					<option value="{{item().id}}" c:content="item().title"></option>
 				</template>
 			</select>
 			<br />
 			<br />
 
-			<ul c:class="{populated: this.items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: this.items}"></ul>
+			<ul c:class="{populated: m().items.length > 0}" c:repeat="{item: 'repeatItem', empty: 'emptyRepeat', items: m().items}"></ul>
 
-			<ul c:repeat="{item: 'repeatItem', items: this.items}">
+			<ul c:repeat="{item: 'repeatItem', items: m().items}">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="this.data.title">
+						<input type="text" c:model="item().title">
 					</li>
 				</template>
 			</ul>

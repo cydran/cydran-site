@@ -81,7 +81,7 @@ class Tutorials extends Component {
     this.listenTo("blog", "error", this.blogError);
     this.listenTo("repeats", "remove", this.removeItem);
 
-    this.watch("this.myField", (previous: any, current: any) => {
+    this.watch("m().myField", (previous: any, current: any) => {
       this.myField = current.replace(this.filter, '');
     });
 
