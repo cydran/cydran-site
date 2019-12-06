@@ -1,15 +1,20 @@
-import { Component } from "cydran";
+import { Component, Events } from "cydran";
 import TEMPLATE from "./App.html";
 
 class App extends Component {
 
 	constructor() {
 		super('app', TEMPLATE);
-		this.listenTo('navigation', 'navigate', this.navigate);
+		this.on("navigate").forChannel("navigation").invoke(this.navigate);
+		this.on(Events.AFTER_CHILD_CHANGED).invoke(this.onRegionChange);
 	}
 
 	public navigate(name: string): void {
 		this.setChildFromRegistry("body", 'page:' + name, 'page:notFound')
+	}
+
+	public onRegionChange(payload: {name: string}): void {
+		this.getLogger().info("Updated region: " + payload.name);
 	}
 
 }
