@@ -13,6 +13,7 @@
 			<br />
 			<br />
 			Color: <input type="text" c:model="m().color" />
+			<button c:onclick="model().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
 			<br />
 			<br />
 			Editable: {{m().lineEditable}}<br />
