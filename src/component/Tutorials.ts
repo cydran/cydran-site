@@ -96,7 +96,7 @@ class Tutorials extends Component {
 
     this.lineEditable = true;
     this.firstNameMaxLength = 5;
-    this.color = "#ffffff";
+    this.color = "#97c024";
   }
 
   public handleMyClick(): void {
