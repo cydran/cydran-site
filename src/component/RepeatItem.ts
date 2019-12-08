@@ -8,7 +8,7 @@ class RepeatItem extends Component {
 	}
 
 	public remove(): void {
-		const id = this["data"]["id"];
+		const id: string = this.getItem()["id"];
 		this.broadcast("repeats", "remove", id);
 	}
 
