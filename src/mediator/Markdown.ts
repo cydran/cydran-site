@@ -1,10 +1,10 @@
-import {Decorator} from "cydran";
-import {markdown} from "markdown";
+import { ElementMediator } from "cydran";
+import { markdown } from "markdown";
 
-class MarkdownDecorator extends Decorator<string, HTMLElement> {
+class Markdown extends ElementMediator<string, HTMLElement> {
 
 	public wire(): void {
-		this.getMediator().watch(this, this.onTargetChange);
+		this.getModelMediator().watch(this, this.onTargetChange);
 	}
 
 	public unwire(): void {
@@ -23,4 +23,4 @@ class MarkdownDecorator extends Decorator<string, HTMLElement> {
 
 }
 
-export default MarkdownDecorator;
+export default Markdown;

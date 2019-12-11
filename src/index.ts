@@ -1,9 +1,8 @@
 import App from "./component/App";
 import Router from "./Router";
 import { Stage, Modules } from "cydran";
-import Navigo from "navigo";
 import "./main.scss";
-import "./decorator/";
+import "./mediator/";
 import "./component/";
 import "./service/";
 
