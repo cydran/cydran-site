@@ -6,7 +6,10 @@ class Menu extends Component {
 	private expanded: boolean;
 
 	constructor() {
-		super('menu', TEMPLATE);
+		super(TEMPLATE);
+	}
+
+	protected init(): void {
 		this.expanded = false;
 	}
 

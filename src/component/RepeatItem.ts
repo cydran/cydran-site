@@ -4,7 +4,7 @@ import TEMPLATE from "./RepeatItem.html";
 class RepeatItem extends Component {
 
 	constructor() {
-		super('repeatItem', TEMPLATE);
+		super(TEMPLATE);
 	}
 
 	public remove(): void {

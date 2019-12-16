@@ -4,7 +4,7 @@ import TEMPLATE from "./NotFound.html";
 class NotFound extends Component {
 
 	constructor() {
-		super('notFound', TEMPLATE);
+		super(TEMPLATE);
 	}
 
 }

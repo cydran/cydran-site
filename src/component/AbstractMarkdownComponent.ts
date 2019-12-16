@@ -7,10 +7,13 @@ abstract class AbstractMarkdownComponent extends Component {
 
 	private markdown: string;
 
-	constructor(componentName: string, title: string, markdown: string) {
-		super(componentName, TEMPLATE);
-		this.documentTitle = title;
-		this.markdown = markdown;
+	constructor(title: string, markdown: string) {
+		super(TEMPLATE);
+	}
+
+	protected init(): void {
+		this.documentTitle = this.metadata().get("title");
+		this.markdown = this.metadata().get("markdown") ;
 	}
 
 }

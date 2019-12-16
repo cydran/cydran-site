@@ -4,7 +4,7 @@ import TEMPLATE from "./Home.html";
 class Home extends Component {
 
 	constructor() {
-		super('home', TEMPLATE);
+		super(TEMPLATE);
 	}
 
 	public handleClick(name: string): void {

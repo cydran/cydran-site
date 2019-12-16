@@ -4,7 +4,7 @@ import CONTENT from "./Docs.md";
 class Docs extends AbstractMarkdownComponent {
 
 	constructor() {
-		super('docs', 'Documentation', CONTENT);
+		super("Documentation", CONTENT);
 	}
 
 }

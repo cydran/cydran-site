@@ -4,7 +4,7 @@ import AbstractMarkdownComponent from "./AbstractMarkdownComponent";
 class Community extends AbstractMarkdownComponent {
 
 	constructor() {
-		super('community', 'Community', CONTENT);
+		super('Community', CONTENT);
 	}
 
 }

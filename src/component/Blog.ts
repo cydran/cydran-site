@@ -25,14 +25,17 @@ class Blog extends Component {
 	private posts: Post[];
 
 	constructor() {
-		super('blog', TEMPLATE);
+		super(TEMPLATE);
 		this.blogService = this.get('blogService');
-		this.posts = [];
-		this.idCounter = 0;
-		this.loading = false;
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);
+	}
+
+	protected init(): void {
+		this.posts = [];
+		this.idCounter = 0;
+		this.loading = false;
 		this.resetPost();
 	}
 

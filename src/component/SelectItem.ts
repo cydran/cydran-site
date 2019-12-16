@@ -4,7 +4,7 @@ import TEMPLATE from "./SelectItem.html";
 class SelectItem extends Component {
 
 	constructor() {
-		super('repeatItem', TEMPLATE);
+		super(TEMPLATE);
 	}
 
 }

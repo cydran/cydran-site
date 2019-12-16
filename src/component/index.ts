@@ -3,6 +3,7 @@ import Docs from './Docs';
 import Footer from './Footer';
 import NotFound from './NotFound';
 import Tutorials from './Tutorials';
+import Calendar from './Calendar';
 import Community from './Community';
 import Blog from './Blog';
 import Menu from './Menu';
@@ -15,6 +16,7 @@ Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community,
 
 Modules.registerPrototype("menu", Menu);
 Modules.registerPrototype("footer", Footer);
+Modules.registerPrototype("calendar", Calendar);
 Modules.registerPrototype("emptyRepeat", EmptyRepeat);
 Modules.registerPrototype("repeatItem", RepeatItem);
 Modules.registerPrototype("selectItem", SelectItem);

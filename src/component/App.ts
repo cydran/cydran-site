@@ -4,7 +4,7 @@ import TEMPLATE from "./App.html";
 class App extends Component {
 
 	constructor() {
-		super('app', TEMPLATE);
+		super(TEMPLATE);
 		this.on("navigate").forChannel("navigation").invoke(this.navigate);
 		this.on(Events.AFTER_CHILD_CHANGED).invoke(this.onRegionChange);
 	}
