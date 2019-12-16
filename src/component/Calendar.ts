@@ -1,10 +1,10 @@
-import { Component } from "cydran";
+import { Component, ComponentConfigBuilder } from "cydran";
 import TEMPLATE from "./Calendar.html";
 
 class Calendar extends Component {
 
 	constructor() {
-		super(TEMPLATE, {}, ["thecolor"]);
+		super(TEMPLATE, new ComponentConfigBuilder().withAttribute("thecolor").build());
 	}
 
 	public handleClick(): void {

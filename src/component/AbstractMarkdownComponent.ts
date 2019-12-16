@@ -1,4 +1,4 @@
-import { Component } from "cydran";
+import { Component, ComponentConfigBuilder } from "cydran";
 import TEMPLATE from "./AbstractMarkdownComponent.html";
 
 abstract class AbstractMarkdownComponent extends Component {
@@ -8,10 +8,7 @@ abstract class AbstractMarkdownComponent extends Component {
 	private markdown: string;
 
 	constructor(title: string, markdown: string) {
-		super(TEMPLATE, {
-			title: title,
-			markdown: markdown,
-		});
+		super(TEMPLATE, new ComponentConfigBuilder().withMetadata("title", title).withMetadata("markdown", markdown).build());
 	}
 
 	protected init(): void {
