@@ -8,7 +8,10 @@ abstract class AbstractMarkdownComponent extends Component {
 	private markdown: string;
 
 	constructor(title: string, markdown: string) {
-		super(TEMPLATE);
+		super(TEMPLATE, {
+			title: title,
+			markdown: markdown,
+		});
 	}
 
 	protected init(): void {
