@@ -35,6 +35,8 @@ class Tutorials extends Component {
 
 	private myValues: string[] = [];
 
+	private hideImage: boolean = true;
+
 	private insideList:
 		{ name: string, value: number }[]
 		= [
@@ -98,6 +100,11 @@ class Tutorials extends Component {
 		this.lineEditable = true;
 		this.firstNameMaxLength = 5;
 		this.color = "#97c024";
+		this.hideImage = true;
+	}
+
+	public toggleImage(): void {
+		this.hideImage = !this.hideImage;
 	}
 
 	public handleMyClick(): void {
