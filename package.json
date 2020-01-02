@@ -4,10 +4,9 @@
   "description": "Cydran Site",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --host 0.0.0.0 --open",
-    "build": "webpack --mode production",
-    "clean": "rimraf dist",
-    "test": "run_tests"
+    "start": "dotenv cross-var npx webpack-dev-server --mode %dev.mode% --host %webpack.host% --open",
+    "build": "dotenv cross-var npx webpack --mode  %prod.mode%",
+    "clean": "dotenv cross-var npx rimraf dist"
   },
   "author": "",
   "license": "ISC",
@@ -18,8 +17,10 @@
     "babel-preset-env": "1.7.0",
     "contents-loader": "^1.0.0",
     "copy-webpack-plugin": "5.1.1",
+    "cross-var": "1.1.0",
     "css-loader": "3.4.0",
     "cydran": "0.0.42",
+    "dotenv-cli": "3.1.0",
     "file-loader": "5.0.2",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.9.0",
@@ -27,10 +28,10 @@
     "raw-loader": "4.0.0",
     "rimraf": "3.0.0",
     "sass-loader": "8.0.0",
-    "style-loader": "1.1.1",
+    "style-loader": "1.1.2",
     "ts-loader": "6.2.1",
     "typescript": "3.7.4",
-    "webpack": "4.41.4",
+    "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.1"
   },
