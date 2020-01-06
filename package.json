@@ -4,9 +4,9 @@
   "description": "Cydran Site",
   "main": "index.js",
   "scripts": {
-    "start": "dotenv cross-var npx webpack-dev-server --mode %dev.mode% --host %webpack.host% --open",
-    "build": "dotenv cross-var npx webpack --mode  %prod.mode%",
-    "clean": "dotenv cross-var npx rimraf dist"
+    "start": "npx webpack-dev-server --mode development --host 0.0.0.0 --open",
+    "build": "npx webpack --mode production",
+    "clean": "npx rimraf dist"
   },
   "author": "",
   "license": "ISC",
@@ -19,7 +19,6 @@
     "copy-webpack-plugin": "5.1.1",
     "cross-var": "1.1.0",
     "css-loader": "3.4.0",
-    "cydran": "0.0.42",
     "dotenv-cli": "3.1.0",
     "file-loader": "5.0.2",
     "html-webpack-plugin": "3.2.0",
