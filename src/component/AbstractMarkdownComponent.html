@@ -17,6 +17,10 @@
 					</ul>
 				</li>
 			</ul>
+
+			<button c:onclick="m().toggleForcedFocus()">Toggle forced focus</button>
+			<input type="text" c:force-focus="m().focusForced">
+
 		</div>
 		<div class="col-sm-9">
 			<h1>{{m().documentTitle}}</h1>
