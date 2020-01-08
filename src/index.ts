@@ -18,7 +18,7 @@ Modules.getScope().add('lower', (str: string) => str.toLowerCase());
 
 let stage: Stage = new Stage("body");
 window['stage'] = stage;
-stage.getConfig().useInfo();
+stage.getConfig().useDebug();
 
 stage.withInitializer(function () {
 	this.setComponent(new App());
