@@ -7,13 +7,20 @@ abstract class AbstractMarkdownComponent extends Component {
 
 	private markdown: string;
 
+	private focusForced: boolean;
+
 	constructor(title: string, markdown: string) {
 		super(TEMPLATE, new ComponentConfigBuilder().withMetadata("title", title).withMetadata("markdown", markdown).build());
 	}
 
 	protected init(): void {
 		this.documentTitle = this.metadata().get("title");
-		this.markdown = this.metadata().get("markdown") ;
+		this.markdown = this.metadata().get("markdown");
+		this.focusForced = true;
+	}
+
+	public toggleForcedFocus(): void {
+		this.focusForced = !this.focusForced;
 	}
 
 }
