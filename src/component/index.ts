@@ -26,6 +26,7 @@ Modules.registerPrototype("page:home", Home);
 Modules.registerPrototype("page:docs", Docs)
 Modules.registerPrototype("page:notFound", NotFound)
 Modules.registerSingleton("page:tutorials", Tutorials)
+Modules.registerPrototype("helloWorld2", Tutorials)
 Modules.registerPrototype('page:community', Community)
 Modules.registerPrototype("page:blog", Blog);
 Modules.registerPrototype("helloWorld", HelloWorld);

@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { builder, Stage, Modules } from "cydran";
+import { builder, Modules } from "cydran";
 import "./main.scss";
 import "./mediator/";
 import "./component/";
@@ -16,7 +16,7 @@ Modules.getScope().add('i18n', (key: string) => bundle[key]);
 Modules.getScope().add('upper', (str: string) => str.toUpperCase());
 Modules.getScope().add('lower', (str: string) => str.toLowerCase());
 
-let stage: Stage = builder("body")
+builder("body")
 	.withDebugLogging()
 	.withComponentAfter("modalContainer")
 	.withInitializer(function () {
@@ -24,8 +24,5 @@ let stage: Stage = builder("body")
 		let router: Router = this.get('router');
 		router.start();
 	})
-	.build();
-
-window['stage'] = stage;
-
-stage.start();
+	.build()
+	.start();

@@ -152,7 +152,7 @@ class Tutorials extends Component {
 	public popOtherModal(): void {
 		this.broadcastGlobally('modal', 'show', {
 			title: 'Confirmation 1',
-			name: 'helloWorld',
+			name: 'helloWorld2',
 			closeable: false
 		});
 	}
