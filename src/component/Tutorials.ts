@@ -137,6 +137,26 @@ class Tutorials extends Component {
 		console.log(error);
 	}
 
+	public sendUpdate(): void {
+		this.broadcastGlobally("helloWorldChannel", "updateName", "Bob");
+	}
+
+	public popModal(): void {
+		this.broadcastGlobally('modal', 'show', {
+			title: 'Confirmation 1',
+			name: 'helloWorld',
+			closeable: true
+		});
+	}
+
+	public popOtherModal(): void {
+		this.broadcastGlobally('modal', 'show', {
+			title: 'Confirmation 1',
+			name: 'helloWorld',
+			closeable: false
+		});
+	}
+
 }
 
 export default Tutorials;

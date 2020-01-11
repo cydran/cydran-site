@@ -21,6 +21,10 @@ class Menu extends Component {
 		this.expanded = !this.expanded;
 	}
 
+	public sendUpdate(): void {
+		this.broadcastGlobally("helloWorldChannel", "updateName", "Bob");
+	}
+
 }
 
 export default Menu;
