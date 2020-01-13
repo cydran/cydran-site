@@ -1,10 +1,14 @@
 <div>
+
 	<p>
 		The color is {{e().thecolor}}.<br />
-		The color is <span c:content="e().thecolor"></span>.<br />
 		The color is <input type="text" c:model="e().thecolor"><br />
 	</p>
-	<button c:onclick="console.log('Digested')">Digest</button>
-	<button c:onclick="console.log(external())">Show Scope</button>
-	<button c:onclick="m().handleClick()">Call Method</button>
+
+	<div class="buttons">
+		<button class="button" c:onclick="console.log('Digested')">Digest</button>
+		<button class="button" c:onclick="console.log(external())">Show Scope</button>
+		<button class="button" c:onclick="m().handleClick()">Call Method</button>
+	</div>
+
 </div>

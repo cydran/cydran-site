@@ -1,16 +1,16 @@
-<div class="modal" c:class="{'is-active': m().visible}" c:visible="m().visible">
+<div class="modal" c:class="{'is-active': m().visible}" c:if="m().visible">
 	<div class="modal-background"></div>
 	<div class="modal-card">
 		<header class="modal-card-head">
-			<p class="modal-card-title" c:content="m().title"></p>
-			<button class="delete" aria-label="close" c:style="{display: m().closeable ? 'inline-block' : 'none'}" c:onclick="m().hideModal()"></button>
+			<p class="modal-card-title">{{m().title}}</p>
+			<button class="delete" aria-label="close" c:if="m().closeable" c:onclick="m().hideModal()"></button>
 		</header>
 		<section class="modal-card-body">
 			<c:region name="body"></c:region>
 		</section>
 		<footer class="modal-card-foot">
-			<button class="button is-success">Save changes</button>
-			<button class="button" c:onclick="m().hideModal()">Cancel</button>
+			<button class="button is-primary is-rounded">Save changes</button>
+			<button class="button is-rounded" c:onclick="m().hideModal()">Cancel</button>
 		</footer>
 	</div>
 </div>

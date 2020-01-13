@@ -46,8 +46,13 @@
 		</div>
 
 		<div class="column">
-			<button c:onclick="m().toggleImage()">Toggle Image</button><br/>
-			<div c:visible="m().hideImage">
+			<button class="button" c:onclick="m().toggleImage()">Toggle Image</button><br/>
+			<div c:if="!m().hideImage">
+				<p>
+					Other
+				</p>
+			</div>
+			<div c:if="m().hideImage">
 				<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
 					xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
@@ -85,13 +90,13 @@
 			<select style="width: 150px;" c:repeat="{items: m().insideList, idKey: 'value'}" c:model="m().myValues"
 				size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{item().value}}" c:content="item().name"></option>
+					<option value="{{item().value}}">{{item().name}}</option>
 				</template>
 			</select>
 			<select style="width: 150px;" c:repeat="{items: m().insideList, idKey: 'value'}" c:model="m().myValues"
 				size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{item().value}}" c:content="item().name"></option>
+					<option value="{{item().value}}">{{item().name}}</option>
 				</template>
 			</select>
 			<br />
@@ -105,7 +110,7 @@
 					<div>
 						<input type="radio" name="radiocount" value="{{item().id}}" id="{{'rad_' + item().id}}"
 							c:model="p().radioChoice" />
-						<label for="{{'rad_' + item().id}}" c:content="item().label"></label>
+						<label for="{{'rad_' + item().id}}">{{item().label}}</label>
 					</div>
 				</template>
 			</div>
@@ -126,7 +131,7 @@
 					<option disabled selected>Select One...</option>
 				</template>
 				<template type="item">
-					<option value="{{item().id}}" c:content="item().title"></option>
+					<option value="{{item().id}}">{{item().title}}</option>
 				</template>
 			</select>
 			<br />
@@ -170,9 +175,11 @@
 
 			<c:component name="calendar" c:property-theColor="m().color"></c:component>
 
-			<button c:onclick="m().sendUpdate()">Update Name</button>
-			<button c:onclick="m().popModal()">Show a modal</button>
-			<button c:onclick="m().popOtherModal()">Show non-closeable modal</button>
+			<div class="buttons">
+				<button class="button" c:onclick="m().sendUpdate()">Update Name</button>
+				<button class="button" c:onclick="m().popModal()">Show a modal</button>
+				<button class="button" c:onclick="m().popOtherModal()">Show non-closeable modal</button>
+			</div>
 
 		</div>
 	</div>
