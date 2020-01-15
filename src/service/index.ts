@@ -1,3 +1,8 @@
-import './BlogServiceImpl';
+import BlogServiceImpl from './BlogServiceImpl';
+import { StageBuilder } from 'cydran';
 
-export {};
+function serviceCapability(builder: StageBuilder) {
+	builder.withSingleton("blogService", BlogServiceImpl);
+}
+
+export default serviceCapability;

@@ -1,4 +1,8 @@
 import Markdown from './Markdown';
-import {Modules} from 'cydran';
+import { StageBuilder } from 'cydran';
 
-Modules.registerElementMediator('markdown', ['*'], Markdown);
+function mediatorCapability(builder: StageBuilder) {
+	builder.withElementMediator('markdown', ['*'], Markdown);
+}
+
+export default mediatorCapability;

@@ -9,21 +9,29 @@ import Community from './Community';
 import Blog from './Blog';
 import Menu from './Menu';
 import ModalContainer from './ModalContainer';
-import { Modules } from "cydran";
+import { StageBuilder, Module } from "cydran";
 
-Modules.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
+function coreCapability(builder: StageBuilder) {
+	builder.withPrototype("menu", Menu)
+		.withPrototype("footer", Footer)
+		.withPrototype("calendar", Calendar)
+		.withPrototype("page:home", Home)
+		.withPrototype("page:docs", Docs)
+		.withPrototype("page:notFound", NotFound)
+		.withSingleton("page:tutorials", Tutorials)
+		.withPrototype("helloWorld2", Tutorials)
+		.withPrototype('page:community', Community)
+		.withPrototype("page:blog", Blog)
+		.withPrototype("helloWorld", HelloWorld)
 
-Modules.registerPrototype("menu", Menu);
-Modules.registerPrototype("footer", Footer);
-Modules.registerPrototype("calendar", Calendar);
-Modules.registerPrototype("page:home", Home);
-Modules.registerPrototype("page:docs", Docs)
-Modules.registerPrototype("page:notFound", NotFound)
-Modules.registerSingleton("page:tutorials", Tutorials)
-Modules.registerPrototype("helloWorld2", Tutorials)
-Modules.registerPrototype('page:community', Community)
-Modules.registerPrototype("page:blog", Blog);
-Modules.registerPrototype("helloWorld", HelloWorld);
-Modules.registerPrototype("modalContainer", ModalContainer);
+	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
+}
 
-export {};
+function modalCapability(builder: StageBuilder): void {
+	const module: Module = builder.getModule("Cydran:Components:Modal");
+	module.registerPrototype("container", ModalContainer);
+	module.associate(ModalContainer);
+	builder.withComponentAfter("container", "Cydran:Components:Modal");
+}
+
+export { coreCapability, modalCapability };
