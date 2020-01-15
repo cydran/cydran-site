@@ -6,7 +6,7 @@
 		<textarea c:model="m().post.body" style="min-width: 400px; min-height: 200px;"></textarea>
 		<button c:onclick="m().add()">Add</button>
 	</div>
-	<section c:repeat="{items: m().posts}">
+	<section c:repeat="m().posts">
 		<template type="empty">
 			<p>No posts yet...</p>
 		</template>

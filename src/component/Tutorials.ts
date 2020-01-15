@@ -72,7 +72,6 @@ class Tutorials extends Component {
 		this.blogService = this.get('blogService');
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);
-		this.on("remove").forChannel("repeats").invoke(this.removeItem);
 		this.watch("m().myField", (previous: any, current: any) => {
 			this.myField = current.replace(this.filter, '');
 		});
