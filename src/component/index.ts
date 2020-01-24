@@ -23,6 +23,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype('page:community', Community)
 		.withPrototype("page:blog", Blog)
 		.withPrototype("helloWorld", HelloWorld)
+		.withPrototype("wazzup", Blog)
 
 	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
 }

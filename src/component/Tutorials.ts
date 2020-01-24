@@ -156,6 +156,14 @@ class Tutorials extends Component {
 		});
 	}
 
+	public popBlogModal(): void {
+		this.broadcastGlobally("modal", "show", {
+			title: "Blog",
+			name: "wazzup",
+			closeable: true
+		})
+	}
+
 }
 
 export default Tutorials;
