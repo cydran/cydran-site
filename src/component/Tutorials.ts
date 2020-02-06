@@ -127,6 +127,10 @@ class Tutorials extends Component {
 		window.alert("Changed");
 	}
 
+	public loadBlog(): void {
+		this.blogService.load();
+	}
+
 	public blogUpdated(data: any): void {
 		console.log(data);
 		this.posts = data.items;
