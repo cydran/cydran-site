@@ -3,8 +3,14 @@ import TEMPLATE from "./Calendar.html";
 
 class Calendar extends Component {
 
+	private localValue: string;
+
 	constructor() {
 		super(TEMPLATE, new ComponentConfigBuilder().withAttribute("thecolor").build());
+	}
+
+	public init(): void {
+		this.localValue = "initialized";
 	}
 
 	public handleClick(): void {

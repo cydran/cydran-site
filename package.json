@@ -35,7 +35,7 @@
   "dependencies": {
     "axios": "0.19.2",
     "bulma": "0.8.0",
-    "cydran": "0.0.54",
+    "cydran": "0.0.56",
     "markdown": "^0.5.0",
     "navigo": "^7.1.2"
   }

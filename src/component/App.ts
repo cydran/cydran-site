@@ -14,7 +14,7 @@ class App extends Component {
 	}
 
 	public onRegionChange(payload: {name: string}): void {
-		this.getLogger().info("Updated region: " + payload.name);
+		this.getLogger().ifTrace(() => "Updated region: " + payload.name);
 	}
 
 }

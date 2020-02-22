@@ -5,6 +5,11 @@
 		The color is <input type="text" c:model="e().thecolor"><br />
 	</p>
 
+	<p>
+		The localValue is {{m().localValue}}.<br />
+		The localValue is <input type="text" c:model="m().localValue"><br />
+	</p>
+
 	<div class="buttons">
 		<button class="button" c:onclick="console.log('Digested')">Digest</button>
 		<button class="button" c:onclick="console.log(external())">Show Scope</button>
