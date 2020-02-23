@@ -11,7 +11,7 @@ const bundle: any = {
 }
 
 builder("body")
-	.withDebugLogging()
+	.withInfoLogging()
 	.withSingleton('router', Router)
 	.withScopeItem('bundle', bundle)
 	.withScopeItem('i18n', (key: string) => bundle[key])

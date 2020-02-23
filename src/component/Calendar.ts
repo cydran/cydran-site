@@ -7,6 +7,7 @@ class Calendar extends Component {
 
 	constructor() {
 		super(TEMPLATE, new ComponentConfigBuilder().withAttribute("thecolor").build());
+		this.on("testMessage").forChannel("testGlobal").invoke(this.init);
 	}
 
 	public init(): void {

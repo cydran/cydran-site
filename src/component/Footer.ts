@@ -7,6 +7,10 @@ class FooterView extends Component {
 		super(TEMPLATE);
 	}
 
+	public sendGlobal(): void {
+		this.broadcastGlobally("testGlobal", "testMessage", {});
+	}
+
 }
 
 export default FooterView;
