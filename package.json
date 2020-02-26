@@ -4,7 +4,7 @@
   "description": "Cydran Site",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack-dev-server --mode development --host localhost --open",
+    "start": "npx webpack-dev-server --mode development --open",
     "build": "npx webpack --mode production",
     "clean": "npx rimraf dist"
   },
