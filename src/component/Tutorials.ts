@@ -37,6 +37,8 @@ class Tutorials extends Component {
 
 	private hideImage: boolean = true;
 
+	private escapedString: string;
+
 	private insideList:
 		{ name: string, value: number }[]
 		= [
@@ -100,6 +102,7 @@ class Tutorials extends Component {
 		this.firstNameMaxLength = 5;
 		this.color = "#97c024";
 		this.hideImage = true;
+		this.escapedString = "first & second > < >";
 	}
 
 	public toggleImage(): void {
