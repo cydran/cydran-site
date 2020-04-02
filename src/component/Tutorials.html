@@ -24,7 +24,7 @@
 			<input type="text" c:model="m().firstNameMaxLength" />
 			FNMN: {{m().firstNameMaxLength}}<br />
 			<input type="text" c:model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
-			<input type="text" c:model="m().address.lastName" /><br />
+			<input type="text" c:model="{{m().address.lastName}}" /><br />
 			<input type="text" c:model="m().address.line1" /><br />
 			<input type="text" c:model="m().address.line2" c:readonly="!m().lineEditable" />
 			<button c:onclick="m().toggleLineEditable()">Editable</button><br />

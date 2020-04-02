@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { builder } from "cydran";
+import { builder, Stage } from "cydran";
 import mediatorCapability from "./mediator/";
 import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
@@ -21,9 +21,9 @@ builder("body")
 	.withCapability(coreCapability)
 	.withCapability(modalCapability)
 	.withCapability(serviceCapability)
-	.withInitializer(function () {
-		this.setComponent(new App());
-		let router: Router = this.get('router');
+	.withInitializer((stage: Stage) => {
+		stage.setComponent(new App());
+		let router: Router = stage.get('router');
 		router.start();
 	})
 	.build()
