@@ -25,6 +25,7 @@ builder("body")
 		stage.setComponent(new App());
 		let router: Router = stage.get('router');
 		router.start();
+		stage.broadcast("devTools", "enableDigestTracing");
 	})
 	.build()
 	.start();

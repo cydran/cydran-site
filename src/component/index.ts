@@ -8,6 +8,8 @@ import Calendar from './Calendar';
 import Community from './Community';
 import Blog from './Blog';
 import Menu from './Menu';
+import RepeatItem from './RepeatItem';
+import Empty from './Empty';
 import ModalContainer from './ModalContainer';
 import { StageBuilder, Module } from "cydran";
 
@@ -23,6 +25,8 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype('page:community', Community)
 		.withPrototype("page:blog", Blog)
 		.withPrototype("helloWorld", HelloWorld)
+		.withPrototype("repeatItem", RepeatItem)
+		.withPrototype("repeatEmpty", Empty)
 		.withPrototype("wazzup", Blog)
 
 	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);

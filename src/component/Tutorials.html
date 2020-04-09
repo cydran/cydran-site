@@ -11,6 +11,7 @@
 
 			<input type="text" c:model="m().myField" />
 			<button c:onclick="m().handleMyClick()" c:enabled="m().myField.length > 0">Click Me!</button>
+			<button c:onclick="m().logItems()">Log Items</button>
 
 			This is {{m().myField}}!<br />
 
@@ -43,6 +44,17 @@
 			<br />
 			<br />
 			<br />
+
+			<ul c:repeat="m().items">
+				<template type="empty">
+					<!-- Comment before -->
+					<c:component name="repeatEmpty"></c:component>
+					<!-- Comment after -->
+				</template>
+				<template type="item">
+					<c:component name="repeatItem"></c:component>
+				</template>
+			</ul>
 
 			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items">
 				<template type="empty">

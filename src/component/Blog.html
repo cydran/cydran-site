@@ -18,4 +18,14 @@
 		</template>
 	</section>
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
+
+	<ul b:repeat="m().posts">
+		<template type="empty">
+			<b:component name="repeatEmpty"></b:component>
+		</template>
+		<template type="item">
+			<b:component name="repeatItem"></b:component>
+		</template>
+	</ul>
+
 </div>

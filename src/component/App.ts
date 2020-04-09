@@ -10,7 +10,7 @@ class App extends Component {
 	}
 
 	public navigate(name: string): void {
-		this.setChildFromRegistry("body", 'page:' + name, 'page:notFound')
+		this.setChildFromRegistry("body", 'page:' + name, 'page:notFound');
 	}
 
 	public onRegionChange(payload: {name: string}): void {

@@ -65,7 +65,7 @@ class Tutorials extends Component {
 	}[];
 
 	private items: {
-		id: number | string,
+		id?: number | string,
 		title: string
 	}[];
 
@@ -113,9 +113,12 @@ class Tutorials extends Component {
 		this.counter++;
 
 		this.items.push({
-			id: this.counter,
 			title: "Item #" + this.counter,
 		});
+	}
+
+	public logItems(): void {
+		this.getLogger().info(this.items);
 	}
 
 	public removeItem(id: number): void {
