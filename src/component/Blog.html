@@ -6,7 +6,7 @@
 		<textarea b:model="m().post.body" style="min-width: 400px; min-height: 200px;"></textarea>
 		<button b:onclick="m().add()">Add</button>
 	</div>
-	<section b:repeat="m().posts">
+	<section b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="i().title + '!'">
 		<template type="empty">
 			<p>No posts yet...</p>
 		</template>
@@ -19,7 +19,7 @@
 	</section>
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
-	<ul b:repeat="m().posts">
+	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="i().title + '!'">
 		<template type="empty">
 			<b:component name="repeatEmpty"></b:component>
 		</template>

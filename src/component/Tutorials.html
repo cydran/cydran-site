@@ -45,7 +45,7 @@
 			<br />
 			<br />
 
-			<ul c:repeat="m().items">
+			<ul c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<!-- Comment before -->
 					<c:component name="repeatEmpty"></c:component>
@@ -56,7 +56,7 @@
 				</template>
 			</ul>
 
-			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items">
+			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<p>
 						Nothing here yet!
@@ -114,12 +114,12 @@
 				</svg>
 			</div>
 			<br />
-			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
+			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
 					<option value="{{item().value}}">{{item().name}}</option>
 				</template>
 			</select>
-			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
+			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
 					<option value="{{item().value}}">{{item().name}}</option>
 				</template>
@@ -130,7 +130,7 @@
 			<input type="text" size="25" c:model="m().sillypass" />
 			<br />
 			<br />
-			<div c:repeat="m().radioList">
+			<div c:repeat="m().radioList" c:repeat:mode="generated">
 				<template type="item">
 					<div>
 						<input type="radio" name="radiocount" value="{{item().id}}" id="{{'rad_' + item().id}}" c:model="m().radioChoice" />
@@ -141,7 +141,7 @@
 			{{m().radioChoice}}: <input type="text" size="5" c:model="m().radioChoice" />
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:repeat="m().items">
+			<select c:model="m().selectedDropdownOption" c:repeat="m().items" c:repeat:mode="generated">
 				<template type="item">
 					<option value="{{item().id}}">{{item().title}}</option>
 				</template>
@@ -151,7 +151,7 @@
 			!!{{m().selectedDropdownOption}}!!
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:repeat="m().items">
+			<select c:model="m().selectedDropdownOption" c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<option value="" disabled selected>Select your option</option>
 				</template>
@@ -165,7 +165,7 @@
 			<br />
 			<br />
 
-			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items">
+			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<p>
 						Nothing here yet!
@@ -179,7 +179,7 @@
 				</template>
 			</ul>
 
-			<ul c:repeat="m().items">
+			<ul c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>
@@ -196,7 +196,7 @@
 						<th>Column 1</th>
 					</tr>
 				</thead>
-				<tbody c:repeat="m().items">
+				<tbody c:repeat="m().items" c:repeat:mode="generated">
 					<template type="empty">
 						<tr>
 							<td>This is really empty!</td>
