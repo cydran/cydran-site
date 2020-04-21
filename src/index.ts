@@ -5,6 +5,7 @@ import mediatorCapability from "./mediator/";
 import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
 import "./main.scss";
+import { galleryCapability } from "./component/gallery/";
 
 const bundle: any = {
 	"title.label": "Blog Post Title"
@@ -19,6 +20,7 @@ builder("body")
 	.withScopeItem('lower', (str: string) => str.toLowerCase())
 	.withCapability(mediatorCapability)
 	.withCapability(coreCapability)
+	.withCapability(galleryCapability)
 	.withCapability(modalCapability)
 	.withCapability(serviceCapability)
 	.withInitializer((stage: Stage) => {

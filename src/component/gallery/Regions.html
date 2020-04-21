@@ -1,0 +1,20 @@
+<div>
+	<h1>Regions</h1>
+
+	<c:region name="item" value="m().items[m().index]"></c:region>
+
+	<button c:onclick="m().useUlComponent()">Use UL Component</button>
+	<button c:onclick="m().useInlineComponent()">Use Inline Component</button>
+	<button c:onclick="m().useItem(0)">Use 0 item</button>
+	<button c:onclick="m().useItem(1)">Use 1 item</button>
+	<button c:onclick="m().useItem(2)">Use 2 item</button>
+
+	<h2>Repeat</h2>
+
+	<ul c:repeat="m().items" c:repeat:mode="generated">
+		<template type="item">
+			<c:component name="inline"></c:component>
+		</template>
+	</ul>
+
+</div>

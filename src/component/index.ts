@@ -7,6 +7,7 @@ import Tutorials from './Tutorials';
 import Calendar from './Calendar';
 import Community from './Community';
 import Blog from './Blog';
+import Gallery from './Gallery';
 import Menu from './Menu';
 import RepeatItem from './RepeatItem';
 import Empty from './Empty';
@@ -21,6 +22,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("page:docs", Docs)
 		.withPrototype("page:notFound", NotFound)
 		.withSingleton("page:tutorials", Tutorials)
+		.withSingleton("page:gallery", Gallery)
 		.withPrototype("helloWorld2", Tutorials)
 		.withPrototype('page:community', Community)
 		.withPrototype("page:blog", Blog)

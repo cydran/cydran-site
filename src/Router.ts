@@ -39,6 +39,9 @@ class Router {
 			'community': () => {
 				this.navigate('community');
 			},
+			'gallery': () => {
+				this.navigate('gallery');
+			},
 			'blog': () => {
 				this.navigate('blog');
 			},

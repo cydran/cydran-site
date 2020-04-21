@@ -174,6 +174,10 @@ class Tutorials extends Component {
 		})
 	}
 
+	public focusLastName(): void {
+		this.forElement("lastName").focus();
+	}
+
 }
 
 export default Tutorials;

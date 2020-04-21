@@ -1,0 +1,26 @@
+<div class="container">
+
+	<div class="columns">
+		<div class="column is-one-fifth">
+
+			<aside class="menu">
+				<p class="menu-label">
+					Gallery
+				</p>
+				<ul class="menu-list" c:repeat="m().items" c:repeat:mode="none">
+					<template type="item">
+						<li>
+							<a href="javascript: void(0);" c:class="{'is-active': m().activeItem === i().id}" c:onclick="m().show(i().id)">{{i().title}}</a>
+						</li>
+					</template>
+				</ul>
+			</aside>
+
+		</div>
+		<div class="column">
+			<c:region name="body"></c:region>
+		</div>
+
+	</div>
+
+</div>
