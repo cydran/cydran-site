@@ -1,7 +1,6 @@
 import HelloWorld from './HelloWorld';
 import Home from './Home';
 import Docs from './Docs';
-import Footer from './Footer';
 import NotFound from './NotFound';
 import Tutorials from './Tutorials';
 import Calendar from './Calendar';
@@ -13,10 +12,10 @@ import RepeatItem from './RepeatItem';
 import Empty from './Empty';
 import ModalContainer from './ModalContainer';
 import { StageBuilder, Module } from "cydran";
+import FOOTER_TEMPLATE from "./Footer.html";
 
 function coreCapability(builder: StageBuilder) {
 	builder.withPrototype("menu", Menu)
-		.withPrototype("footer", Footer)
 		.withPrototype("calendar", Calendar)
 		.withPrototype("page:home", Home)
 		.withPrototype("page:docs", Docs)
@@ -30,6 +29,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("repeatItem", RepeatItem)
 		.withPrototype("repeatEmpty", Empty)
 		.withPrototype("wazzup", Blog)
+		.withSimpleComponent("footer", FOOTER_TEMPLATE);
 
 	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
 }
