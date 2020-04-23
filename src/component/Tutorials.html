@@ -66,8 +66,8 @@
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="item().title">
-						<button c:onclick="m().removeItem(i().id)">Remove</button>
+						<input type="text" c:model="value().title">
+						<button c:onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ul>
@@ -118,12 +118,12 @@
 			<br />
 			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{item().value}}">{{item().name}}</option>
+					<option value="{{value().value}}">{{value().name}}</option>
 				</template>
 			</select>
 			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{item().value}}">{{item().name}}</option>
+					<option value="{{value().value}}">{{value().name}}</option>
 				</template>
 			</select>
 			<br />
@@ -135,8 +135,8 @@
 			<div c:repeat="m().radioList" c:repeat:mode="generated">
 				<template type="item">
 					<div>
-						<input type="radio" name="radiocount" value="{{item().id}}" id="{{'rad_' + item().id}}" c:model="m().radioChoice" />
-						<label for="{{'rad_' + item().id}}">{{item().label}}</label>
+						<input type="radio" name="radiocount" value="{{value().id}}" id="{{'rad_' + value().id}}" c:model="m().radioChoice" />
+						<label for="{{'rad_' + value().id}}">{{value().label}}</label>
 					</div>
 				</template>
 			</div>
@@ -145,7 +145,7 @@
 			<br />
 			<select c:model="m().selectedDropdownOption" c:repeat="m().items" c:repeat:mode="generated">
 				<template type="item">
-					<option value="{{item().id}}">{{item().title}}</option>
+					<option value="{{value().id}}">{{value().title}}</option>
 				</template>
 			</select>
 			<br />
@@ -161,7 +161,7 @@
 					<option disabled selected>Select One...</option>
 				</template>
 				<template type="item">
-					<option value="{{item().id}}">{{item().title}}</option>
+					<option value="{{value().id}}">{{value().title}}</option>
 				</template>
 			</select>
 			<br />
@@ -175,8 +175,8 @@
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="item().title">
-						<button c:onclick="m().removeItem(i().id)">Remove</button>
+						<input type="text" c:model="value().title">
+						<button c:onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ul>
@@ -187,7 +187,7 @@
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="item().title">
+						<input type="text" c:model="value().title">
 					</li>
 				</template>
 			</ul>
@@ -207,7 +207,7 @@
 					<template type="item">
 						<tr>
 							<td>
-								<input type="text" c:model="item().title"> {{item().title}}
+								<input type="text" c:model="value().title"> {{value().title}}
 							</td>
 						</tr>
 					</template>

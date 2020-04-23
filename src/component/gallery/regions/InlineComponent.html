@@ -3,13 +3,13 @@
 	<h1>Inline Component</h1>
 
 	<p>
-		<input c:model="i().firstName" />
-		<input c:model="i().lastName" />
+		<input c:model="v().firstName" />
+		<input c:model="v().lastName" />
 	</p>
 
 	<p>
-		<button c:onclick="i().firstName = i().firstName.toUpperCase()">Uppercase First Name</button>
-		<button c:onclick="i().lastName = i().lastName.toUpperCase()">Uppercase Last Name</button>
+		<button c:onclick="v().firstName = v().firstName.toUpperCase()">Uppercase First Name</button>
+		<button c:onclick="v().lastName = v().lastName.toUpperCase()">Uppercase Last Name</button>
 		<button c:onclick="m().hello()">Say Hello</button>
 	</p>
 

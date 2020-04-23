@@ -7,7 +7,7 @@
 				<ul class="menu-list" c:repeat="m().items" c:repeat:mode="none">
 					<template type="item">
 						<li>
-							<a href="javascript: void(0);" c:class="{'is-active': m().activeItem === i().id}" c:onclick="m().show(i().id)">{{i().title}}</a>
+							<a href="javascript: void(0);" c:class="{'is-active': m().activeItem === v().id}" c:onclick="m().show(v().id)">{{v().title}}</a>
 						</li>
 					</template>
 				</ul>

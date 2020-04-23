@@ -29,7 +29,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("repeatItem", RepeatItem)
 		.withPrototype("repeatEmpty", Empty)
 		.withPrototype("wazzup", Blog)
-		.withSimpleComponent("footer", FOOTER_TEMPLATE);
+		.withImplicit("footer", FOOTER_TEMPLATE);
 
 	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
 }
