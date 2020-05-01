@@ -11,9 +11,6 @@ abstract class AbstractMarkdownComponent extends Component {
 
 	constructor(title: string, markdown: string) {
 		super(TEMPLATE, new ComponentConfigBuilder().withMetadata("title", title).withMetadata("markdown", markdown).build());
-	}
-
-	protected init(): void {
 		this.documentTitle = this.metadata().get("title");
 		this.markdown = this.metadata().get("markdown");
 		this.focusForced = true;

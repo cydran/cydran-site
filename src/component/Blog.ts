@@ -30,9 +30,6 @@ class Blog extends Component {
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);
-	}
-
-	protected init(): void {
 		this.posts = [];
 		this.idCounter = 0;
 		this.loading = false;

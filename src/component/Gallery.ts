@@ -17,10 +17,6 @@ class Gallery extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-		this.setChildFromRegistry("body", "gallery:intro");
-	}
-
-	public init(): void {
 		this.items = [
 			{
 				id: "intro",
@@ -32,6 +28,8 @@ class Gallery extends Component {
 			}
 		];
 		this.activeItem = "intro";
+
+		this.setChildFromRegistry("body", "gallery:intro");
 	}
 
 	public show(name: string): void {
