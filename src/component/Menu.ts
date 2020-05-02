@@ -7,9 +7,6 @@ class Menu extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-	}
-
-	protected init(): void {
 		this.expanded = false;
 	}
 

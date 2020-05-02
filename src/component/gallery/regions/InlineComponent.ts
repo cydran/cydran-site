@@ -8,7 +8,7 @@ class InlineComponent extends Component {
 	}
 
 	public hello(): void {
-		window.alert("Hello " + this.getItem()["firstName"] + "!");
+		window.alert("Hello " + this.getValue()["firstName"] + "!");
 	}
 
 }

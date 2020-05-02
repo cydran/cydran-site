@@ -8,9 +8,6 @@ class HelloWorld extends Component {
 	constructor() {
 		super(TEMPLATE);
 		this.on("updateName").forChannel("helloWorldChannel").invoke(this.setName);
-	}
-
-	protected init(): void {
 		this.name = "Anonymous";
 	}
 

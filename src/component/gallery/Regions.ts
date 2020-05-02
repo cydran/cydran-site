@@ -20,9 +20,6 @@ class Regions extends Component {
 	constructor() {
 		super(TEMPLATE);
 		this.useUlComponent();
-	}
-
-	public init(): void {
 		this.items = [
 			{
 				firstName: "James",

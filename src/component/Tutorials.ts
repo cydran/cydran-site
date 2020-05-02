@@ -77,9 +77,7 @@ class Tutorials extends Component {
 		this.watch("m().myField", (previous: any, current: any) => {
 			this.myField = current.replace(this.filter, '');
 		});
-	}
 
-	protected init(): void {
 		this.myField = "Kilroy was here";
 		this.mdContent = CONTENT;
 		this.items = [

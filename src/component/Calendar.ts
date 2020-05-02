@@ -7,10 +7,11 @@ class Calendar extends Component {
 
 	constructor() {
 		super(TEMPLATE, new ComponentConfigBuilder().withAttribute("thecolor").build());
-		this.on("testMessage").forChannel("testGlobal").invoke(this.init);
+		this.on("testMessage").forChannel("testGlobal").invoke(this.reset);
+		this.reset();
 	}
 
-	public init(): void {
+	public reset(): void {
 		this.localValue = "initialized";
 	}
 
