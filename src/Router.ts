@@ -15,8 +15,8 @@ class Router {
 
 	private pubSub: PubSub;
 
-	constructor() {
-		this.pubSub = new PubSub(this);
+	constructor(pubSub: PubSub) {
+		this.pubSub = pubSub;
 		let url = window.location.protocol + '//' + window.location.hostname;
 
 		if (window.location.port) {
