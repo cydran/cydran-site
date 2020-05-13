@@ -31,7 +31,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("wazzup", Blog)
 		.withImplicit("footer", FOOTER_TEMPLATE);
 
-	builder.getDefaultModule().associate(Home, Docs, NotFound, Tutorials, Community, Blog);
+	// builder.getDefaultModule().associate(App, Menu, Home, Docs, NotFound, Tutorials, Community, Blog, Empty, RepeatItem, Calendar, HelloWorld, Gallery, Regions);
 }
 
 function modalCapability(builder: StageBuilder): void {

@@ -13,7 +13,7 @@ const bundle: any = {
 
 builder("body")
 	.withInfoLogging()
-	.withSingleton('router', Router)
+	.withSingleton('router', Router, ["$pubSub"])
 	.withScopeItem('bundle', bundle)
 	.withScopeItem('i18n', (key: string) => bundle[key])
 	.withScopeItem('upper', (str: string) => str.toUpperCase())
@@ -26,6 +26,7 @@ builder("body")
 	.withInitializer((stage: Stage) => {
 		stage.setComponent(new App());
 		let router: Router = stage.get('router');
+
 		router.start();
 		stage.broadcast("devTools", "enableDigestTracing");
 	})

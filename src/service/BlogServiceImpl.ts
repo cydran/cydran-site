@@ -8,8 +8,8 @@ class BlogServiceImpl implements BlogService {
 
 	private logger: Logger = LoggerFactory.getLogger("BlogServiceImpl");
 
-	constructor() {
-		this.pubSub = new PubSub(this);
+	constructor(pubSub: PubSub) {
+		this.pubSub = pubSub;
 	}
 
 	public load(): void {
