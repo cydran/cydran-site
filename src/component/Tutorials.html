@@ -192,6 +192,25 @@
 				</template>
 			</ul>
 
+			<br>
+
+			<input c:model="m().filterString" />
+
+			<h1>Before Filtered</h1>
+
+			<ul c:repeat="m().filtered.items()" c:repeat:mode="generated">
+				<template type="empty">
+					<li>This is really empty!</li>
+				</template>
+				<template type="item">
+					<li>
+						{{value().title}}
+					</li>
+				</template>
+			</ul>
+
+			<h1>After Filtered</h1>
+
 			<table class="table is-striped is-fullwidth">
 				<thead>
 					<tr>

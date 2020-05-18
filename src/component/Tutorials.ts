@@ -1,4 +1,4 @@
-import { Component } from "cydran";
+import { Component, Filter, filterBuilder } from "cydran";
 import TEMPLATE from "./Tutorials.html";
 import CONTENT from "./Tutorials.md";
 import BlogService from "../service/BlogService";
@@ -13,7 +13,7 @@ class Tutorials extends Component {
 
 	private blogService: BlogService;
 
-	private filter: RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
+	private regex: RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
 
 	private address: any;
 
@@ -69,19 +69,30 @@ class Tutorials extends Component {
 		title: string
 	}[];
 
+	private filtered: Filter;
+
+	private filterString: string;
+
 	constructor() {
 		super(TEMPLATE);
 		this.blogService = this.get('blogService');
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);
 		this.watch("m().myField", (previous: any, current: any) => {
-			this.myField = current.replace(this.filter, '');
+			this.myField = current.replace(this.regex, '');
 		});
 
 		this.myField = "Kilroy was here";
 		this.mdContent = CONTENT;
 		this.items = [
 		];
+
+		this.filterString = "blah";
+
+		this.filtered = filterBuilder(this, "m().items")
+			.withPredicate("m().filterString.length === 0 || v().title && v().title.indexOf(p(0)) !== -1", "m().filterString")
+			.withSort("compare.alpha(a().title, b().title) * p(0) ? -1 : 1", "m().filterString.length === 0")
+			.build();
 
 		this.counter = 0;
 		this.selectedDropdownOption = "";
