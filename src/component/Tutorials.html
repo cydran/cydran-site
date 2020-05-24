@@ -197,8 +197,14 @@
 			<input c:model="m().filterString" />
 
 			<h1>Before Filtered</h1>
+			<p>
+				Filtered: {{m().filtered.items().length}}
+			</p>
+			<p>
+				Paged: {{m().paged.items().length}}
+			</p>
 
-			<ul c:repeat="m().filtered.items()" c:repeat:mode="generated">
+			<ul c:repeat="m().paged.items()" c:repeat:mode="generated">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>

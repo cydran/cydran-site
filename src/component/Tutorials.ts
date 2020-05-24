@@ -1,14 +1,7 @@
-import { Component, Filter, filterBuilder, FilterBuilder, Watchable } from "cydran";
+import { Component, Filter, Filters, Watchable } from "cydran";
 import TEMPLATE from "./Tutorials.html";
 import CONTENT from "./Tutorials.md";
 import BlogService from "../service/BlogService";
-
-function createCoolFilter(watchable: Watchable): FilterBuilder {
-	return filterBuilder(watchable, "m().items")
-		.withPredicate("m().filterString.length === 0 || v().title && v().title.indexOf(p(0)) !== -1", "m().filterString")
-		.withSort("compare.alpha(a().title, b().title) * p(0) ? -1 : 1", "m().filterString.length === 0")
-		.withLimit(5)
-}
 
 class Tutorials extends Component {
 
@@ -78,6 +71,8 @@ class Tutorials extends Component {
 
 	private filtered: Filter;
 
+	private paged: Filter;
+
 	private filterString: string;
 
 	constructor() {
@@ -96,7 +91,14 @@ class Tutorials extends Component {
 
 		this.filterString = "blah";
 
-		this.filtered = createCoolFilter(this).build();
+		this.filtered = Filters.builder(this, "m().items")
+			.withPredicate("m().filterString.length === 0 || v().title && v().title.indexOf(p(0)) !== -1", "m().filterString")
+			.build();
+
+		this.paged = this.filtered.extend()
+			.withLimit(3)
+			.withSort("compare.alpha(a().title, b().title) * p(0) ? -1 : 1", "m().filterString.length === 0")
+			.build();
 
 		this.counter = 0;
 		this.selectedDropdownOption = "";
