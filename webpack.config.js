@@ -1,21 +1,20 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 const path = require("path");
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
 	template: "./src/index.html",
 	filename: "./index.html"
 });
-
-const copyWebpackPlugin = new CopyWebpackPlugin([
-	{
-		from: 'src/static',
-		to: 'static'
-	}
-]);
-
+const copyWebpackPlugin = new CopyWebpackPlugin({
+	patterns: [
+		{
+			from: "src/static",
+			to: "static"
+		}
+	]
+});
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
 	filename: `[name].css`
 });
