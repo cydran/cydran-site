@@ -26,7 +26,7 @@ module.exports = {
 	entry: path.join(__dirname, "src/index.ts"),
 	devServer: {
 		port: 8085,
-		host: "0.0.0.0"
+		host: "localhost"
 	},
 	//    devtool: 'source-map',
 	output: {
