@@ -9,8 +9,6 @@ class Tutorials extends Component {
 
 	private myField: string;
 
-	private errorMessage: string;
-
 	private blogService: BlogService;
 
 	private regex: RegExp = new RegExp("[^a-zA-Z0-9\ ]+");
