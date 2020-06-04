@@ -1,4 +1,4 @@
-import { Component, Filter, Filters, Watchable } from "cydran";
+import { Component, Filter, Filters, Watchable, PagedFilter } from "cydran";
 import TEMPLATE from "./Tutorials.html";
 import CONTENT from "./Tutorials.md";
 import BlogService from "../service/BlogService";
@@ -69,11 +69,7 @@ class Tutorials extends Component {
 		title: string
 	}[];
 
-	private filtered: Filter;
-
-	private paged: Filter;
-
-	private filterString: string;
+	private filtered: PagedFilter;
 
 	constructor() {
 		super(TEMPLATE);
@@ -89,16 +85,8 @@ class Tutorials extends Component {
 		this.items = [
 		];
 
-		this.filterString = "blah";
-
-		this.filtered = Filters.builder(this, "m().items")
-			.withPredicate("m().filterString.length === 0 || v().title && v().title.indexOf(p(0)) !== -1", "m().filterString")
-			.build();
-
-		this.paged = this.filtered.extend()
-			.withLimit(3)
-			.withSort("compare.alpha(a().title, b().title) * p(0) ? -1 : 1", "m().filterString.length === 0")
-			.build();
+		this.filtered = Filters.builder(this, "m().items").paged();
+		this.filtered.setPageSize(3);
 
 		this.counter = 0;
 		this.selectedDropdownOption = "";

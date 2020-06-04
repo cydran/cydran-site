@@ -194,17 +194,34 @@
 
 			<br>
 
-			<input c:model="m().filterString" />
+			<button c:onclick="m().filtered.toStart()">&lt;&lt;</button>
+			<button c:onclick="m().filtered.toPrevious()">&lt;</button>
 
-			<h1>Before Filtered</h1>
+			<p>
+				Page: {{m().filtered.getPage()}}
+			</p>
+
+			<p>
+				Total Pages: {{m().filtered.getTotalPages()}}
+			</p>
+
+			<p>
+				Page Size: {{m().filtered.getPageSize()}}
+			</p>
+
 			<p>
 				Filtered: {{m().filtered.items().length}}
 			</p>
 			<p>
-				Paged: {{m().paged.items().length}}
+				Paged: {{m().filtered.items().length}}
 			</p>
 
-			<ul c:repeat="m().paged.items()" c:repeat:mode="generated">
+			<button c:onclick="m().filtered.toNext()">&gt;</button>
+			<button c:onclick="m().filtered.toEnd()">&gt;&gt;</button>
+
+			<h1>Before Filtered</h1>
+
+			<ul c:repeat="m().filtered.items()" c:repeat:mode="generated">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>
