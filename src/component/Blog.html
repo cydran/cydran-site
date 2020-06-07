@@ -1,4 +1,5 @@
 <div class="container">
+
 	<div>
 		{{i18n('title.label')}}: <input type="text" b:model="m().post.title" /><br />
 		{{upper(m().post.title)}}<br />
@@ -6,6 +7,7 @@
 		<textarea b:model="m().post.body" style="min-width: 400px; min-height: 200px;"></textarea>
 		<button b:onclick="m().add()">Add</button>
 	</div>
+
 	<section b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
 		<template type="empty">
 			<p>No posts yet...</p>
@@ -17,6 +19,7 @@
 			</article>
 		</template>
 	</section>
+
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
 	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
@@ -27,5 +30,14 @@
 			<b:component name="repeatItem"></b:component>
 		</template>
 	</ul>
+
+	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
+		<template type="item">
+			<li>
+				<img src="{{v().title + '.jpg'}}" />
+			</li>
+		</template>
+	</ul>
+
 
 </div>

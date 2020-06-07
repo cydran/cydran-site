@@ -194,8 +194,8 @@
 
 			<br>
 
-			<button c:onclick="m().filtered.toStart()" c:enabled="m().filtered.getPage() > 0">&lt;&lt;</button>
-			<button c:onclick="m().filtered.toPrevious()" c:enabled="m().filtered.getPage() > 0">&lt;</button>
+			<button c:onclick="m().filtered.toStart()" c:enabled="m().filtered.isMoreBefore()">&lt;&lt;</button>
+			<button c:onclick="m().filtered.toPrevious()" c:enabled="m().filtered.isMoreBefore()">&lt;</button>
 
 			<p>
 				Page: {{m().filtered.getPage()}}
@@ -216,8 +216,8 @@
 				Paged: {{m().filtered.items().length}}
 			</p>
 
-			<button c:onclick="m().filtered.toNext()" c:enabled="m().filtered.getPage() < (m().filtered.getTotalPages() - 1)">&gt;</button>
-			<button c:onclick="m().filtered.toEnd()" c:enabled="m().filtered.getPage() < (m().filtered.getTotalPages() - 1)">&gt;&gt;</button>
+			<button c:onclick="m().filtered.toNext()" c:enabled="m().filtered.isMoreAfter()">&gt;</button>
+			<button c:onclick="m().filtered.toEnd()" c:enabled="m().filtered.isMoreAfter()">&gt;&gt;</button>
 
 			<h1>Before Filtered</h1>
 
