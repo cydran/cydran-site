@@ -7,7 +7,7 @@
 		<div class="container column" c:style="{border: '1px solid', borderColor: m().color}">
 
 			<button c:onclick="m().loadBlog()">Load Blog</button><br /><br />
-			<button c:onclick="console.log(event)">Fire Event</button><br /><br />
+			<button c:onclick="console.log($event)">Fire Event</button><br /><br />
 
 			<input type="text" c:model="m().myField" />
 			<button c:onclick="m().handleMyClick()" c:enabled="m().myField.length > 0">Click Me!</button>

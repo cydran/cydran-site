@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { builder, Stage } from "cydran";
+import { builder, Stage, HOOKS } from "cydran";
 import mediatorCapability from "./mediator/";
 import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
