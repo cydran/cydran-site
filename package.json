@@ -1,42 +1,42 @@
 {
-  "name": "cydran-site",
-  "version": "1.0.0",
-  "description": "Cydran Site",
-  "main": "index.js",
-  "scripts": {
-    "start": "npx webpack-dev-server --mode development --open",
-    "build": "npx webpack --mode production",
-    "clean": "npx rimraf dist"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "7.10.2",
-    "babel-core": "6.26.3",
-    "babel-loader": "8.1.0",
-    "babel-preset-env": "1.7.0",
-    "contents-loader": "^1.0.0",
-    "copy-webpack-plugin": "6.0.2",
-    "css-loader": "3.5.3",
-    "file-loader": "6.0.0",
-    "html-webpack-plugin": "4.3.0",
-    "mini-css-extract-plugin": "0.9.0",
-    "node-sass": "4.14.1",
-    "raw-loader": "4.0.1",
-    "rimraf": "3.0.2",
-    "sass-loader": "8.0.2",
-    "style-loader": "1.2.1",
-    "ts-loader": "7.0.5",
-    "typescript": "3.9.5",
-    "webpack": "4.43.0",
-    "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.11.0"
-  },
-  "dependencies": {
-    "axios": "0.19.2",
-    "bulma": "0.8.2",
-    "cydran": "0.1.21",
-    "markdown": "^0.5.0",
-    "navigo": "^7.1.2"
-  }
+	"name": "cydran-site",
+	"version": "1.0.0",
+	"description": "Cydran Site",
+	"main": "index.js",
+	"scripts": {
+		"start": "npx webpack-dev-server --mode development --open",
+		"build": "npx webpack --mode production",
+		"clean": "npx rimraf dist"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "7.10.2",
+		"babel-core": "6.26.3",
+		"babel-loader": "8.1.0",
+		"babel-preset-env": "1.7.0",
+		"contents-loader": "^1.0.0",
+		"copy-webpack-plugin": "6.0.2",
+		"css-loader": "3.5.3",
+		"file-loader": "6.0.0",
+		"html-webpack-plugin": "4.3.0",
+		"mini-css-extract-plugin": "0.9.0",
+		"node-sass": "4.14.1",
+		"raw-loader": "4.0.1",
+		"rimraf": "3.0.2",
+		"sass-loader": "8.0.2",
+		"style-loader": "1.2.1",
+		"ts-loader": "7.0.5",
+		"typescript": "3.9.5",
+		"webpack": "4.43.0",
+		"webpack-cli": "3.3.11",
+		"webpack-dev-server": "3.11.0"
+	},
+	"dependencies": {
+		"axios": "0.19.2",
+		"bulma": "0.8.2",
+		"cydran": "0.1.22",
+		"markdown": "^0.5.0",
+		"navigo": "^7.1.2"
+	}
 }

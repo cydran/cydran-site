@@ -50,11 +50,11 @@
 			<ul c:repeat="m().items" c:repeat:mode="generated">
 				<template type="empty">
 					<!-- Comment before -->
-					<c:component name="repeatEmpty"></c:component>
+					<c:region component="repeatEmpty"></c:region>
 					<!-- Comment after -->
 				</template>
 				<template type="item">
-					<c:component name="repeatItem"></c:component>
+					<c:region component="repeatItem"></c:region>
 				</template>
 			</ul>
 
@@ -256,7 +256,7 @@
 				</tbody>
 			</table>
 
-			<c:component name="calendar" c:property-theColor="m().color"></c:component>
+			<c:region component="calendar" value="m()"></c:region>
 
 			<div class="buttons">
 				<button class="button" c:onclick="m().sendUpdate()">Update Name</button>

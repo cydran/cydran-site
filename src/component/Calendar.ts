@@ -1,4 +1,4 @@
-import { Component, ComponentConfigBuilder } from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./Calendar.html";
 
 class Calendar extends Component {
@@ -6,7 +6,7 @@ class Calendar extends Component {
 	private localValue: string;
 
 	constructor() {
-		super(TEMPLATE, new ComponentConfigBuilder().withAttribute("thecolor").build());
+		super(TEMPLATE);
 		this.on("testMessage").forChannel("testGlobal").invoke(this.reset);
 		this.reset();
 	}
@@ -16,9 +16,9 @@ class Calendar extends Component {
 	}
 
 	public handleClick(): void {
-		console.log(this.getExternals());
-		this.getExternals()["thecolor"] = "#ff0000";
-		console.log(this.getExternals());
+		console.log(this.getValue());
+		this.getValue()["color"] = "#ff0000";
+		console.log(this.getValue());
 	}
 
 }

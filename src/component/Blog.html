@@ -24,10 +24,10 @@
 
 	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
 		<template type="empty">
-			<b:component name="repeatEmpty"></b:component>
+			<b:region component="repeatEmpty"></b:region>
 		</template>
 		<template type="item">
-			<b:component name="repeatItem"></b:component>
+			<b:region component="repeatItem"></b:region>
 		</template>
 	</ul>
 

@@ -11,7 +11,7 @@ const bundle: any = {
 	"title.label": "Blog Post Title"
 }
 
-builder("body")
+const stage: Stage =builder("body")
 	.withInfoLogging()
 	.withSingleton('router', Router, ["$pubSub"])
 	.withScopeItem('bundle', bundle)
@@ -30,5 +30,41 @@ builder("body")
 		router.start();
 		stage.broadcast("devTools", "enableDigestTracing");
 	})
-	.build()
-	.start();
+	.build();
+
+class A {
+
+	public doSomething(): string {
+		return "doSomething";
+	}
+
+}
+
+class B extends A {
+
+	public doSomethingElse(): string {
+		return "doSomethingElse";
+	}
+
+}
+
+class C extends A {
+
+	public doSomethingMore(): string {
+		return "doSomethingMore";
+	}
+
+}
+
+class D extends C {
+
+	public doEvenMore(): string {
+		return "doEvenMore";
+	}
+
+}
+
+window["cydraninspect"] = new D();
+
+stage.start();
+
