@@ -48,14 +48,10 @@
 			<br />
 
 			<ul c:repeat="m().items" c:repeat:mode="generated">
-				<template type="empty">
-					<!-- Comment before -->
-					<c:region component="repeatEmpty"></c:region>
-					<!-- Comment after -->
+				<template type="empty" component="repeatEmpty">
+					<!-- Just a comment -->
 				</template>
-				<template type="item">
-					<c:region component="repeatItem"></c:region>
-				</template>
+				<template type="item" component="repeatItem"></template>
 			</ul>
 
 			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items" c:repeat:mode="generated">

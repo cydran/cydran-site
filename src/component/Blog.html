@@ -23,12 +23,8 @@
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
 	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
-		<template type="empty">
-			<b:region component="repeatEmpty"></b:region>
-		</template>
-		<template type="item">
-			<b:region component="repeatItem"></b:region>
-		</template>
+		<template type="empty" component="repeatEmpty"></template>
+		<template type="item" component="repeatItem"></template>
 	</ul>
 
 </div>
