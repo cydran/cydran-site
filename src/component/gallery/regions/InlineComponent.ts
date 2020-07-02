@@ -1,5 +1,6 @@
 import { Component } from "cydran";
 import TEMPLATE from "./InlineComponent.html";
+import Item from "./Item";
 
 class InlineComponent extends Component {
 
@@ -8,7 +9,8 @@ class InlineComponent extends Component {
 	}
 
 	public hello(): void {
-		window.alert("Hello " + this.getValue()["firstName"] + "!");
+		const person: Item = this.getValue();
+		window.alert("Hello " + person.firstName + "!");
 	}
 
 }
