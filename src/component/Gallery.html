@@ -4,7 +4,7 @@
 		<div class="column is-one-fifth">
 
 			<aside class="menu">
-				<ul class="menu-list" c:repeat="m().items" c:repeat:mode="none">
+				<ul class="menu-list" c:each="m().items" c:each:mode="none">
 					<template type="item">
 						<li>
 							<a href="javascript: void(0);" c:class="{'is-active': m().activeItem === v().id}" c:onclick="m().show(v().id)">{{v().title}}</a>
