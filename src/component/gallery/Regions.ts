@@ -2,14 +2,7 @@ import { Component } from "cydran";
 import TEMPLATE from "./Regions.html";
 import UlComponent from "./regions/UlComponent";
 import InlineComponent from "./regions/InlineComponent";
-
-interface Item {
-
-	firstName: string;
-
-	lastName: string;
-
-}
+import Item from "./regions/Item";
 
 class Regions extends Component {
 
