@@ -8,21 +8,21 @@
 		<button b:onclick="m().add()">Add</button>
 	</div>
 
-	<section b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
+	<section b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
 		<template type="empty">
 			<p>No posts yet...</p>
 		</template>
 		<template type="item">
 			<article>
-				<h2>{{value().title}}</h2>
-				<div b:markdown="value().body"></div>
+				<h2>{{v().title}}</h2>
+				<div b:markdown="v().body"></div>
 			</article>
 		</template>
 	</section>
 
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
-	<ul b:repeat="m().posts" b:repeat:mode="expression" b:repeat:expression="v().title + '!'">
+	<ul b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
 		<template type="empty" component="repeatEmpty"></template>
 		<template type="item" component="repeatItem"></template>
 	</ul>

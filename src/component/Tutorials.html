@@ -20,7 +20,7 @@
 			<br />
 			<br />
 			Color: <input type="text" c:model="m().color" />
-			<button class="button is-rounded" c:onclick="model().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
+			<button class="button is-rounded" c:onclick="m().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
 			<br />
 			<br />
 			Editable: {{m().lineEditable}}<br />
@@ -47,14 +47,14 @@
 			<br />
 			<br />
 
-			<ul c:repeat="m().items" c:repeat:mode="generated">
+			<ul c:each="m().items" c:each:mode="generated">
 				<template type="empty" component="repeatEmpty">
 					<!-- Just a comment -->
 				</template>
 				<template type="item" component="repeatItem"></template>
 			</ul>
 
-			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items" c:repeat:mode="generated">
+			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
 				<template type="empty">
 					<p>
 						Nothing here yet!
@@ -62,7 +62,7 @@
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="value().title">
+						<input type="text" c:model="v().title">
 						<button c:onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
@@ -112,14 +112,14 @@
 				</svg>
 			</div>
 			<br />
-			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
+			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{value().value}}">{{value().name}}</option>
+					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
-			<select style="width: 150px;" c:repeat="m().insideList" c:repeat:mode="generated" c:repeat:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
+			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
 				<template type="item">
-					<option value="{{value().value}}">{{value().name}}</option>
+					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
 			<br />
@@ -128,20 +128,20 @@
 			<input type="text" size="25" c:model="m().sillypass" />
 			<br />
 			<br />
-			<div c:repeat="m().radioList" c:repeat:mode="generated">
+			<div c:each="m().radioList" c:each:mode="generated">
 				<template type="item">
 					<div>
-						<input type="radio" name="radiocount" value="{{value().id}}" id="{{'rad_' + value().id}}" c:model="m().radioChoice" />
-						<label for="{{'rad_' + value().id}}">{{value().label}}</label>
+						<input type="radio" name="radiocount" value="{{v().id}}" id="{{'rad_' + v().id}}" c:model="m().radioChoice" />
+						<label for="{{'rad_' + v().id}}">{{v().label}}</label>
 					</div>
 				</template>
 			</div>
 			{{m().radioChoice}}: <input type="text" size="5" c:model="m().radioChoice" />
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:repeat="m().items" c:repeat:mode="generated">
+			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
 				<template type="item">
-					<option value="{{value().id}}">{{value().title}}</option>
+					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
 			<br />
@@ -149,7 +149,7 @@
 			!!{{m().selectedDropdownOption}}!!
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:repeat="m().items" c:repeat:mode="generated">
+			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
 				<template type="empty">
 					<option value="" disabled selected>Select your option</option>
 				</template>
@@ -157,13 +157,13 @@
 					<option disabled selected>Select One...</option>
 				</template>
 				<template type="item">
-					<option value="{{value().id}}">{{value().title}}</option>
+					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
 			<br />
 			<br />
 
-			<ul c:class="{populated: m().items.length > 0}" c:repeat="m().items" c:repeat:mode="generated">
+			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
 				<template type="empty">
 					<p>
 						Nothing here yet!
@@ -171,19 +171,19 @@
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="value().title">
+						<input type="text" c:model="v().title">
 						<button c:onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ul>
 
-			<ul c:repeat="m().items" c:repeat:mode="generated">
+			<ul c:each="m().items" c:each:mode="generated">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>
 				<template type="item">
 					<li>
-						<input type="text" c:model="value().title">
+						<input type="text" c:model="v().title">
 					</li>
 				</template>
 			</ul>
@@ -217,13 +217,13 @@
 
 			<h1>Before Filtered</h1>
 
-			<ul c:repeat="m().filtered.items()" c:repeat:mode="generated">
+			<ul c:each="m().filtered.items()" c:each:mode="generated">
 				<template type="empty">
 					<li>This is really empty!</li>
 				</template>
 				<template type="item">
 					<li>
-						{{value().title}}
+						{{v().title}}
 					</li>
 				</template>
 			</ul>
@@ -236,7 +236,7 @@
 						<th>Column 1</th>
 					</tr>
 				</thead>
-				<tbody c:repeat="m().items" c:repeat:mode="generated">
+				<tbody c:each="m().items" c:each:mode="generated">
 					<template type="empty">
 						<tr>
 							<td>This is really empty!</td>
@@ -245,7 +245,7 @@
 					<template type="item">
 						<tr>
 							<td>
-								<input type="text" c:model="value().title"> {{value().title}}
+								<input type="text" c:model="v().title"> {{v().title}}
 							</td>
 						</tr>
 					</template>
