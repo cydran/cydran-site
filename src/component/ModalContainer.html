@@ -1,6 +1,6 @@
 <div class="modal" c:class="{'is-active': m().visible}" c:hidden="!m().visible">
-	<div class="modal-background"></div>
-	<div class="modal-card">
+	<div class="modal-background" c:if="m().visible"></div>
+	<div class="modal-card animate__animated animate__fadeIn" c:if="m().visible">
 		<header class="modal-card-head">
 			<p class="modal-card-title">{{m().title}}</p>
 			<button class="delete" aria-label="close" c:if="m().closeable" c:onclick="m().hideModal()"></button>
