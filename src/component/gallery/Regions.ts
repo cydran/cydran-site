@@ -12,7 +12,6 @@ class Regions extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-		this.useUlComponent();
 		this.items = [
 			{
 				firstName: "James",
@@ -29,6 +28,7 @@ class Regions extends Component {
 		];
 
 		this.index = 0;
+		this.useUlComponent();
 	}
 
 	public useItem(index: number): void {
