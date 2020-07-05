@@ -9,10 +9,10 @@
 	</div>
 
 	<section b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
-		<template type="empty">
+		<template b:type="empty">
 			<p>No posts yet...</p>
 		</template>
-		<template type="item">
+		<template b:type="item">
 			<article>
 				<h2>{{v().title}}</h2>
 				<div b:markdown="v().body"></div>
@@ -23,8 +23,8 @@
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
 	<ul b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
-		<template type="empty" component="repeatEmpty"></template>
-		<template type="item" component="repeatItem"></template>
+		<template b:type="empty" b:component="repeatEmpty"></template>
+		<template b:type="item" b:component="repeatItem"></template>
 	</ul>
 
 </div>

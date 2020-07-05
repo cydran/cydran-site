@@ -48,19 +48,19 @@
 			<br />
 
 			<ul c:each="m().items" c:each:mode="generated">
-				<template type="empty" component="repeatEmpty">
+				<template c:type="empty" c:component="repeatEmpty">
 					<!-- Just a comment -->
 				</template>
-				<template type="item" component="repeatItem"></template>
+				<template c:type="item" c:component="repeatItem"></template>
 			</ul>
 
 			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
-				<template type="empty">
+				<template c:type="empty">
 					<p>
 						Nothing here yet!
 					</p>
 				</template>
-				<template type="item">
+				<template c:type="item">
 					<li>
 						<input type="text" c:model="v().title">
 						<button c:onclick="m().removeItem(v().id)">Remove</button>
@@ -113,12 +113,12 @@
 			</div>
 			<br />
 			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template type="item">
+				<template c:type="item">
 					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
 			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template type="item">
+				<template c:type="item">
 					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
@@ -129,7 +129,7 @@
 			<br />
 			<br />
 			<div c:each="m().radioList" c:each:mode="generated">
-				<template type="item">
+				<template c:type="item">
 					<div>
 						<input type="radio" name="radiocount" value="{{v().id}}" id="{{'rad_' + v().id}}" c:model="m().radioChoice" />
 						<label for="{{'rad_' + v().id}}">{{v().label}}</label>
@@ -140,7 +140,7 @@
 			<br />
 			<br />
 			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
-				<template type="item">
+				<template c:type="item">
 					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
@@ -150,13 +150,13 @@
 			<br />
 			<br />
 			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
-				<template type="empty">
+				<template c:type="empty">
 					<option value="" disabled selected>Select your option</option>
 				</template>
-				<template type="first">
+				<template c:type="first">
 					<option disabled selected>Select One...</option>
 				</template>
-				<template type="item">
+				<template c:type="item">
 					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
@@ -164,12 +164,12 @@
 			<br />
 
 			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
-				<template type="empty">
+				<template c:type="empty">
 					<p>
 						Nothing here yet!
 					</p>
 				</template>
-				<template type="item">
+				<template c:type="item">
 					<li>
 						<input type="text" c:model="v().title">
 						<button c:onclick="m().removeItem(v().id)">Remove</button>
@@ -178,10 +178,10 @@
 			</ul>
 
 			<ul c:each="m().items" c:each:mode="generated">
-				<template type="empty">
+				<template c:type="empty">
 					<li>This is really empty!</li>
 				</template>
-				<template type="item">
+				<template c:type="item">
 					<li>
 						<input type="text" c:model="v().title">
 					</li>
@@ -218,10 +218,10 @@
 			<h1>Before Filtered</h1>
 
 			<ul c:each="m().filtered.items()" c:each:mode="generated">
-				<template type="empty">
+				<template c:type="empty">
 					<li>This is really empty!</li>
 				</template>
-				<template type="item">
+				<template c:type="item">
 					<li>
 						{{v().title}}
 					</li>
@@ -237,12 +237,12 @@
 					</tr>
 				</thead>
 				<tbody c:each="m().items" c:each:mode="generated">
-					<template type="empty">
+					<template c:type="empty">
 						<tr>
 							<td>This is really empty!</td>
 						</tr>
 					</template>
-					<template type="item">
+					<template c:type="item">
 						<tr>
 							<td>
 								<input type="text" c:model="v().title"> {{v().title}}
@@ -252,7 +252,7 @@
 				</tbody>
 			</table>
 
-			<script type="cydran/region" component="calendar" value="m()"></script>
+			<script type="cydran/region" c:component="calendar" c:value="m()"></script>
 
 			<div class="buttons">
 				<button class="button" c:onclick="m().sendUpdate()">Update Name</button>

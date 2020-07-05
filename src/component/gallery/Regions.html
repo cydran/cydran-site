@@ -2,7 +2,7 @@
 
 	<h1 class="title is-2">Regions</h1>
 
-	<script type="cydran/region" name="item" value="m().items[m().index]"></script>
+	<script type="cydran/region" c:name="item" c:value="m().items[m().index]"></script>
 
 	<button c:onclick="m().useUlComponent()">Use UL Component</button>
 	<button c:onclick="m().useInlineComponent()">Use Inline Component</button>
@@ -14,7 +14,7 @@
 	<h2>Repeat</h2>
 
 	<ul c:each="m().items" c:each:mode="generated">
-		<template type="item" component="inline"></template>
+		<template c:type="item" c:component="inline"></template>
 	</ul>
 
 </div>
