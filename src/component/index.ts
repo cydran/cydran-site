@@ -21,7 +21,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("page:docs", Docs)
 		.withPrototype("page:notFound", NotFound)
 		.withSingleton("page:tutorials", Tutorials)
-		.withSingleton("page:gallery", Gallery)
+		.withPrototype("page:gallery", Gallery)
 		.withPrototype("helloWorld2", Tutorials)
 		.withPrototype('page:community', Community)
 		.withPrototype("page:blog", Blog)
