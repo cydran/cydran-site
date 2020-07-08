@@ -1,4 +1,4 @@
-import { ElementMediator } from "cydran";
+import { ElementMediator, Validators } from "cydran";
 import { markdown } from "markdown";
 
 class Markdown extends ElementMediator<string, HTMLElement, any> {
@@ -13,6 +13,10 @@ class Markdown extends ElementMediator<string, HTMLElement, any> {
 
 	protected onTargetChange(previous: string, current: string): void {
 		this.setMarkdown(current);
+	}
+
+	protected validate(element: HTMLElement, check: (name: string, value?: any) => Validators): void {
+		// Intentionally do nothing
 	}
 
 	private setMarkdown(source: string): void {
