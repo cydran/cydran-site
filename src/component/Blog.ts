@@ -24,7 +24,7 @@ class Blog extends Component {
 
 	private posts: Post[];
 
-	constructor() {
+	constructor(somethingCool: string) {
 		super(TEMPLATE, new ComponentConfigBuilder().withPrefix("b").build());
 		this.blogService = this.get('blogService');
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
@@ -34,6 +34,7 @@ class Blog extends Component {
 		this.idCounter = 0;
 		this.loading = false;
 		this.resetPost();
+		this.getLogger().info(somethingCool);
 	}
 
 	public blogUpdated(data: any): void {

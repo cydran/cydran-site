@@ -6,20 +6,13 @@ import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
 import "./main.scss";
 import { galleryCapability } from "./component/gallery/";
-
-const bundle: any = {
-	"home.hero.title": "Cydran",
-	"home.hero.tagline": "An unobtrusive JavaScript library for building user interfaces",
-	"home.hero.get-started": "Get Started",
-	"home.hero.take-the-tutorial": "Take the Tutorial",
-	"home.copyright": "2018 The Cydran Team",
-	"title.label": "Blog Post Title"
-};
+import BUNDLE from "./bundle.json";
+import PROPERTIES from "./properties.json";
 
 const LOGGER: Logger = LoggerFactory.getLogger("Index");
 
 function i18n(key: string) {
-	const result: string = bundle[key];
+	const result: string = BUNDLE[key];
 	LOGGER.debug("I18N - key: " + key + " value: " + result);
 
 	return result;
@@ -28,7 +21,7 @@ function i18n(key: string) {
 const stage: Stage = builder("body")
 	.withDebugLogging()
 	.withSingleton('router', Router, ["$pubSub"])
-	.withScopeItem('bundle', bundle)
+	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)
 	.withScopeItem('upper', (str: string) => str.toUpperCase())
 	.withScopeItem('lower', (str: string) => str.toLowerCase())
@@ -37,6 +30,7 @@ const stage: Stage = builder("body")
 	.withCapability(galleryCapability)
 	.withCapability(modalCapability)
 	.withCapability(serviceCapability)
+	.withProperties(PROPERTIES)
 	.withInitializer((stage: Stage) => {
 		stage.setComponent(new App());
 		let router: Router = stage.get('router');
@@ -46,39 +40,4 @@ const stage: Stage = builder("body")
 	})
 	.build();
 
-class A {
-
-	public doSomething(): string {
-		return "doSomething";
-	}
-
-}
-
-class B extends A {
-
-	public doSomethingElse(): string {
-		return "doSomethingElse";
-	}
-
-}
-
-class C extends A {
-
-	public doSomethingMore(): string {
-		return "doSomethingMore";
-	}
-
-}
-
-class D extends C {
-
-	public doEvenMore(): string {
-		return "doEvenMore";
-	}
-
-}
-
-window["cydraninspect"] = new D();
-
 stage.start();
-

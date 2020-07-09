@@ -24,7 +24,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("page:gallery", Gallery)
 		.withPrototype("helloWorld2", Tutorials)
 		.withPrototype('page:community', Community)
-		.withPrototype("page:blog", Blog)
+		.withPrototype("page:blog", Blog, ["$prop:something.cool"])
 		.withPrototype("helloWorld", HelloWorld)
 		.withPrototype("repeatItem", RepeatItem)
 		.withPrototype("repeatEmpty", Empty)
