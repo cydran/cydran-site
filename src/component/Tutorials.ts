@@ -31,7 +31,7 @@ class Tutorials extends Component {
 
 	private selectedDropdownOption: string;
 
-	private myValues: string[] = [];
+	private myValues: string[];
 
 	private hideImage: boolean = true;
 
@@ -104,6 +104,8 @@ class Tutorials extends Component {
 		this.color = "#97c024";
 		this.hideImage = true;
 		this.escapedString = "first & second > < >";
+		this.myValues = ["2", "4"];
+
 	}
 
 	public toggleImage(): void {
