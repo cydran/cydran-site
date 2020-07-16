@@ -30,7 +30,13 @@ class Blog extends Component {
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);
-		this.posts = [];
+		this.posts = [
+			{
+				id: "1",
+				title: "An immutable post",
+				body: "Body text"
+			}
+		];
 		this.idCounter = 0;
 		this.loading = false;
 		this.resetPost();

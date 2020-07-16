@@ -38,7 +38,7 @@ class Tutorials extends Component {
 	private escapedString: string;
 
 	private insideList:
-		{ name: string, value: number }[]
+		{ name: string, value: number; }[]
 		= [
 			{ name: 'Name 1', value: 1 },
 			{ name: 'Name 2', value: 2 },
@@ -48,7 +48,7 @@ class Tutorials extends Component {
 		];
 
 	private radioList:
-		{ label: string, id: string | number }[]
+		{ label: string, id: string | number; }[]
 		= [
 			{ id: 0, label: "Zero" },
 			{ id: 1, label: "One" },
@@ -59,12 +59,12 @@ class Tutorials extends Component {
 
 	private posts: {
 		title: string,
-		body: string
+		body: string;
 	}[];
 
 	private items: {
 		id?: number | string,
-		title: string
+		title: string;
 	}[];
 
 	private filtered: PagedFilter;
@@ -174,11 +174,15 @@ class Tutorials extends Component {
 			title: "Blog",
 			name: "wazzup",
 			closeable: true
-		})
+		});
 	}
 
 	public focusLastName(): void {
 		this.forElement("lastName").focus();
+	}
+
+	public showProperty(): void {
+		window.alert(this.getProperties().get("something.cool"));
 	}
 
 }

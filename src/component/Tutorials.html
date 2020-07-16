@@ -6,6 +6,8 @@
 
 		<div class="container column" c:style="{border: '1px solid', borderColor: m().color}">
 
+			<button c:onclick="m().showProperty()">Show Property</button>
+
 			<button c:onclick="m().loadBlog()">Load Blog</button><br /><br />
 			<button c:onclick="console.log($event)">Fire Event</button><br /><br />
 
@@ -25,6 +27,8 @@
 			<br />
 			Editable: {{m().lineEditable}}<br />
 			<input type="text" c:model="m().firstNameMaxLength" />
+			<div data-address="[[m().address.line1]]"></div>
+
 			FNMN: {{m().firstNameMaxLength}}<br />
 			<input type="text" c:model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
 			<input type="text" c:model="{{m().address.lastName}}" c:id="lastName" /><br />

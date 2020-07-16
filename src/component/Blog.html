@@ -22,9 +22,19 @@
 
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 
+	<h1>Mutable</h1>
+
 	<ul b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
 		<template b:type="empty" b:component="repeatEmpty"></template>
 		<template b:type="item" b:component="repeatItem"></template>
 	</ul>
+
+	<h1>Immutable</h1>
+
+	<ul b:each="[[m().posts]]" b:each:mode="expression" b:each:expression="v().title + '!'">
+		<template b:type="empty" b:component="repeatEmpty"></template>
+		<template b:type="item" b:component="repeatItem"></template>
+	</ul>
+
 
 </div>
