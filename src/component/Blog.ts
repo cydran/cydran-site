@@ -1,4 +1,4 @@
-import { Component, ComponentConfigBuilder, Events } from "cydran";
+import { Component, Events } from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
@@ -25,7 +25,7 @@ class Blog extends Component {
 	private posts: Post[];
 
 	constructor(somethingCool: string) {
-		super(TEMPLATE, new ComponentConfigBuilder().withPrefix("b").build());
+		super(TEMPLATE, { prefix: "b" });
 		this.blogService = this.get('blogService');
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);

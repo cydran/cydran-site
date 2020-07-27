@@ -1,5 +1,6 @@
-import { Component, ComponentConfigBuilder } from "cydran";
+import { Component } from "cydran";
 import TEMPLATE from "./AbstractMarkdownComponent.html";
+import { markdown } from 'markdown';
 
 abstract class AbstractMarkdownComponent extends Component {
 
@@ -10,7 +11,12 @@ abstract class AbstractMarkdownComponent extends Component {
 	private focusForced: boolean;
 
 	constructor(title: string, markdown: string) {
-		super(TEMPLATE, new ComponentConfigBuilder().withMetadata("title", title).withMetadata("markdown", markdown).build());
+		super(TEMPLATE, {
+			metadata: {
+				title: title,
+				markdown: markdown
+			}
+		});
 		this.documentTitle = this.metadata().get("title");
 		this.markdown = this.metadata().get("markdown");
 		this.focusForced = true;

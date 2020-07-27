@@ -1,7 +1,7 @@
-import { ElementMediator, Validators } from "cydran";
+import { Validators, AbstractElementMediator } from "cydran";
 import { markdown } from "markdown";
 
-class Markdown extends ElementMediator<string, HTMLElement, any> {
+class Markdown extends AbstractElementMediator<string, HTMLElement, any> {
 
 	public wire(): void {
 		this.getModelMediator().watch(this, this.onTargetChange);

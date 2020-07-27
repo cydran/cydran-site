@@ -61,7 +61,9 @@
 			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
 				<template c:type="empty">
 					<p>
-						Nothing here yet!
+						Nothing here yet!  
+						<button c:onclick="console.log(m())">Show m()</button>
+						{{ m()?.address?.firstName }}
 					</p>
 				</template>
 				<template c:type="item">
