@@ -45,7 +45,7 @@
 			<br />
 			{{m().address.firstName}} {{m().address.lastName}}<br />
 			{{m().address.line1}}<br />
-			<span c:visible="m().address.line2.length > 0">{{m().address.line2}}<br /></span>
+			<span c:hidden="!(m().address.line2.length > 0)">{{m().address.line2}}<br /></span>
 			{{m().address.city}}, {{m().address.state}} {{m().address.postalCode}}
 			<br />
 			<br />
