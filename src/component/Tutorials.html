@@ -16,6 +16,7 @@
 			<button c:onclick="m().logItems()">Log Items</button>
 
 			This is {{m().myField}}!<br />
+			! {{ v().first }} !
 
 			<button c:onclick="m().focusLastName()">Focus Last Name</button>
 
@@ -63,7 +64,8 @@
 					<p>
 						Nothing here yet!  
 						<button c:onclick="console.log(m())">Show m()</button>
-						{{ m()?.address?.firstName }}
+						{{ m()?.address?.firstName }}<br />
+						! {{ v().first }} !
 					</p>
 				</template>
 				<template c:type="item">
