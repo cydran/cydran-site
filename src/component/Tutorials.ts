@@ -37,6 +37,8 @@ class Tutorials extends Component {
 
 	private escapedString: string;
 
+	private checked: boolean;
+
 	private insideList:
 		{ name: string, value: number; }[]
 		= [
@@ -105,7 +107,7 @@ class Tutorials extends Component {
 		this.hideImage = true;
 		this.escapedString = "first & second > < >";
 		this.myValues = ["2", "4"];
-
+		this.checked = true;
 	}
 
 	public toggleImage(): void {

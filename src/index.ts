@@ -1,7 +1,7 @@
 import App from "./component/App";
 import Router from "./Router";
-import { builder, Stage, HOOKS, Logger, LoggerFactory } from "cydran";
-import mediatorCapability from "./mediator/";
+import { builder, argumentsBuilder, Stage, HOOKS, Logger, LoggerFactory } from "cydran";
+import behaviorCapability from "./behavior";
 import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
 import "./main.scss";
@@ -20,12 +20,12 @@ function i18n(key: string) {
 
 const stage: Stage = builder("body")
 	.withDebugLogging()
-	.withSingleton('router', Router, ["$pubSub"])
+	.withSingleton('router', Router, argumentsBuilder().withPubSub().build())
 	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)
 	.withScopeItem('upper', (str: string) => str.toUpperCase())
 	.withScopeItem('lower', (str: string) => str.toLowerCase())
-	.withCapability(mediatorCapability)
+	.withCapability(behaviorCapability)
 	.withCapability(coreCapability)
 	.withCapability(galleryCapability)
 	.withCapability(modalCapability)
@@ -36,7 +36,7 @@ const stage: Stage = builder("body")
 		let router: Router = stage.get('router');
 
 		router.start();
-		stage.broadcast("devTools", "enableDigestTracing");
+		// stage.broadcast("devTools", "enableDigestTracing");
 	})
 	.build();
 

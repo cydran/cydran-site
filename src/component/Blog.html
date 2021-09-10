@@ -8,7 +8,9 @@
 		<button b:onclick="m().add()">Add</button>
 	</div>
 
-	<section b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
+	<!-- b:each:mode="expression" -->
+
+	<section b:each="m().posts" b:each:expression="v().title + '!'">
 		<template b:type="empty">
 			<p>No posts yet...</p>
 		</template>

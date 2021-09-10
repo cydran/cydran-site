@@ -26,6 +26,10 @@ abstract class AbstractMarkdownComponent extends Component {
 		this.focusForced = !this.focusForced;
 	}
 
+	public imposeFocus(): void {
+		this.forElement("focused-input").focus();
+	}
+
 }
 
 export default AbstractMarkdownComponent;
