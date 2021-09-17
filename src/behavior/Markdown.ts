@@ -3,10 +3,6 @@ import { markdown } from "markdown";
 
 class Markdown extends AbstractBehavior<string, HTMLElement, any> {
 
-	constructor() {
-		super((input) => input);
-	}
-
 	public populate(): void {
 		this.onChange(null, this.getMediator().get());
 	}
