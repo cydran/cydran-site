@@ -1,16 +1,14 @@
-import { AbstractBehavior, Validators } from "cydran";
+import { AbstractBehavior } from "cydran";
 import { markdown } from "markdown";
 
 class Markdown extends AbstractBehavior<string, HTMLElement, any> {
-
-	public populate(): void {
-		this.onChange(null, this.getMediator().get());
-	}
 
 	public onMount(): void {
 		if (this.isMutable()) {
 			this.getMediator().watch(this, this.onChange);
 		}
+
+		this.onChange(null, this.getMediator().get());
 	}
 
 	protected onChange(previous: string, current: string): void {
