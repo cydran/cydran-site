@@ -19,7 +19,7 @@ function i18n(key: string) {
 }
 
 const stage: Stage = builder("body")
-	.withDebugLogging()
+	.withTraceLogging()
 	.withSingleton('router', Router, argumentsBuilder().withPubSub().build())
 	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)

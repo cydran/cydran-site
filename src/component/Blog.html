@@ -11,10 +11,10 @@
 	<h1>before</h1>
 
 	<section b:each="m().posts" b:each:expression="v().title + '!'" b:each:mode="expression">
-		<template b:each:type="empty">
+		<template b:type="empty">
 			<p>No posts yet...</p>
 		</template>
-		<template b:each:type="item">
+		<template b:type="item">
 			<article>
 				<h2>{{v().title}}</h2>
 				<div b:markdown="v().body"></div>
@@ -29,15 +29,15 @@
 	<h1>Mutable</h1>
 
 	<ul b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
-		<template b:each:type="empty" b:each:component="repeatEmpty"></template>
-		<template b:each:type="item" b:each:component="repeatItem"></template>
+		<template b:type="empty" b:component="repeatEmpty"></template>
+		<template b:type="item" b:component="repeatItem"></template>
 	</ul>
 
 	<h1>Immutable</h1>
 
 	<ul b:each="[[m().posts]]" b:each:mode="expression" b:each:expression="v().title + '!'">
-		<template b:each:type="empty" b:each:component="repeatEmpty"></template>
-		<template b:each:type="item" b:each:component="repeatItem"></template>
+		<template b:type="empty" b:component="repeatEmpty"></template>
+		<template b:type="item" b:component="repeatItem"></template>
 	</ul>
 
 
