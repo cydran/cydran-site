@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { builder, argumentsBuilder, Stage, HOOKS, Logger, LoggerFactory } from "cydran";
+import { builder, argumentsBuilder, Stage, Logger, LoggerFactory } from "cydran";
 import behaviorCapability from "./behavior";
 import { coreCapability, modalCapability } from "./component/";
 import serviceCapability from "./service/";
@@ -19,7 +19,9 @@ function i18n(key: string) {
 }
 
 const stage: Stage = builder("body")
-	.withTraceLogging()
+	.withProperties({
+		"cydran.logging.level": "TRACE"
+	})
 	.withSingleton('router', Router, argumentsBuilder().withPubSub().build())
 	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)
