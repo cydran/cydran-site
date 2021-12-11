@@ -19,9 +19,6 @@ function i18n(key: string) {
 }
 
 const stage: Stage = builder("body")
-	.withProperties({
-		"cydran.logging.level": "TRACE"
-	})
 	.withSingleton('router', Router, argumentsBuilder().withPubSub().build())
 	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)
