@@ -18,7 +18,7 @@ function i18n(key: string) {
 	return result;
 }
 
-const stage: Stage = builder("body")
+const stage: Stage = builder("body", PROPERTIES)
 	.withSingleton('router', Router, argumentsBuilder().withPubSub().build())
 	.withScopeItem('bundle', BUNDLE)
 	.withScopeItem('i18n', i18n)
@@ -29,13 +29,11 @@ const stage: Stage = builder("body")
 	.withCapability(galleryCapability)
 	.withCapability(modalCapability)
 	.withCapability(serviceCapability)
-	.withProperties(PROPERTIES)
 	.withInitializer((stage: Stage) => {
 		stage.setComponent(new App());
 		let router: Router = stage.get('router');
 
 		router.start();
-		// stage.broadcast("devTools", "enableDigestTracing");
 	})
 	.build();
 
