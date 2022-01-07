@@ -8,7 +8,9 @@
 		<button b:onclick="m().add()">Add</button>
 	</div>
 
-	<section b:each="m().posts" b:each:mode="expression" b:each:expression="v().title + '!'">
+	<h1>before</h1>
+
+	<section b:each="m().posts" b:each:expression="v().title + '!'" b:each:mode="expression">
 		<template b:type="empty">
 			<p>No posts yet...</p>
 		</template>
@@ -19,6 +21,8 @@
 			</article>
 		</template>
 	</section>
+
+	<h1>after</h1>
 
 	<button b:onclick="m().load()" b:enabled="!m().loading">Load Posts</button>
 

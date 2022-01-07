@@ -11,10 +11,10 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "7.11.6",
+		"@babel/core": "7.16.5",
 		"animate.css": "4.1.1",
 		"babel-core": "6.26.3",
-		"babel-loader": "8.1.0",
+		"babel-loader": "8.2.3",
 		"babel-preset-env": "1.7.0",
 		"contents-loader": "^1.0.0",
 		"copy-webpack-plugin": "6.1.0",
@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"axios": "0.20.0",
-		"bulma": "0.9.0",
+		"bulma": "0.9.3",
 		"cydran": "0.1.37",
 		"markdown": "^0.5.0",
 		"navigo": "^7.1.2"

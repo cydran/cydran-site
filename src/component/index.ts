@@ -11,7 +11,7 @@ import Menu from './Menu';
 import RepeatItem from './RepeatItem';
 import Empty from './Empty';
 import ModalContainer from './ModalContainer';
-import { StageBuilder, Module } from "cydran";
+import { StageBuilder, argumentsBuilder, Module } from "cydran";
 import FOOTER_TEMPLATE from "./Footer.html";
 
 function coreCapability(builder: StageBuilder) {
@@ -24,7 +24,7 @@ function coreCapability(builder: StageBuilder) {
 		.withPrototype("page:gallery", Gallery)
 		.withPrototype("helloWorld2", Tutorials)
 		.withPrototype('page:community', Community)
-		.withPrototype("page:blog", Blog, ["$prop:something.cool"])
+		.withPrototype("page:blog", Blog, argumentsBuilder().withProperty("something.cool").build())
 		.withPrototype("helloWorld", HelloWorld)
 		.withPrototype("repeatItem", RepeatItem)
 		.withPrototype("repeatEmpty", Empty)
