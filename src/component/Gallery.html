@@ -4,10 +4,10 @@
 		<div class="column is-one-fifth">
 
 			<aside class="menu">
-				<ul class="menu-list" c:each="m().items" c:each:mode="none">
-					<template c:type="item">
+				<ul class="menu-list" c-each="m().items" c-each-mode="none">
+					<template c-type="item">
 						<li>
-							<a href="javascript: void(0);" c:class="{'is-active': m().activeItem === v().id}" c:onclick="m().show(v().id)">{{v().title}}</a>
+							<a href="javascript: void(0);" c-class="{'is-active': m().activeItem === v().id}" c-onclick="m().show(v().id)">{{v().title}}</a>
 						</li>
 					</template>
 				</ul>
@@ -15,7 +15,7 @@
 
 		</div>
 		<div class="column">
-			<script type="cydran/region" c:region:name="body"></script>
+			<script type="cydran/region" c-region-name="body"></script>
 		</div>
 
 	</div>

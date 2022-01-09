@@ -1,94 +1,94 @@
 <section class="section">
 
-	<div class="container" c:markdown="m().mdContent"></div>
+	<div class="container" c-markdown="m().mdContent"></div>
 
 	<div class="columns">
 
-		<div class="container column" c:style="{border: '1px solid', borderColor: m().color}">
+		<div class="container column" c-style="{border: '1px solid', borderColor: m().color}">
 
-			<button c:onclick="m().showProperty()">Show Property</button>
+			<button c-onclick="m().showProperty()">Show Property</button>
 
-			<button c:onclick="m().loadBlog()">Load Blog</button><br /><br />
-			<button c:onclick="console.log($event)">Fire Event</button><br /><br />
+			<button c-onclick="m().loadBlog()">Load Blog</button><br /><br />
+			<button c-onclick="console.log($event)">Fire Event</button><br /><br />
 
-			<input type="text" c:model="m().myField" />
-			<button c:onclick="m().handleMyClick()" c:enabled="m().myField.length > 0">Click Me!</button>
-			<button c:onclick="m().logItems()">Log Items</button>
+			<input type="text" c-model="m().myField" />
+			<button c-onclick="m().handleMyClick()" c-enabled="m().myField.length > 0">Click Me!</button>
+			<button c-onclick="m().logItems()">Log Items</button>
 
 			This is {{m().myField}}!<br />
 			! {{ v().first }} !
 
-			<button c:onclick="m().focusLastName()">Focus Last Name</button>
+			<button c-onclick="m().focusLastName()">Focus Last Name</button>
 
 			<br />
 			<br />
-			Color: <input type="text" c:model="m().color" />
-			<button class="button is-rounded" c:onclick="m().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
+			Color: <input type="text" c-model="m().color" />
+			<button class="button is-rounded" c-onclick="m().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
 			<br />
 			<br />
 			Editable: {{m().lineEditable}}<br />
-			<input type="text" c:model="m().firstNameMaxLength" />
+			<input type="text" c-model="m().firstNameMaxLength" />
 			<div data-address="[[m().address.line1]]"></div>
 
 			FNMN: {{m().firstNameMaxLength}}<br />
-			<input type="text" c:model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
-			<input type="text" c:model="{{m().address.lastName}}" c:id="lastName" /><br />
-			<input type="text" c:model="m().address.line1" /><br />
-			<input type="text" c:model="m().address.line2" c:readonly="!m().lineEditable" />
-			<button c:onclick="m().toggleLineEditable()">Editable</button><br />
-			<input type="text" c:model="m().address.city" /><br />
-			<input type="text" c:model="m().address.state" /><br />
-			<input type="text" c:readonly="!m().lineEditable" c:model="m().address.postalCode" />
-			<input type="checkbox" c:checked="!m().lineEditable" c:onchange="m().toggleLineEditable()" />
-			<input type="radio" c:checked="!m().lineEditable" c:onclick="m().toggleLineEditable()" /><br />
+			<input type="text" c-model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
+			<input type="text" c-model="{{m().address.lastName}}" c-id="lastName" /><br />
+			<input type="text" c-model="m().address.line1" /><br />
+			<input type="text" c-model="m().address.line2" c-readonly="!m().lineEditable" />
+			<button c-onclick="m().toggleLineEditable()">Editable</button><br />
+			<input type="text" c-model="m().address.city" /><br />
+			<input type="text" c-model="m().address.state" /><br />
+			<input type="text" c-readonly="!m().lineEditable" c-model="m().address.postalCode" />
+			<input type="checkbox" c-checked="!m().lineEditable" c-onchange="m().toggleLineEditable()" />
+			<input type="radio" c-checked="!m().lineEditable" c-onclick="m().toggleLineEditable()" /><br />
 			<br />
 			<br />
 			<br />
 			{{m().address.firstName}} {{m().address.lastName}}<br />
 			{{m().address.line1}}<br />
-			<span c:hidden="!(m().address.line2.length > 0)">{{m().address.line2}}<br /></span>
+			<span c-hidden="!(m().address.line2.length > 0)">{{m().address.line2}}<br /></span>
 			{{m().address.city}}, {{m().address.state}} {{m().address.postalCode}}
 			<br />
 			<br />
 			<br />
 
-			<ul c:each="m().items" c:each:mode="generated">
-				<template c:type="empty" c:component="repeatEmpty">
+			<ul c-each="m().items" c-each-mode="generated">
+				<template c-type="empty" c-component="repeatEmpty">
 					<!-- Just a comment -->
 				</template>
-				<template c:type="item" c:component="repeatItem"></template>
+				<template c-type="item" c-component="repeatItem"></template>
 			</ul>
 
-			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
-				<template c:type="empty">
+			<ul c-class="{populated: m().items.length > 0}" c-each="m().items" c-each-mode="generated">
+				<template c-type="empty">
 					<p>
 						Nothing here yet!  
-						<button c:onclick="console.log(m())">Show m()</button>
+						<button c-onclick="console.log(m())">Show m()</button>
 						{{ m()?.address?.firstName }}<br />
 						! {{ v().first }} !
 					</p>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<li>
-						<input type="text" c:model="v().title">
-						<button c:onclick="m().removeItem(v().id)">Remove</button>
+						<input type="text" c-model="v().title">
+						<button c-onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ul>
 
-			<ol c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
-				<template c:type="empty" c:value="m().address">
+			<ol c-class="{populated: m().items.length > 0}" c-each="m().items" c-each-mode="generated">
+				<template c-type="empty" c-value="m().address">
 					<p>
 						Nothing here yet!  
-						<button c:onclick="console.log(m())">Show m()</button>
+						<button c-onclick="console.log(m())">Show m()</button>
 						{{ m()?.address?.firstName }}<br />
 						! {{ v().city }} !
 					</p>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<li>
-						<input type="text" c:model="v().title">
-						<button c:onclick="m().removeItem(v().id)">Remove</button>
+						<input type="text" c-model="v().title">
+						<button c-onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ol>
@@ -98,13 +98,13 @@
 		</div>
 
 		<div class="column">
-			<button class="button" c:onclick="m().toggleImage()">Toggle Image</button><br/>
-			<div c:if="m().hideImage">
+			<button class="button" c-onclick="m().toggleImage()">Toggle Image</button><br/>
+			<div c-if="m().hideImage">
 				<p>
 					Other
 				</p>
 			</div>
-			<div c:if="!m().hideImage">
+			<div c-if="!m().hideImage">
 				<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
 					xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
@@ -139,35 +139,35 @@
 				</svg>
 			</div>
 			<br />
-			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template c:type="item">
+			<select style="width: 150px;" c-each="m().insideList" c-each-mode="generated" c-each-idkey="value" c-model="m().myValues" size="{{m().insideList.length}}" multiple>
+				<template c-type="item">
 					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
-			<select style="width: 150px;" c:each="m().insideList" c:each:mode="generated" c:each:idkey="value" c:model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template c:type="item">
+			<select style="width: 150px;" c-each="m().insideList" c-each-mode="generated" c-each-idkey="value" c-model="m().myValues" size="{{m().insideList.length}}" multiple>
+				<template c-type="item">
 					<option value="{{v().value}}">{{v().name}}</option>
 				</template>
 			</select>
 			<br />
 			<br />
-			<input type="password" size="25" c:model="m().sillypass" /> :
-			<input type="text" size="25" c:model="m().sillypass" />
+			<input type="password" size="25" c-model="m().sillypass" /> :
+			<input type="text" size="25" c-model="m().sillypass" />
 			<br />
 			<br />
-			<div c:each="m().radioList" c:each:mode="generated">
-				<template c:type="item">
+			<div c-each="m().radioList" c-each-mode="generated">
+				<template c-type="item">
 					<div>
-						<input type="radio" name="radiocount" value="{{v().id}}" id="{{'rad_' + v().id}}" c:model="m().radioChoice" />
+						<input type="radio" name="radiocount" value="{{v().id}}" id="{{'rad_' + v().id}}" c-model="m().radioChoice" />
 						<label for="{{'rad_' + v().id}}">{{v().label}}</label>
 					</div>
 				</template>
 			</div>
-			{{m().radioChoice}}: <input type="text" size="5" c:model="m().radioChoice" />
+			{{m().radioChoice}}: <input type="text" size="5" c-model="m().radioChoice" />
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
-				<template c:type="item">
+			<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
+				<template c-type="item">
 					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
@@ -176,49 +176,49 @@
 			!!{{m().selectedDropdownOption}}!!
 			<br />
 			<br />
-			<select c:model="m().selectedDropdownOption" c:each="m().items" c:each:mode="generated">
-				<template c:type="empty">
+			<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
+				<template c-type="empty">
 					<option value="" disabled selected>Select your option</option>
 				</template>
-				<template c:type="first">
+				<template c-type="first">
 					<option disabled selected>Select One...</option>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<option value="{{v().id}}">{{v().title}}</option>
 				</template>
 			</select>
 			<br />
 			<br />
 
-			<ul c:class="{populated: m().items.length > 0}" c:each="m().items" c:each:mode="generated">
-				<template c:type="empty">
+			<ul c-class="{populated: m().items.length > 0}" c-each="m().items" c-each-mode="generated">
+				<template c-type="empty">
 					<p>
 						Nothing here yet!
 					</p>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<li>
-						<input type="text" c:model="v().title">
-						<button c:onclick="m().removeItem(v().id)">Remove</button>
+						<input type="text" c-model="v().title">
+						<button c-onclick="m().removeItem(v().id)">Remove</button>
 					</li>
 				</template>
 			</ul>
 
-			<ul c:each="m().items" c:each:mode="generated">
-				<template c:type="empty">
+			<ul c-each="m().items" c-each-mode="generated">
+				<template c-type="empty">
 					<li>This is really empty!</li>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<li>
-						<input type="text" c:model="v().title">
+						<input type="text" c-model="v().title">
 					</li>
 				</template>
 			</ul>
 
 			<br>
 
-			<button c:onclick="m().filtered.toStart()" c:enabled="m().filtered.isMoreBefore()">&lt;&lt;</button>
-			<button c:onclick="m().filtered.toPrevious()" c:enabled="m().filtered.isMoreBefore()">&lt;</button>
+			<button c-onclick="m().filtered.toStart()" c-enabled="m().filtered.isMoreBefore()">&lt;&lt;</button>
+			<button c-onclick="m().filtered.toPrevious()" c-enabled="m().filtered.isMoreBefore()">&lt;</button>
 
 			<p>
 				Page: {{m().filtered.getPage()}}
@@ -239,16 +239,16 @@
 				Paged: {{m().filtered.items().length}}
 			</p>
 
-			<button c:onclick="m().filtered.toNext()" c:enabled="m().filtered.isMoreAfter()">&gt;</button>
-			<button c:onclick="m().filtered.toEnd()" c:enabled="m().filtered.isMoreAfter()">&gt;&gt;</button>
+			<button c-onclick="m().filtered.toNext()" c-enabled="m().filtered.isMoreAfter()">&gt;</button>
+			<button c-onclick="m().filtered.toEnd()" c-enabled="m().filtered.isMoreAfter()">&gt;&gt;</button>
 
 			<h1>Before Filtered</h1>
 
-			<ul c:each="m().filtered.items()" c:each:mode="generated">
-				<template c:type="empty">
+			<ul c-each="m().filtered.items()" c-each-mode="generated">
+				<template c-type="empty">
 					<li>This is really empty!</li>
 				</template>
-				<template c:type="item">
+				<template c-type="item">
 					<li>
 						{{v().title}}
 					</li>
@@ -263,29 +263,29 @@
 						<th>Column 1</th>
 					</tr>
 				</thead>
-				<tbody c:each="m().items" c:each:mode="generated">
-					<template c:type="empty">
+				<tbody c-each="m().items" c-each-mode="generated">
+					<template c-type="empty">
 						<tr>
 							<td>This is really empty!</td>
 						</tr>
 					</template>
-					<template c:type="item">
+					<template c-type="item">
 						<tr>
 							<td>
-								<input type="text" c:model="v().title"> {{v().title}}
+								<input type="text" c-model="v().title"> {{v().title}}
 							</td>
 						</tr>
 					</template>
 				</tbody>
 			</table>
 
-			<script type="cydran/region" c:region:component="calendar" c:value="m()"></script>
+			<script type="cydran/region" c-region-component="calendar" c-value="m()"></script>
 
 			<div class="buttons">
-				<button class="button" c:onclick="m().sendUpdate()">Update Name</button>
-				<button class="button" c:onclick="m().popModal()">Show a modal</button>
-				<button class="button" c:onclick="m().popOtherModal()">Show non-closeable modal</button><br/>
-				<button class="button" c:onclick="m().popBlogModal()">Blog Modal</button><br/>
+				<button class="button" c-onclick="m().sendUpdate()">Update Name</button>
+				<button class="button" c-onclick="m().popModal()">Show a modal</button>
+				<button class="button" c-onclick="m().popOtherModal()">Show non-closeable modal</button><br/>
+				<button class="button" c-onclick="m().popBlogModal()">Blog Modal</button><br/>
 			</div>
 
 		</div>
@@ -295,9 +295,9 @@
 		{{m().escapedString}}
 	</div>
 
-	<input type="checkbox" c:checked="m().checked">
-	<button c:onclick="m().checked = true">Check</button>
-	<button c:onclick="m().checked = false">Uncheck</button>
+	<input type="checkbox" c-checked="m().checked">
+	<button c-onclick="m().checked = true">Check</button>
+	<button c-onclick="m().checked = false">Uncheck</button>
 	<p>
 		{{!!m().checked}}
 	</p>
