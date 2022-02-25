@@ -6,10 +6,20 @@
 	"scripts": {
 		"start": "npx webpack-dev-server --mode development --open",
 		"build": "npx webpack --mode production",
-		"clean": "npx rimraf dist"
+		"start.new": "cydran-build start",
+		"build.new": "cydran-build build",
+		"clean": "cydran-build clean",
+		"test": "cydran-build test",
+		"eject": "cydran-build eject",
+		"help": "cydran-build help"
 	},
 	"author": "",
 	"license": "ISC",
+	"cydran-build": {
+		"start": {
+			"port": 8085
+		}
+	},
 	"devDependencies": {
 		"@babel/core": "7.16.5",
 		"animate.css": "4.1.1",
@@ -22,9 +32,9 @@
 		"file-loader": "6.1.0",
 		"html-webpack-plugin": "4.4.1",
 		"mini-css-extract-plugin": "0.11.1",
-		"node-sass": "4.14.1",
 		"raw-loader": "4.0.1",
 		"rimraf": "3.0.2",
+		"sass": "1.49.0",
 		"sass-loader": "10.0.2",
 		"style-loader": "1.2.1",
 		"ts-loader": "8.0.3",
@@ -36,7 +46,7 @@
 	"dependencies": {
 		"axios": "0.20.0",
 		"bulma": "0.9.3",
-		"cydran": "0.1.37",
+		"cydran": "0.2.0",
 		"markdown": "^0.5.0",
 		"navigo": "^7.1.2"
 	}

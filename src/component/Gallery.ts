@@ -25,6 +25,10 @@ class Gallery extends Component {
 			{
 				id: "regions",
 				title: "Regions"
+			},
+			{
+				id: "validation",
+				title: "Validation"
 			}
 		];
 		this.activeItem = "intro";

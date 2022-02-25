@@ -1,7 +1,7 @@
 import { AbstractBehavior } from "cydran";
 import { markdown } from "markdown";
 
-class Markdown extends AbstractBehavior<string, HTMLElement, any> {
+class MarkdownBehavior extends AbstractBehavior<string, HTMLElement, any> {
 
 	public onMount(): void {
 		if (this.isMutable()) {
@@ -19,4 +19,4 @@ class Markdown extends AbstractBehavior<string, HTMLElement, any> {
 
 }
 
-export default Markdown;
+export default MarkdownBehavior;

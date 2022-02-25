@@ -1,5 +1,5 @@
 {
 	"cydran.development.enabled": true,
-	"cydran.logging.level": "info",
+	"cydran.logging.level": "debug",
 	"something.cool": "Zero Kelvin"
 }

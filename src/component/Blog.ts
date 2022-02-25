@@ -1,4 +1,4 @@
-import { Component, Events } from "cydran";
+import { Component, Events, requireNotNull } from "cydran";
 import TEMPLATE from "./Blog.html";
 import BlogService from "../service/BlogService";
 
@@ -24,9 +24,9 @@ class Blog extends Component {
 
 	private posts: Post[];
 
-	constructor(somethingCool: string) {
+	constructor(blogService: BlogService, somethingCool: string) {
 		super(TEMPLATE, { prefix: "b" });
-		this.blogService = this.get('blogService');
+		this.blogService = requireNotNull(blogService, "blogService");
 		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
 		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
 		this.on("error").forChannel("blog").invoke(this.blogError);

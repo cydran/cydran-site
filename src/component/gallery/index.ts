@@ -1,11 +1,13 @@
 import { StageBuilder } from "cydran";
 import Intro from "./Intro";
+import Validation from "./Validation";
 import Regions from "./Regions";
 import InlineComponent from "./regions/InlineComponent";
 
 function galleryCapability(builder: StageBuilder) {
 	builder.withPrototype("gallery:intro", Intro)
 	builder.withPrototype("gallery:regions", Regions)
+	builder.withPrototype("gallery:validation", Validation)
 	builder.withPrototype("inline", InlineComponent)
 	builder.getDefaultModule().associate(Intro);
 }

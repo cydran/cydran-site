@@ -1,0 +1,21 @@
+<div style="padding: 25px;">
+
+	Name: <input type="text" c-model="m().name" c-validated>
+
+	<button c-onclick="m().add()" c-enabled="m().name.length > 0">Add</button>
+
+	<h2>Items</h2>
+
+	<ul c-each="m().items">
+		<template c-type="item">
+			<li>{{v().name}}</li>
+		</template>
+	</ul>
+
+	<form>
+	
+		<input type="file" c-onchange="alert('Changed')">
+
+	</form>
+
+</div>

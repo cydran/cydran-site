@@ -7,6 +7,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 	template: "./src/index.html",
 	filename: "./index.html"
 });
+
 const copyWebpackPlugin = new CopyWebpackPlugin({
 	patterns: [
 		{
@@ -15,6 +16,7 @@ const copyWebpackPlugin = new CopyWebpackPlugin({
 		}
 	]
 });
+
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
 	filename: `[name].css`
 });

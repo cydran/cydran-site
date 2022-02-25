@@ -45,6 +45,9 @@ class Router {
 			'blog': () => {
 				this.navigate('blog');
 			},
+			'helloworld': () => {
+				this.navigate('helloworld');
+			},
 			'test/:id': (data: number | string) => {
 				console.log('first');
 				console.log(data);
