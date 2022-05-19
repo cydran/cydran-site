@@ -1,7 +1,7 @@
 import { Component } from "cydran";
-import TEMPLATE from "./Calendar.html";
+import TEMPLATE from "./TutorialChild.html";
 
-class Calendar extends Component {
+class TutorialChild extends Component {
 
 	private localValue: string;
 
@@ -23,4 +23,4 @@ class Calendar extends Component {
 
 }
 
-export default Calendar;
+export default TutorialChild;

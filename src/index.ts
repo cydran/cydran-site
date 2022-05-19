@@ -9,13 +9,8 @@ import { galleryCapability } from "./component/gallery/";
 import BUNDLE from "./bundle.json";
 import PROPERTIES from "./properties.json";
 
-const LOGGER: Logger = LoggerFactory.getLogger("Index");
-
 function i18n(key: string) {
-	const result: string = BUNDLE[key];
-	LOGGER.debug("I18N - key: " + key + " value: " + result);
-
-	return result;
+	return BUNDLE[key];
 }
 
 const stage: Stage = builder("body", PROPERTIES)

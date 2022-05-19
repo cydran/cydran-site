@@ -15,10 +15,13 @@ class Hello extends Component {
 
 	private items: Item[];
 
+	private active: boolean;
+
 	constructor() {
 		super(TEMPLATE);
 		this.items = [];
 		this.name = "";
+		this.active = false;
 	}
 
 	public add(): void {
@@ -27,6 +30,10 @@ class Hello extends Component {
 		});
 
 		this.name = "";
+	}
+
+	public resetForm(): void {
+		this.forForms().reset();
 	}
 
 }

@@ -1,15 +1,16 @@
 import axios from "axios";
-import { PubSub, Logger, LoggerFactory } from "cydran";
+import { PubSub, Logger, requireNotNull } from "cydran";
 import BlogService from "./BlogService";
 
 class BlogServiceImpl implements BlogService {
 
 	private pubSub: PubSub;
 
-	private logger: Logger = LoggerFactory.getLogger("BlogServiceImpl");
+	private logger: Logger;
 
-	constructor(pubSub: PubSub) {
-		this.pubSub = pubSub;
+	constructor(logger: Logger, pubSub: PubSub) {
+		this.logger = requireNotNull(logger, "logger");
+		this.pubSub = requireNotNull(pubSub, "pubSub");
 	}
 
 	public load(): void {

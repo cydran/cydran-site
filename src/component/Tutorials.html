@@ -1,55 +1,13 @@
 <section class="section">
 
-	<div class="container" c-markdown="m().mdContent"></div>
-
 	<div class="columns">
 
-		<div class="container column" c-style="{border: '1px solid', borderColor: m().color}">
+		<div class="container column" style="border: 1px solid;">
+			<button c-onclick="console.log($event)" class="button">Fire Event</button><br /><br />
+			<button c-onclick="m().handleMyClick()" class="button">Click Me!</button>
+			<button c-onclick="m().logItems()" class="button">Log Items</button>
 
-			<button c-onclick="m().showProperty()">Show Property</button>
-
-			<button c-onclick="m().loadBlog()">Load Blog</button><br /><br />
-			<button c-onclick="console.log($event)">Fire Event</button><br /><br />
-
-			<input type="text" c-model="m().myField" />
-			<button c-onclick="m().handleMyClick()" c-enabled="m().myField.length > 0">Click Me!</button>
-			<button c-onclick="m().logItems()">Log Items</button>
-
-			This is {{m().myField}}!<br />
-			! {{ v().first }} !
-
-			<button c-onclick="m().focusLastName()">Focus Last Name</button>
-
-			<br />
-			<br />
-			Color: <input type="text" c-model="m().color" />
-			<button class="button is-rounded" c-onclick="m().color = '#' + Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
-			<br />
-			<br />
-			Editable: {{m().lineEditable}}<br />
-			<input type="text" c-model="m().firstNameMaxLength" />
-			<div data-address="[[m().address.line1]]"></div>
-
-			FNMN: {{m().firstNameMaxLength}}<br />
-			<input type="text" c-model="m().address.firstName" maxlength="{{m().firstNameMaxLength}}" /><br />
-			<input type="text" c-model="{{m().address.lastName}}" c-id="lastName" /><br />
-			<input type="text" c-model="m().address.line1" /><br />
-			<input type="text" c-model="m().address.line2" c-readonly="!m().lineEditable" />
-			<button c-onclick="m().toggleLineEditable()">Editable</button><br />
-			<input type="text" c-model="m().address.city" /><br />
-			<input type="text" c-model="m().address.state" /><br />
-			<input type="text" c-readonly="!m().lineEditable" c-model="m().address.postalCode" />
-			<input type="checkbox" c-checked="!m().lineEditable" c-onchange="m().toggleLineEditable()" />
-			<input type="radio" c-checked="!m().lineEditable" c-onclick="m().toggleLineEditable()" /><br />
-			<br />
-			<br />
-			<br />
-			{{m().address.firstName}} {{m().address.lastName}}<br />
-			{{m().address.line1}}<br />
-			<span c-hidden="!(m().address.line2.length > 0)">{{m().address.line2}}<br /></span>
-			{{m().address.city}}, {{m().address.state}} {{m().address.postalCode}}
-			<br />
-			<br />
+			! {{ v().first }} !<br />
 			<br />
 
 			<ul c-each="m().items" c-each-mode="generated">
@@ -63,7 +21,7 @@
 				<template c-type="empty">
 					<p>
 						Nothing here yet!  
-						<button c-onclick="console.log(m())">Show m()</button>
+						<button c-onclick="console.log(m())" class="button">Show m()</button>
 						{{ m()?.address?.firstName }}<br />
 						! {{ v().first }} !
 					</p>
@@ -71,7 +29,7 @@
 				<template c-type="item">
 					<li>
 						<input type="text" c-model="v().title">
-						<button c-onclick="m().removeItem(v().id)">Remove</button>
+						<button c-onclick="m().removeItem(v().id)" class="button">Remove</button>
 					</li>
 				</template>
 			</ul>
@@ -80,115 +38,50 @@
 				<template c-type="empty" c-value="m().address">
 					<p>
 						Nothing here yet!  
-						<button c-onclick="console.log(m())">Show m()</button>
+						<button c-onclick="console.log(m())" class="button">Show m()</button>
 						{{ m()?.address?.firstName }}<br />
-						! {{ v().city }} !
+						! {{ v()?.city }} !
 					</p>
 				</template>
 				<template c-type="item">
 					<li>
 						<input type="text" c-model="v().title">
-						<button c-onclick="m().removeItem(v().id)">Remove</button>
+						<button c-onclick="m().removeItem(v().id)" class="button">Remove</button>
 					</li>
 				</template>
 			</ol>
 
-
-
 		</div>
 
 		<div class="column">
-			<button class="button" c-onclick="m().toggleImage()">Toggle Image</button><br/>
-			<div c-if="m().hideImage">
-				<p>
-					Other
-				</p>
+
+			<div class="select">
+				<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
+					<template c-type="item">
+						<option value="{{v().id}}">{{v().title}}</option>
+					</template>
+				</select>
 			</div>
-			<div c-if="!m().hideImage">
-				<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
-					xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink"
-					xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
-					xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-					xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr"
-					id="Livello_1" enable-background="new 0 0 595.28 841.89" xml:space="preserve"
-					viewBox="0 0 595.28 841.89" version="1.1" y="0px" x="0px" style="width: 200px;">
-					<linearGradient id="SVGID_1_" y2="271.87" gradientUnits="userSpaceOnUse" x2="439.54" y1="271.87"
-						x1="-52.793">
-						<stop style="stop-color:#FFFFFF" offset="0" />
-						<stop style="{{'stop-color: ' + m().color}}" offset="1" />
-					</linearGradient>
-					<path
-						d="m336.45 359.99c48.176-0.588 87.051-39.806 87.051-88.12 0-48.679-39.462-88.14-88.141-88.14-47.036 0-85.458 29.797-88.003 76.198h88.003c1.35 0 3.997 2.217 3.997 5.976 0 4.332-2.647 5.965-3.997 5.965h-319.61c0 30.721 4.738 60.32 13.489 88.15h307.22v-0.04z"
-						fill="url(#SVGID_1_)" />
-					<linearGradient id="SVGID_2_" y2="374.53" gradientUnits="userSpaceOnUse" x2="606.51" y1="374.53"
-						x1="-58.302">
-						<stop style="stop-color:#FFFFFF" offset="0" />
-						<stop style="{{'stop-color: ' + m().color}}" offset="1" />
-					</linearGradient>
-					<path
-						d="m584.8 372.94c-0.848-47.938-39.954-86.547-88.101-86.547-47.035 0-84.665 29.996-87.211 76.392h89.078c1.349 0 3.545 1.157 3.545 5.778 0 5.975-2.986 5.975-4.336 5.975h-463.54c12.149 32.511 29.919 62.264 52.093 88.14h410.37c16.766 0 32.436-4.682 45.778-12.804 25.403-15.472 42.367-43.424 42.367-75.336 0-0.54-0.03-1.06-0.05-1.6z"
-						fill="url(#SVGID_2_)" />
-					<linearGradient id="SVGID_3_" y2="565.34" gradientUnits="userSpaceOnUse" x2="500.68" y1="565.34"
-						x1="34.752">
-						<stop style="stop-color:#FFFFFF" offset="0" />
-						<stop style="{{'stop-color: ' + m().color}}" offset="1" />
-					</linearGradient>
-					<path
-						d="m397.35 477.2h-297.74c53.27 54.365 127.47 88.14 209.6 88.14h88.308c1.354 0 3.5 2.188 3.5 6.372 0 3.906-2.146 5.58-3.5 5.58h-88.166c2.547 46.401 40.969 76.193 88.002 76.193 48.686 0 88.146-39.462 88.146-88.146 0-17.958-5.381-34.652-14.604-48.582-15.78-23.83-42.82-39.55-73.55-39.55z"
-						fill="url(#SVGID_3_)" />
-				</svg>
-			</div>
-			<br />
-			<select style="width: 150px;" c-each="m().insideList" c-each-mode="generated" c-each-idkey="value" c-model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template c-type="item">
-					<option value="{{v().value}}">{{v().name}}</option>
-				</template>
-			</select>
-			<select style="width: 150px;" c-each="m().insideList" c-each-mode="generated" c-each-idkey="value" c-model="m().myValues" size="{{m().insideList.length}}" multiple>
-				<template c-type="item">
-					<option value="{{v().value}}">{{v().name}}</option>
-				</template>
-			</select>
-			<br />
-			<br />
-			<input type="password" size="25" c-model="m().sillypass" /> :
-			<input type="text" size="25" c-model="m().sillypass" />
-			<br />
-			<br />
-			<div c-each="m().radioList" c-each-mode="generated">
-				<template c-type="item">
-					<div>
-						<input type="radio" name="radiocount" value="{{v().id}}" id="{{'rad_' + v().id}}" c-model="m().radioChoice" />
-						<label for="{{'rad_' + v().id}}">{{v().label}}</label>
-					</div>
-				</template>
-			</div>
-			{{m().radioChoice}}: <input type="text" size="5" c-model="m().radioChoice" />
-			<br />
-			<br />
-			<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
-				<template c-type="item">
-					<option value="{{v().id}}">{{v().title}}</option>
-				</template>
-			</select>
+
 			<br />
 			<br />
 			!!{{m().selectedDropdownOption}}!!
 			<br />
 			<br />
-			<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
-				<template c-type="empty">
-					<option value="" disabled selected>Select your option</option>
-				</template>
-				<template c-type="first">
-					<option disabled selected>Select One...</option>
-				</template>
-				<template c-type="item">
-					<option value="{{v().id}}">{{v().title}}</option>
-				</template>
-			</select>
-			<br />
-			<br />
+
+			<div class="select">
+				<select c-model="m().selectedDropdownOption" c-each="m().items" c-each-mode="generated">
+					<template c-type="empty">
+						<option value="" disabled selected>Select your option</option>
+					</template>
+					<template c-type="first">
+						<option disabled selected>Select One...</option>
+					</template>
+					<template c-type="item">
+						<option value="{{v().id}}">{{v().title}}</option>
+					</template>
+				</select>
+			</div>
 
 			<ul c-class="{populated: m().items.length > 0}" c-each="m().items" c-each-mode="generated">
 				<template c-type="empty">
@@ -217,8 +110,8 @@
 
 			<br>
 
-			<button c-onclick="m().filtered.toStart()" c-enabled="m().filtered.isMoreBefore()">&lt;&lt;</button>
-			<button c-onclick="m().filtered.toPrevious()" c-enabled="m().filtered.isMoreBefore()">&lt;</button>
+			<button c-onclick="m().filtered.toStart()" c-enabled="m().filtered.isMoreBefore()" class="button">&lt;&lt;</button>
+			<button c-onclick="m().filtered.toPrevious()" c-enabled="m().filtered.isMoreBefore()" class="button">&lt;</button>
 
 			<p>
 				Page: {{m().filtered.getPage()}}
@@ -239,8 +132,8 @@
 				Paged: {{m().filtered.items().length}}
 			</p>
 
-			<button c-onclick="m().filtered.toNext()" c-enabled="m().filtered.isMoreAfter()">&gt;</button>
-			<button c-onclick="m().filtered.toEnd()" c-enabled="m().filtered.isMoreAfter()">&gt;&gt;</button>
+			<button c-onclick="m().filtered.toNext()" c-enabled="m().filtered.isMoreAfter()" class="button">&gt;</button>
+			<button c-onclick="m().filtered.toEnd()" c-enabled="m().filtered.isMoreAfter()" class="button">&gt;&gt;</button>
 
 			<h1>Before Filtered</h1>
 
@@ -279,27 +172,15 @@
 				</tbody>
 			</table>
 
-			<script type="cydran/region" c-region-component="calendar" c-value="m()"></script>
-
-			<div class="buttons">
-				<button class="button" c-onclick="m().sendUpdate()">Update Name</button>
-				<button class="button" c-onclick="m().popModal()">Show a modal</button>
-				<button class="button" c-onclick="m().popOtherModal()">Show non-closeable modal</button><br/>
-				<button class="button" c-onclick="m().popBlogModal()">Blog Modal</button><br/>
-			</div>
+			<script type="cydran/region" c-region-component="tutorialChild" c-value="m()"></script>
+			<button class="button" c-onclick="m().sendUpdate()">Update Name</button>
 
 		</div>
+
 	</div>
 
 	<div>
 		{{m().escapedString}}
 	</div>
-
-	<input type="checkbox" c-checked="m().checked">
-	<button c-onclick="m().checked = true">Check</button>
-	<button c-onclick="m().checked = false">Uncheck</button>
-	<p>
-		{{!!m().checked}}
-	</p>
 
 </section>
