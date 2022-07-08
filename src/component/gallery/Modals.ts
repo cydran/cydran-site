@@ -8,27 +8,33 @@ class Modals extends Component {
 	}
 
 	public popModal(): void {
-		this.broadcastGlobally('modal', 'show', {
+		this.$c().send('show', {
 			title: 'Confirmation 1',
 			name: 'helloWorld',
 			closeable: true
-		});
+		})
+		.onChannel('modal')
+		.globally();
 	}
 
 	public popOtherModal(): void {
-		this.broadcastGlobally('modal', 'show', {
+		this.$c().send('show', {
 			title: 'Confirmation 1',
 			name: 'helloWorld2',
 			closeable: false
-		});
+		})
+		.onChannel('modal')
+		.globally();
 	}
 
 	public popBlogModal(): void {
-		this.broadcastGlobally("modal", "show", {
+		this.$c().send('show', {
 			title: "Blog",
 			name: "wazzup",
 			closeable: true
-		});
+		})
+		.onChannel('modal')
+		.globally();
 	}
 
 }

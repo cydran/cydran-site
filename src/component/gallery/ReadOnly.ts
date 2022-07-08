@@ -47,7 +47,7 @@ class ReadOnly extends Component {
 	}
 
 	public focusLastName(): void {
-		this.forElement("lastName").focus();
+		this.$c().forElement("lastName").focus();
 	}
 
 }

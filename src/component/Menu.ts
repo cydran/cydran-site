@@ -11,7 +11,7 @@ class Menu extends Component {
 	}
 
 	public handleClick(name: string): void {
-		this.broadcast('navigation', 'navigate', name);
+		this.$c().send('navigate', name).onChannel('navigation').toModule();
 	}
 
 	public handleMenuToggle(): void {
@@ -19,7 +19,7 @@ class Menu extends Component {
 	}
 
 	public sendUpdate(): void {
-		this.broadcastGlobally("helloWorldChannel", "updateName", "Bob");
+		this.$c().send("updateName", "Bob").onChannel("helloWorldChannel").globally();
 	}
 
 }

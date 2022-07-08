@@ -17,25 +17,25 @@ class ModalContainer extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-		this.on('show').forChannel('modal').invoke(this.showModal);
-		this.on('hide').forChannel('modal').invoke(this.hideModal);
+		this.$c().onMessage('show').forChannel('modal').invoke(this.showModal);
+		this.$c().onMessage('hide').forChannel('modal').invoke(this.hideModal);
 		this.title = 'Modal Dialog';
 		this.visible = false;
 		this.closeable = false;
 	}
 
 	public showModal(payload: ModalParams) {
-		this.getLogger().info('Modal opening');
-		this.setChildFromRegistry('body', payload.name);
+		this.$c().getLogger().info('Modal opening');
+		this.$c().regions().setFromRegistry('body', payload.name);
 		this.title = payload.title;
 		this.closeable = payload.closeable;
 		this.visible = true;
 	}
 
 	public hideModal() {
-		this.getLogger().info('Modal closing');
+		this.$c().getLogger().info('Modal closing');
 		this.visible = false;
-		this.setChild('body', null);
+		this.$c().regions().set('body', null);
 	}
 }
 

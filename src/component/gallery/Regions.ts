@@ -36,11 +36,11 @@ class Regions extends Component {
 	}
 
 	public useUlComponent(): void {
-		this.setChild("item", new UlComponent());
+		this.$c().regions().set("item", new UlComponent());
 	}
 
 	public useInlineComponent(): void {
-		this.setChild("item", new InlineComponent());
+		this.$c().regions().set("item", new InlineComponent());
 	}
 
 }

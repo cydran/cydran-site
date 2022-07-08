@@ -8,7 +8,7 @@ class RepeatItem extends Component {
 	}
 
 	public handleClick(): void {
-		this.getLogger().info(this.getValue());
+		this.$c().getLogger().info(this.$c().getValue());
 	}
 
 }

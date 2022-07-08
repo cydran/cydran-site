@@ -12,6 +12,7 @@ import CheckboxState from "./CheckboxState";
 import Modals from "./Modals";
 import WatchedField from "./WatchedField";
 import FocusedEach from "./FocusedEach";
+import Clock from "./Clock";
 
 function galleryCapability(builder: StageBuilder) {
 	builder.withPrototype("gallery:intro", Intro);
@@ -21,11 +22,12 @@ function galleryCapability(builder: StageBuilder) {
 	builder.withPrototype("gallery:multiSelects", MultiSelects);
 	builder.withPrototype("gallery:sharedModel", SharedModel);
 	builder.withPrototype("gallery:readOnly", ReadOnly);
-	builder.withPrototype("gallery:svg", Svg);	
+	builder.withPrototype("gallery:svg", Svg);
 	builder.withPrototype("gallery:checkboxState", CheckboxState);
 	builder.withPrototype("gallery:modals", Modals);
 	builder.withPrototype("gallery:watchedField", WatchedField);
 	builder.withPrototype("gallery:focusedEach", FocusedEach);
+	builder.withPrototype("gallery:clock", Clock);
 	builder.withPrototype("inline", InlineComponent);
 	builder.getDefaultModule().associate(Intro);
 }

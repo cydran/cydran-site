@@ -8,7 +8,7 @@ class Home extends Component {
 	}
 
 	public handleClick(name: string): void {
-		this.broadcast('navigation', 'navigate', name);
+		this.$c().send('navigate', name).onChannel('navigation').toModule();
 	}
 
 }

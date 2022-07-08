@@ -7,7 +7,7 @@ class TutorialChild extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-		this.on("testMessage").forChannel("testGlobal").invoke(this.reset);
+		this.$c().onMessage("testMessage").forChannel("testGlobal").invoke(this.reset);
 		this.reset();
 	}
 
@@ -16,9 +16,9 @@ class TutorialChild extends Component {
 	}
 
 	public handleClick(): void {
-		console.log(this.getValue());
-		this.getValue()["color"] = "#ff0000";
-		console.log(this.getValue());
+		console.log(this.$c().getValue());
+		this.$c().getValue()["color"] = "#ff0000";
+		console.log(this.$c().getValue());
 	}
 
 }

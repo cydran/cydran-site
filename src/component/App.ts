@@ -9,19 +9,19 @@ class App extends Component {
 
 	constructor() {
 		super(TEMPLATE);
-		this.on("navigate").forChannel("navigation").invoke(this.navigate);
-		this.on(Events.AFTER_CHILD_CHANGED).invoke(this.onRegionChange);
+		this.$c().onMessage("navigate").forChannel("navigation").invoke(this.navigate);
+		this.$c().onMessage(Events.AFTER_CHILD_CHANGED).invoke(this.onRegionChange);
 		this.value = {
 			first: "A parent value"
 		};
 	}
 
 	public navigate(name: string): void {
-		this.setChildFromRegistry("body", 'page:' + name, 'page:notFound');
+		this.$c().regions().setFromRegistry("body", 'page:' + name, 'page:notFound');
 	}
 
 	public onRegionChange(payload: { name: string; }): void {
-		this.getLogger().ifTrace(() => "Updated region: " + payload.name);
+		this.$c().getLogger().ifTrace(() => "Updated region: " + payload.name);
 	}
 
 }

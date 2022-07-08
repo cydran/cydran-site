@@ -51,12 +51,11 @@ class FocusedEach extends Component {
 				value: "Eta"
 			}
 		];
-		setInterval(() => {
-			this.$apply(() => {
-				this.add();
-				this.rotate();
-			});
-		}, 5000);
+		this.$c().onInterval(1000).invoke(() => {
+			this.add();
+			this.rotate();
+			this.$c().sync();
+		});
 	}
 
 	public add(): void {
@@ -70,6 +69,7 @@ class FocusedEach extends Component {
 
 	public clear(): void {
 		this.items = [];
+		this.counter = 0;
 	}
 
 	public rotate(): void {

@@ -27,9 +27,9 @@ class Blog extends Component {
 	constructor(blogService: BlogService, somethingCool: string) {
 		super(TEMPLATE, { prefix: "b" });
 		this.blogService = requireNotNull(blogService, "blogService");
-		this.on(Events.AFTER_PARENT_ADDED).invoke(this.load);
-		this.on("updated").forChannel("blog").invoke(this.blogUpdated);
-		this.on("error").forChannel("blog").invoke(this.blogError);
+		this.$c().onMessage(Events.AFTER_PARENT_ADDED).invoke(this.load);
+		this.$c().onMessage("updated").forChannel("blog").invoke(this.blogUpdated);
+		this.$c().onMessage("error").forChannel("blog").invoke(this.blogError);
 		this.posts = [
 			{
 				id: "1",
@@ -40,22 +40,22 @@ class Blog extends Component {
 		this.idCounter = 0;
 		this.loading = false;
 		this.resetPost();
-		this.getLogger().info(somethingCool);
+		this.$c().getLogger().info(somethingCool);
 	}
 
 	public blogUpdated(data: any): void {
-		this.getLogger().debug(data);
+		this.$c().getLogger().debug(data);
 		this.posts = data;
 		this.loading = false;
 	}
 
 	public blogError(error: any): void {
-		this.getLogger().error(error);
+		this.$c().getLogger().error(error);
 		this.loading = false;
 	}
 
 	public load(): void {
-		this.getLogger().info("loading");
+		this.$c().getLogger().info("loading");
 		this.blogService.load();
 		this.loading = true;
 	}

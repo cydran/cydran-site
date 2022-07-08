@@ -26,7 +26,7 @@ class Tutorials extends Component {
 		this.items = [
 		];
 
-		this.filtered = this.withFilter("m().items").paged();
+		this.filtered = this.$c().createFilter("m().items").paged();
 		this.filtered.setPageSize(3);
 
 		this.counter = 0;
@@ -44,7 +44,7 @@ class Tutorials extends Component {
 	}
 
 	public logItems(): void {
-		this.getLogger().info(this.items);
+		this.$c().getLogger().info(this.items);
 	}
 
 	public removeItem(id: number): void {
@@ -56,7 +56,7 @@ class Tutorials extends Component {
 	}
 
 	public sendUpdate(): void {
-		this.broadcastGlobally("helloWorldChannel", "updateName", "Bob");
+		this.$c().send("updateName", "Bob").onChannel("helloWorldChannel").globally();
 	}
 
 }

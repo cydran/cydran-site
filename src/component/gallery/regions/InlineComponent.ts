@@ -9,7 +9,7 @@ class InlineComponent extends Component {
 	}
 
 	public hello(): void {
-		const person: Item = this.getValue();
+		const person: Item = this.$c().getValue();
 		window.alert("Hello " + person.firstName + "!");
 	}
 

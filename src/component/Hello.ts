@@ -33,7 +33,7 @@ class Hello extends Component {
 	}
 
 	public resetForm(): void {
-		this.forForms().reset();
+		this.$c().forForms().reset();
 	}
 
 }

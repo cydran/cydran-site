@@ -65,15 +65,19 @@ class Gallery extends Component {
 			{
 				id: "focusedEach",
 				title: "Focused Each"
+			},
+			{
+				id: "clock",
+				title: "Clock"
 			}
 		];
 		this.activeItem = "intro";
-		this.setChildFromRegistry("body", "gallery:intro");
+		this.$c().regions().setFromRegistry("body", "gallery:intro");
 	}
 
 	public show(name: string): void {
 		this.activeItem = name;
-		this.setChildFromRegistry("body", "gallery:" + name);
+		this.$c().regions().setFromRegistry("body", "gallery:" + name);
 	}
 
 }

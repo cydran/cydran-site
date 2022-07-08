@@ -1,6 +1,5 @@
 import { Component } from "cydran";
 import TEMPLATE from "./AbstractMarkdownComponent.html";
-import { markdown } from 'markdown';
 
 abstract class AbstractMarkdownComponent extends Component {
 
@@ -17,8 +16,8 @@ abstract class AbstractMarkdownComponent extends Component {
 				markdown: markdown
 			}
 		});
-		this.documentTitle = this.metadata().get("title");
-		this.markdown = this.metadata().get("markdown");
+		this.documentTitle = this.$c().metadata().get("title");
+		this.markdown = this.$c().metadata().get("markdown");
 		this.focusForced = true;
 	}
 
@@ -27,7 +26,7 @@ abstract class AbstractMarkdownComponent extends Component {
 	}
 
 	public imposeFocus(): void {
-		this.forElement("focused-input").focus();
+		this.$c().forElement("focused-input").focus();
 	}
 
 }
