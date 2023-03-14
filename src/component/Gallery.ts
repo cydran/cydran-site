@@ -72,7 +72,10 @@ class Gallery extends Component {
 			}
 		];
 		this.activeItem = "intro";
-		this.$c().regions().setFromRegistry("body", "gallery:intro");
+	}
+
+	public onMount(): void {
+		this.$c().regions().setFromRegistry("body", "gallery:intro");		
 	}
 
 	public show(name: string): void {

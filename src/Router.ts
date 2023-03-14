@@ -57,7 +57,7 @@ class Router {
 	}
 
 	private navigate(name: string): void {
-		this.pubSub.broadcast('navigation', 'navigate', name);
+		this.pubSub.sendGlobally('navigation', 'navigate', name);
 	}
 
 	public start(): void {

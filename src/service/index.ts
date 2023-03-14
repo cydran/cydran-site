@@ -1,8 +1,8 @@
 import BlogServiceImpl from './BlogServiceImpl';
-import { StageBuilder, argumentsBuilder } from 'cydran';
+import { argumentsBuilder, Context } from 'cydran';
 
-function serviceCapability(builder: StageBuilder) {
-	builder.withSingleton("blogService", BlogServiceImpl, argumentsBuilder().withLogger("BlogServiceImpl").withPubSub().build());
+function serviceCapability(context: Context) {
+	context.registerSingleton("blogService", BlogServiceImpl, argumentsBuilder().withLogger("BlogServiceImpl").withPubSub().build());
 }
 
 export default serviceCapability;

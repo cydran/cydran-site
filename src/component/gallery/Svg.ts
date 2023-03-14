@@ -1,14 +1,6 @@
 import { Component } from "cydran";
 import TEMPLATE from "./Svg.html";
 
-interface Item {
-
-	name: string;
-
-	value: number;
-
-}
-
 class Svg extends Component {
 
 	private color: string;

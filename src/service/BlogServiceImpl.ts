@@ -17,9 +17,9 @@ class BlogServiceImpl implements BlogService {
 		axios.get("/static/blog-posts.json")
 			.then((response) => {
 				this.logger.info(response.data.items);
-				this.pubSub.broadcast('blog', "updated", response.data.items);
+				this.pubSub.sendGlobally('blog', "updated", response.data.items);
 			}).catch((error) => {
-				this.pubSub.broadcast('blog', "error", error);
+				this.pubSub.sendGlobally('blog', "error", error);
 			});
 	}
 
