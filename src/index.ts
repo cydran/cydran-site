@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { StageImpl, argumentsBuilder, Stage, Context } from "cydran";
+import { argumentsBuilder, Context, Stage, StageImpl } from "cydran";
 import behaviorCapability from "./behavior";
 import { modalCapability } from "./component/";
 import serviceCapability from "./service/";
@@ -41,57 +41,61 @@ function i18n(key: string) {
 	return BUNDLE[key];
 }
 
+function rootCapability(context: Context) {
+	context.registerSingleton('router', Router, argumentsBuilder().withPubSub().build());
+	context.getScope().add('bundle', BUNDLE);
+	context.getScope().add('i18n', i18n);
+	context.getScope().add('upper', (str: string) => str.toUpperCase());
+	context.getScope().add('lower', (str: string) => str.toLowerCase());
+	context.configure(behaviorCapability);
+	context.registerPrototype("menu", Menu);
+	context.registerPrototype("tutorialChild", TutorialChild);
+	context.registerPrototype("page:home", Home);
+	context.registerPrototype("page:docs", Docs);
+	context.registerPrototype("page:notFound", NotFound);
+	context.registerSingleton("page:tutorials", Tutorials);
+	context.registerPrototype("page:gallery", Gallery);
+	context.registerPrototype("page:helloworld", Hello);
+	context.registerPrototype("helloWorld2", Tutorials);
+	context.registerPrototype('page:community', Community);
+	context.registerPrototype("page:blog", Blog, argumentsBuilder().with("blogService").withProperty("something.cool").build());
+	context.registerPrototype("helloWorld", HelloWorld);
+	context.registerPrototype("repeatItem", RepeatItem);
+	context.registerPrototype("repeatEmpty", Empty);
+	context.registerPrototype("wazzup", Blog, argumentsBuilder().with("blogService").withProperty("something.cool").build());
+	context.registerImplicit("footer", FOOTER_TEMPLATE);
+
+	context.registerPrototype("gallery:intro", Intro);
+	context.registerPrototype("gallery:regions", Regions);
+	context.registerPrototype("gallery:validation", Validation);
+	context.registerPrototype("gallery:radioButtons", RadioButtons);
+	context.registerPrototype("gallery:multiSelects", MultiSelects);
+	context.registerPrototype("gallery:sharedModel", SharedModel);
+	context.registerPrototype("gallery:readOnly", ReadOnly);
+	context.registerPrototype("gallery:svg", Svg);
+	context.registerPrototype("gallery:checkboxState", CheckboxState);
+	context.registerPrototype("gallery:modals", Modals);
+	context.registerPrototype("gallery:watchedField", WatchedField);
+	context.registerPrototype("gallery:focusedEach", FocusedEach);
+	context.registerPrototype("gallery:clock", Clock);
+	context.registerPrototype("inline", InlineComponent);
+
+	context.addChild("gallery", galleryCapability);
+	context.addChild("services", serviceCapability);
+}
+
 const stage: Stage = new StageImpl("body", PROPERTIES);
-stage.addPreInitializer((stage: Stage) => {
-	stage.registerSingleton('router', Router, argumentsBuilder().withPubSub().build());
-	stage.getScope().add('bundle', BUNDLE);
-	stage.getScope().add('i18n', i18n);
-	stage.getScope().add('upper', (str: string) => str.toUpperCase());
-	stage.getScope().add('lower', (str: string) => str.toLowerCase());
+stage.getContext()
+	.configure(rootCapability)
+	//.configure(modalCapability)
+	;
 
-	stage.addChild("behaviors", behaviorCapability);
-
-	stage.registerPrototype("menu", Menu);
-	stage.registerPrototype("tutorialChild", TutorialChild);
-	stage.registerPrototype("page:home", Home);
-	stage.registerPrototype("page:docs", Docs);
-	stage.registerPrototype("page:notFound", NotFound);
-	stage.registerSingleton("page:tutorials", Tutorials);
-	stage.registerPrototype("page:gallery", Gallery);
-	stage.registerPrototype("page:helloworld", Hello);
-	stage.registerPrototype("helloWorld2", Tutorials);
-	stage.registerPrototype('page:community', Community);
-	stage.registerPrototype("page:blog", Blog, argumentsBuilder().with("blogService").withProperty("something.cool").build());
-	stage.registerPrototype("helloWorld", HelloWorld);
-	stage.registerPrototype("repeatItem", RepeatItem);
-	stage.registerPrototype("repeatEmpty", Empty);
-	stage.registerPrototype("wazzup", Blog, argumentsBuilder().with("blogService").withProperty("something.cool").build());
-	stage.registerImplicit("footer", FOOTER_TEMPLATE);
-
-	
-	stage.registerPrototype("gallery:intro", Intro);
-	stage.registerPrototype("gallery:regions", Regions);
-	stage.registerPrototype("gallery:validation", Validation);
-	stage.registerPrototype("gallery:radioButtons", RadioButtons);
-	stage.registerPrototype("gallery:multiSelects", MultiSelects);
-	stage.registerPrototype("gallery:sharedModel", SharedModel);
-	stage.registerPrototype("gallery:readOnly", ReadOnly);
-	stage.registerPrototype("gallery:svg", Svg);
-	stage.registerPrototype("gallery:checkboxState", CheckboxState);
-	stage.registerPrototype("gallery:modals", Modals);
-	stage.registerPrototype("gallery:watchedField", WatchedField);
-	stage.registerPrototype("gallery:focusedEach", FocusedEach);
-	stage.registerPrototype("gallery:clock", Clock);
-	stage.registerPrototype("inline", InlineComponent);
-
-	stage.addChild("gallery", galleryCapability);
-	stage.addChild("services", serviceCapability);
-});
 stage.addInitializer((stage: Stage) => {
-	stage.addChild("Cydran:Components:Modal", modalCapability)
+	stage.getContext().addChild("Cydran:Components:Modal", modalCapability)
 	stage.setComponent(new App());
-	let router: Router = stage.getObject('router');
+	let router: Router = stage.getContext().getObject('router');
 
 	router.start();
 });
+
 stage.start();

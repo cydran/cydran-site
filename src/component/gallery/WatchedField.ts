@@ -10,7 +10,7 @@ class WatchedField extends Component {
 	constructor() {
 		super(TEMPLATE);
 		this.myField = "Kilroy was here";
-		this.$c().onExpressionChange("m().myField", (previous: any, current: any) => {
+		this.$c().onExpressionValueChange("m().myField", (previous: any, current: any) => {
 			this.myField = current.replace(this.regex, '');
 		});
 	}
