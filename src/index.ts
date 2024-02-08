@@ -1,6 +1,6 @@
 import App from "./component/App";
 import Router from "./Router";
-import { argumentsBuilder, Context, Stage, StageImpl } from "cydran";
+import { argumentsBuilder, Context, Stage, StageImpl, Component, ElementComponent } from "cydran";
 import behaviorCapability from "./behavior";
 import { modalCapability } from "./component/";
 import serviceCapability from "./service/";
@@ -22,20 +22,6 @@ import Menu from './component/Menu';
 import RepeatItem from './component/RepeatItem';
 import Empty from './component/Empty';
 import FOOTER_TEMPLATE from "./component/Footer.html";
-import Intro from "./component/gallery/Intro";
-import Validation from "./component/gallery/Validation";
-import Regions from "./component/gallery/Regions";
-import InlineComponent from "./component/gallery/regions/InlineComponent";
-import RadioButtons from "./component/gallery/RadioButtons";
-import MultiSelects from "./component/gallery/MultiSelects";
-import SharedModel from "./component/gallery/SharedModel";
-import ReadOnly from "./component/gallery/ReadOnly";
-import Svg from "./component/gallery/Svg";
-import CheckboxState from "./component/gallery/CheckboxState";
-import Modals from "./component/gallery/Modals";
-import WatchedField from "./component/gallery/WatchedField";
-import FocusedEach from "./component/gallery/FocusedEach";
-import Clock from "./component/gallery/Clock";
 
 function i18n(key: string) {
 	return BUNDLE[key];
@@ -65,24 +51,19 @@ function rootCapability(context: Context) {
 	context.registerPrototype("wazzup", Blog, argumentsBuilder().with("blogService").withProperty("something.cool").build());
 	context.registerImplicit("footer", FOOTER_TEMPLATE);
 
-	context.registerPrototype("gallery:intro", Intro);
-	context.registerPrototype("gallery:regions", Regions);
-	context.registerPrototype("gallery:validation", Validation);
-	context.registerPrototype("gallery:radioButtons", RadioButtons);
-	context.registerPrototype("gallery:multiSelects", MultiSelects);
-	context.registerPrototype("gallery:sharedModel", SharedModel);
-	context.registerPrototype("gallery:readOnly", ReadOnly);
-	context.registerPrototype("gallery:svg", Svg);
-	context.registerPrototype("gallery:checkboxState", CheckboxState);
-	context.registerPrototype("gallery:modals", Modals);
-	context.registerPrototype("gallery:watchedField", WatchedField);
-	context.registerPrototype("gallery:focusedEach", FocusedEach);
-	context.registerPrototype("gallery:clock", Clock);
-	context.registerPrototype("inline", InlineComponent);
-
 	context.addChild("gallery", galleryCapability);
 	context.addChild("services", serviceCapability);
 }
+
+class MyComponent extends ElementComponent {
+
+	constructor() {
+		super("<div><p>Hello World</p><button c-onclick='alert(\"This is a test\")'>Click Me</button></div>");
+	}
+
+}
+
+customElements.define('my-component', MyComponent);
 
 const stage: Stage = new StageImpl("body", PROPERTIES);
 stage.getContext()
