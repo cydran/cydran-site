@@ -80,7 +80,7 @@ class Gallery extends Component {
 
 	public show(name: string): void {
 		this.activeItem = name;
-		this.$c().regions().setFromRegistry("body", "./gallery/" + name);
+		this.$c().regions().setFromRegistry("body", "/gallery/../gallery/" + name);
 	}
 
 }
