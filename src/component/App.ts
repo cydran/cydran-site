@@ -8,7 +8,9 @@ class App extends Component {
 	};
 
 	constructor() {
-		super(TEMPLATE);
+		super(TEMPLATE, {
+			styles: "font-size: 20px;"
+		});
 		this.$c().onMessage("navigate").forChannel("navigation").invoke(this.navigate);
 		this.$c().onMessage(Events.AFTER_CHILD_CHANGED).invoke(this.onRegionChange);
 		this.value = {
