@@ -28,12 +28,12 @@ function i18n(key: string) {
 }
 
 function rootCapability(context: Context) {
+	context.configure(behaviorCapability);
 	context.registerSingleton('router', Router, argumentsBuilder().withPubSub().build());
 	context.getScope().add('bundle', BUNDLE);
 	context.getScope().add('i18n', i18n);
 	context.getScope().add('upper', (str: string) => str.toUpperCase());
 	context.getScope().add('lower', (str: string) => str.toLowerCase());
-	context.configure(behaviorCapability);
 	context.registerPrototype("menu", Menu);
 	context.registerPrototype("tutorialChild", TutorialChild);
 	context.registerPrototype("page:home", Home);
@@ -63,7 +63,7 @@ class MyComponent extends ElementComponent {
 
 }
 
-customElements.define('my-component', MyComponent);
+customElements.define('my-component', MyComponent as CustomElementConstructor);
 
 const stage: Stage = new StageImpl("body", PROPERTIES);
 stage.getContext()
