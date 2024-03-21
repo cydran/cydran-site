@@ -23,8 +23,7 @@ class Tutorials extends Component {
 	constructor() {
 		super(TEMPLATE);
 
-		this.items = [
-		];
+		this.items = [];
 
 		this.filtered = this.$c().createFilter("m().items").paged();
 		this.filtered.setPageSize(3);

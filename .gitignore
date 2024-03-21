@@ -7,3 +7,4 @@ settings.json
 .tm_properties
 .externalToolBuilders/
 /package-lock.json
+.DS_Store
